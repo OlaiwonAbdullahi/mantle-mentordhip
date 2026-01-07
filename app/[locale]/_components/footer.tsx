@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div>
       <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20 nunito">
@@ -52,16 +52,16 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4 text-sm text-neutral-400">
                 {[
-                  t("navbar.about_us"),
-                  t("navbar.contact_us"),
-                  t("navbar.programs"),
+                  { label: t("navbar.about_us"), href: "about-us" },
+                  { label: t("navbar.contact_us"), href: "contact-us" },
+                  { label: t("navbar.programs"), href: "programs" },
                 ].map((item) => (
-                  <li key={item}>
+                  <li key={item.href}>
                     <a
-                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                      href={`/${i18n.language}/${item.href}`}
                       className="hover:text-[#008000] transition-colors uppercase italic font-bold"
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}

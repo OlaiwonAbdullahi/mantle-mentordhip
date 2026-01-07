@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className="relative flex flex-col items-center justify-center min-h-[90vh] py-16 overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center gap-10">
@@ -40,7 +40,7 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row nunito items-center gap-4 animate-fade-in-up delay-200 w-full justify-center">
-          <Link href="/about-us">
+          <Link href={`/${i18n.language}/about-us`}>
             <Button
               size="lg"
               variant="outline"
@@ -49,7 +49,7 @@ const Hero = () => {
               <span>{t("hero.learn_more")}</span>
             </Button>
           </Link>
-          <Link href="/programs">
+          <Link href={`/${i18n.language}/programs`}>
             <Button
               size="lg"
               className="rounded-full bg-[#008000] cursor-pointer hover:bg-[#006400] text-white px-8 h-12 text-base font-bold transition-all duration-300 shadow-lg shadow-[#008000]/25 hover:shadow-[#008000]/40 hover:-translate-y-0.5 w-full sm:w-auto"

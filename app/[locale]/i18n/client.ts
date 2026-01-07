@@ -12,13 +12,13 @@ i18n.use(initReactI18next).init({
   defaultNS: "common",
   resources: {
     en: {
-      common: require("../../public/locales/en/common.json"),
+      common: require("../../../public/locales/en/common.json"),
     },
     fr: {
-      common: require("../../public/locales/fr/common.json"),
+      common: require("../../../public/locales/fr/common.json"),
     },
     es: {
-      common: require("../../public/locales/es/common.json"),
+      common: require("../../../public/locales/es/common.json"),
     },
   },
   interpolation: {

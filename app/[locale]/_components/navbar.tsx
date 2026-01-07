@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   IconArrowUpRight,
@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { usePathname, useRouter } from "next/navigation";
 
 const languages = [
   { code: "en", src: "/uk.png", alt: "UK" },
@@ -26,6 +27,9 @@ const languages = [
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const pathname = usePathname();
+  const router = useRouter();
+
   // Initialize with the current language or default to first one
   const selectedLang =
     languages.find((l) => l.code === i18n.language) || languages[0];
@@ -35,12 +39,16 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang: (typeof languages)[0]) => {
     i18n.changeLanguage(lang.code);
+    const newPathname = pathname.replace(`/${i18n.language}`, `/${lang.code}`);
+    router.push(newPathname);
   };
 
+  const currentLocale = i18n.language;
+
   const navItems = [
-    { label: t("navbar.about_us"), href: "/about-us" },
-    { label: t("navbar.programs"), href: "/programs" },
-    { label: t("navbar.contact_us"), href: "/contact-us" },
+    { label: t("navbar.about_us"), href: `/${currentLocale}/about-us` },
+    { label: t("navbar.programs"), href: `/${currentLocale}/programs` },
+    { label: t("navbar.contact_us"), href: `/${currentLocale}/contact-us` },
   ];
 
   return (
@@ -48,7 +56,7 @@ const Navbar = () => {
       <nav className="sticky top-0 z-50 md:p-5 p-2 bg-transparent nunito">
         <div className="mx-auto flex max-w-7xl items-center justify-between md:px-6 px-2 md:py-4 py-2">
           <div className="flex items-center gap-3">
-            <Link href="/">
+            <Link href={`/${currentLocale}`}>
               <Image src="/mantleLogo.png" alt="logo" width={75} height={75} />
             </Link>
           </div>
@@ -103,7 +111,7 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/programs">
+            <Link href={`/${currentLocale}/programs`}>
               <Button
                 size="lg"
                 className="hidden lg:flex rounded-full font-bold bg-[#008000] hover:bg-transparent hover:text-neutral-300 hover:border hover:border-[#008000] cursor-pointer p-3 shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
@@ -147,7 +155,10 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              <Link href="/programs" onClick={toggleMobileMenu}>
+              <Link
+                href={`/${currentLocale}/programs`}
+                onClick={toggleMobileMenu}
+              >
                 <Button
                   size="lg"
                   className="w-full max-w-xs mt-4 rounded-full font-bold bg-[#008000] hover:bg-[#006400] text-white p-6 shadow-lg shadow-primary/20"
