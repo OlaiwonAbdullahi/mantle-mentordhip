@@ -76,7 +76,7 @@ export function InfoDialog({ children }: { children: React.ReactNode }) {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-neutral-950 border-neutral-800 text-white">
+      <DialogContent className="sm:max-w-md bg-neutral-950 nunito border-neutral-800 text-white">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold sora">
             {step === "details" && "Enrollment Details"}
