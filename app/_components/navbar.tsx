@@ -16,19 +16,32 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const languages = [
-  { code: "uk", src: "/uk.png", alt: "UK" },
-  { code: "spain", src: "/spain.png", alt: "Spain" },
-  { code: "portugal", src: "/portugal.png", alt: "Portugal" },
-  { code: "france", src: "/france.webp", alt: "France" },
+  { code: "en", src: "/uk.png", alt: "UK" },
+  { code: "es", src: "/spain.png", alt: "Spain" },
+  { code: "fr", src: "/france.webp", alt: "France" },
 ];
 
 const Navbar = () => {
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const { t, i18n } = useTranslation();
+  // Initialize with the current language or default to first one
+  const selectedLang =
+    languages.find((l) => l.code === i18n.language) || languages[0];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const handleLanguageChange = (lang: (typeof languages)[0]) => {
+    i18n.changeLanguage(lang.code);
+  };
+
+  const navItems = [
+    { label: t("navbar.about_us"), href: "/about-us" },
+    { label: t("navbar.programs"), href: "/programs" },
+    { label: t("navbar.contact_us"), href: "/contact-us" },
+  ];
 
   return (
     <div>
@@ -42,13 +55,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-10 lg:flex">
-            {["About Us", "Programs", "Contact Us"].map((item) => (
+            {navItems.map((item) => (
               <Link
-                key={item}
-                href={`/${item.toLowerCase().replace(" ", "-")}`}
-                className="text-md  text-neutral-300 hover:text-neutral-100 transition-colors"
+                key={item.href}
+                href={item.href}
+                className="text-md text-neutral-300 hover:text-neutral-100 transition-colors"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>
@@ -72,7 +85,7 @@ const Navbar = () => {
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
-                    onClick={() => setSelectedLang(lang)}
+                    onClick={() => handleLanguageChange(lang)}
                     className="cursor-pointer text-neutral-300 focus:bg-neutral-800 focus:text-neutral-100"
                   >
                     <div className="flex items-center gap-2">
@@ -90,15 +103,17 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button
-              size="lg"
-              className="hidden lg:flex rounded-full font-bold bg-[#008000] hover:bg-transparent hover:text-neutral-300 hover:border hover:border-[#008000] cursor-pointer p-3 shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
-            >
-              <span>GET STARTED</span>
-              <div className="p-1.5 rounded-full bg-white">
-                <IconArrowUpRight color="#008000" />
-              </div>
-            </Button>
+            <Link href="/programs">
+              <Button
+                size="lg"
+                className="hidden lg:flex rounded-full font-bold bg-[#008000] hover:bg-transparent hover:text-neutral-300 hover:border hover:border-[#008000] cursor-pointer p-3 shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+              >
+                <span>{t("navbar.get_started")}</span>
+                <div className="p-1.5 rounded-full bg-white">
+                  <IconArrowUpRight color="#008000" />
+                </div>
+              </Button>
+            </Link>
 
             {/* Mobile Menu Trigger */}
             <div
@@ -121,26 +136,28 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col gap-8 items-center text-center">
-              {["About Us", "Programs", "Contact Us"].map((item) => (
-                <a
-                  key={item}
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
                   className="text-2xl font-bold text-neutral-300 hover:text-[#008000] transition-colors"
                   onClick={toggleMobileMenu}
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </Link>
               ))}
 
-              <Button
-                size="lg"
-                className="w-full max-w-xs mt-4 rounded-full font-bold bg-[#008000] hover:bg-[#006400] text-white p-6 shadow-lg shadow-primary/20"
-              >
-                <span>GET STARTED</span>
-                <div className="p-1.5 rounded-full bg-white ml-2">
-                  <IconArrowUpRight color="#008000" size={16} />
-                </div>
-              </Button>
+              <Link href="/programs" onClick={toggleMobileMenu}>
+                <Button
+                  size="lg"
+                  className="w-full max-w-xs mt-4 rounded-full font-bold bg-[#008000] hover:bg-[#006400] text-white p-6 shadow-lg shadow-primary/20"
+                >
+                  <span>{t("navbar.get_started")}</span>
+                  <div className="p-1.5 rounded-full bg-white ml-2">
+                    <IconArrowUpRight color="#008000" size={16} />
+                  </div>
+                </Button>
+              </Link>
             </div>
           </div>
         )}

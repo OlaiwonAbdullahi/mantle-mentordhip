@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "The Mantle Mentorship",
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -21,12 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#000000]">
-        <div className="min-h-screen relative bg-[#1f1f1f]">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <Providers>
+          <div className="min-h-screen relative bg-[#1f1f1f]">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
