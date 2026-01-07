@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -14,6 +16,7 @@ import {
   IconLock,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 interface ProgramProps {
   title: string;
@@ -38,6 +41,8 @@ const ProgramCard = ({
   benefits,
   isComingSoon,
 }: ProgramProps) => {
+  const { t } = useTranslation();
+
   return (
     <Card
       className={`relative w-full overflow-hidden transition-all duration-300 ${
@@ -52,7 +57,7 @@ const ProgramCard = ({
             <IconLock className="text-[#008000]" size={32} />
           </div>
           <span className="text-xl font-bold text-white uppercase tracking-widest bg-black/40 px-4 py-1 rounded-lg border border-white/10">
-            Coming Soon
+            {t("programs_page.coming_soon")}
           </span>
         </div>
       )}
@@ -87,7 +92,7 @@ const ProgramCard = ({
                   </div>
                   <div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                      Fee
+                      {t("programs_page.fee_label")}
                     </p>
                     {fees?.map((fee, i) => (
                       <p key={i} className="text-neutral-200 font-semibold">
@@ -105,7 +110,7 @@ const ProgramCard = ({
                   </div>
                   <div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                      Duration
+                      {t("programs_page.duration_label")}
                     </p>
                     <p className="text-neutral-200 font-semibold">
                       {duration?.title}
@@ -121,7 +126,7 @@ const ProgramCard = ({
                   </div>
                   <div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                      Class Size
+                      {t("programs_page.class_size_label")}
                     </p>
                     <p className="text-neutral-200 font-semibold">
                       {classSize}
@@ -137,7 +142,7 @@ const ProgramCard = ({
                   </div>
                   <div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                      Frequency
+                      {t("programs_page.frequency_label")}
                     </p>
                     <p className="text-neutral-200 font-semibold">
                       {frequency}
@@ -150,7 +155,7 @@ const ProgramCard = ({
                   </div>
                   <div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                      Mode
+                      {t("programs_page.mode_label")}
                     </p>
                     <p className="text-neutral-200 font-semibold">{mode}</p>
                   </div>
@@ -160,7 +165,7 @@ const ProgramCard = ({
 
             <div className="pt-4 border-t border-neutral-800">
               <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
-                What you get
+                {t("programs_page.what_you_get_label")}
               </p>
               <ul className="space-y-3">
                 {benefits?.map((item, i) => (
@@ -180,7 +185,7 @@ const ProgramCard = ({
           </CardContent>
           <div className="p-6 pt-0">
             <Button className="w-full bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg rounded-xl shadow-lg shadow-[#008000]/20">
-              Enroll Now
+              {t("programs_page.enroll_now")}
             </Button>
           </div>
         </>
@@ -189,8 +194,7 @@ const ProgramCard = ({
       {isComingSoon && (
         <CardContent className="pb-8">
           <p className="text-neutral-500 italic">
-            This program is currently in development. Check back later for
-            details.
+            {t("programs_page.in_development")}
           </p>
         </CardContent>
       )}
@@ -199,10 +203,11 @@ const ProgramCard = ({
 };
 
 const Programs = () => {
+  const { t } = useTranslation();
+
   const activeProgram = {
-    title: "General Mantle Mentorship Program",
-    description:
-      "A comprehensive 6-week mentorship journey designed to equip you with practical and life-based skills for future leadership.",
+    title: t("programs_page.program_general_title"),
+    description: t("programs_page.program_general_desc"),
     fees: [
       { amount: "₦100,000", region: "Africa" },
       { amount: "€100", region: "Europe" },
@@ -223,33 +228,33 @@ const Programs = () => {
 
   const upcomingPrograms = [
     {
-      title: "High School to University Transition Program",
+      title: t("programs_page.program_hs_uni"),
       isComingSoon: true,
     },
     {
-      title: "Tertiary Institution to Job Market Transition Program",
+      title: t("programs_page.program_tertiary_job"),
       isComingSoon: true,
     },
     {
-      title: "Tertiary Institution to Entrepreneurship Transition Program",
+      title: t("programs_page.program_tertiary_ent"),
       isComingSoon: true,
     },
     {
-      title: "Job Market to back-to-School Transition Programs",
+      title: t("programs_page.program_job_school"),
       isComingSoon: true,
     },
-    { title: "Career Change Transition Programs", isComingSoon: true },
+    { title: t("programs_page.program_career_change"), isComingSoon: true },
     {
-      title: "High School to Polytechnic Transition Program",
+      title: t("programs_page.program_hs_poly"),
       isComingSoon: true,
     },
     {
-      title: "Polytechnic to University Transition Program",
+      title: t("programs_page.program_poly_uni"),
       isComingSoon: true,
     },
-    { title: "Discipline-based skilled program", isComingSoon: true },
-    { title: "Project-based acquisition program", isComingSoon: true },
-    { title: "Start-up/Young business Advisory Programs", isComingSoon: true },
+    { title: t("programs_page.program_discipline"), isComingSoon: true },
+    { title: t("programs_page.program_project"), isComingSoon: true },
+    { title: t("programs_page.program_startup"), isComingSoon: true },
   ];
 
   return (
@@ -257,10 +262,13 @@ const Programs = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl sora">
-            Our <span className="text-[#008000]">Programs</span>
+            {t("programs_page.title_our")}{" "}
+            <span className="text-[#008000]">
+              {t("programs_page.title_programs")}
+            </span>
           </h2>
           <p className="mt-4 text-lg text-neutral-400">
-            Choose the path that fits your journey to leadership.
+            {t("programs_page.subtitle")}
           </p>
         </div>
 
@@ -272,10 +280,14 @@ const Programs = () => {
         {/* Upcoming Programs Header */}
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl sora">
-            Review Our <span className="text-[#008000]">Upcoming</span> Programs
+            {t("programs_page.review_upcoming_title")}{" "}
+            <span className="text-[#008000]">
+              {t("programs_page.review_upcoming_subtitle")}
+            </span>{" "}
+            {t("programs_page.review_upcoming_programs")}
           </h2>
           <p className="mt-4 text-base text-neutral-400">
-            Expanding our mentorship to every stage of your journey.
+            {t("programs_page.review_upcoming_desc")}
           </p>
         </div>
 
