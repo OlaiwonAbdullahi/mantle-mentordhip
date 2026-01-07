@@ -1,0 +1,184 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTiktok,
+  IconBrandYoutube,
+  IconMail,
+  IconPhone,
+} from "@tabler/icons-react";
+import Image from "next/image";
+
+const ContactUs = () => {
+  return (
+    <div className="min-h-screen pt-24 pb-12 nunito">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl sora">
+            Contact <span className="text-[#008000]">Us</span>
+          </h1>
+          <p className="mt-4 text-lg text-neutral-400">
+            We&apos;d love to hear from you. Send us a message or reach out
+            directly.
+          </p>
+        </div>
+
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+          {/* Contact Form */}
+          <div className="space-y-8 rounded-2xl bg-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
+            <h2 className="text-2xl font-bold text-white sora">
+              Send a message
+            </h2>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-neutral-300">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-neutral-300">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  placeholder="john@example.com"
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-neutral-300">
+                  Message
+                </label>
+                <textarea
+                  placeholder="How can we help you?"
+                  rows={5}
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600 resize-none"
+                />
+              </div>
+              <Button className="w-full rounded-xl bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg shadow-lg shadow-[#008000]/20 mt-4">
+                Send Message
+              </Button>
+            </form>
+          </div>
+
+          {/* Contact Details */}
+          <div className="space-y-10 lg:py-8">
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-white sora">
+                Contact details
+              </h2>
+              <p className="text-neutral-400 leading-relaxed">
+                You can also reach us using the details below. <br />
+                We typically respond within{" "}
+                <span className="text-[#008000] font-bold">
+                  2 – 3 working days
+                </span>
+                .
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-[#008000]/10 p-3 text-[#008000]">
+                  <IconMail size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-lg">
+                    Email Address
+                  </h3>
+                  <a
+                    href="mailto:info@mantlementor.com"
+                    className="text-neutral-400 hover:text-[#008000] transition-colors"
+                  >
+                    info@mantlementor.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-[#008000]/10 p-3 text-[#008000]">
+                  <IconPhone size={24} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-bold text-white text-lg">Phone</h3>
+                  <div className="grid gap-1 text-neutral-400">
+                    <p>
+                      <span className="text-neutral-200 font-medium">
+                        Nigeria & Africa:
+                      </span>{" "}
+                      +234 803 897 9738
+                    </p>
+                    <p>
+                      <span className="text-neutral-200 font-medium">
+                        Europe:
+                      </span>{" "}
+                      +33 7 5113 57 27
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6 pt-6 border-t border-neutral-800">
+              <h3 className="font-bold text-white text-lg sora">
+                Social Media
+              </h3>
+              <div className="flex gap-4">
+                {[
+                  {
+                    icon: IconBrandInstagram,
+                    href: "#",
+                    color: "hover:text-pink-500",
+                  },
+                  {
+                    icon: IconBrandYoutube,
+                    href: "#",
+                    color: "hover:text-red-500",
+                  },
+                  {
+                    icon: IconBrandLinkedin,
+                    href: "#",
+                    color: "hover:text-blue-500",
+                  },
+                  {
+                    icon: IconBrandTiktok,
+                    href: "#",
+                    color: "hover:text-pink-400",
+                  },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    className={`rounded-full bg-neutral-900 border border-neutral-800 p-4 text-neutral-400 hover:border-transparent hover:bg-neutral-800 transition-all duration-300 ${social.color}`}
+                  >
+                    <social.icon size={24} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Decorative Element */}
+            <div className="hidden lg:block relative mt-8 h-48 rounded-2xl overflow-hidden border border-white/5">
+              <Image
+                src="/hero.jpeg"
+                alt="Contact Us"
+                fill
+                className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-[#008000]/20 to-transparent" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContactUs;

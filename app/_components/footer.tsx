@@ -11,8 +11,8 @@ const Footer = () => {
     <div>
       <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20 nunito">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-row justify-between  gap-16  mb-24">
-            <div className="w-1/3 space-y-8">
+          <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 mb-16 lg:mb-24">
+            <div className="w-full lg:w-1/3 space-y-8">
               <div className="flex items-center gap-3">
                 <Image
                   src="/mantleLogo.png"
@@ -44,15 +44,15 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w1/3 space-y-6">
-              <h4 className="text-xs  uppercase tracking-[0.2em] text-neutral-200 italic  font-bold">
+            <div className="w-full lg:w-1/3 space-y-6">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
                 Company
               </h4>
               <ul className="space-y-4 text-sm text-neutral-400">
                 {["About Us", "Contact Us", "Programs"].map((item) => (
                   <li key={item}>
                     <a
-                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      href={`/${item.toLowerCase().replace(" ", "-")}`}
                       className="hover:text-[#008000] transition-colors uppercase italic"
                     >
                       {item}
@@ -62,8 +62,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="w-1/3 space-y-8">
-              <h4 className="text-xs  uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+            <div className="w-full lg:w-1/3 space-y-8">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
                 Subscribe to updates
               </h4>
               <div className="flex gap-2">
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between border-t border-neutral-800 pt-12 gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
-            <p>
+            <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} The Mantle Mentorship Program.
               All rights reserved.
             </p>
