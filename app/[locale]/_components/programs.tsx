@@ -49,7 +49,7 @@ const ProgramCard = ({
       className={`relative w-full overflow-hidden transition-all duration-300 ${
         isComingSoon
           ? "bg-neutral-900/30 border-neutral-800"
-          : "max-w-2xl bg-neutral-950 border-[#008000]/20 shadow-lg shadow-[#008000]/10 hover:shadow-[#008000]/20"
+          : "max-w-2xl bg-neutral-950/40 border-[#008000]/20 shadow-lg shadow-[#008000]/10 hover:shadow-[#008000]/20"
       }`}
     >
       {isComingSoon && (
