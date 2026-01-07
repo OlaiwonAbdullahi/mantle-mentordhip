@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   IconBrandFacebook,
@@ -5,8 +6,10 @@ import {
   IconPhone,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20 nunito">
@@ -25,8 +28,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-neutral-400 font-medium leading-relaxed">
-                Transferring the practical & life-based skill mantle to next
-                future leaders.
+                {t("hero.subtitle")}
               </p>
               <div className="flex gap-4">
                 {[IconBrandInstagram, IconBrandFacebook, IconPhone].map(
@@ -49,11 +51,15 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-4 text-sm text-neutral-400">
-                {["About Us", "Contact Us", "Programs"].map((item) => (
+                {[
+                  t("navbar.about_us"),
+                  t("navbar.contact_us"),
+                  t("navbar.programs"),
+                ].map((item) => (
                   <li key={item}>
                     <a
-                      href={`/${item.toLowerCase().replace(" ", "-")}`}
-                      className="hover:text-[#008000] transition-colors uppercase italic"
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="hover:text-[#008000] transition-colors uppercase italic font-bold"
                     >
                       {item}
                     </a>
@@ -64,7 +70,7 @@ const Footer = () => {
 
             <div className="w-full lg:w-1/3 space-y-8">
               <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
-                Subscribe to updates
+                {t("footer.subscribe_title")}
               </h4>
               <div className="flex gap-2">
                 <input
@@ -81,15 +87,14 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between border-t border-neutral-800 pt-12 gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
             <p className="text-center md:text-left">
-              &copy; {new Date().getFullYear()} The Mantle Mentorship Program.
-              All rights reserved.
+              &copy; {new Date().getFullYear()} {t("footer.copyright")}
             </p>
             <div className="flex gap-12 italic">
               <a href="#" className="hover:text-[#008000] transition-colors">
-                Privacy Policy
+                {t("footer.privacy_policy")}
               </a>
               <a href="#" className="hover:text-[#008000] transition-colors">
-                Terms of Service
+                {t("footer.terms_of_service")}
               </a>
             </div>
           </div>

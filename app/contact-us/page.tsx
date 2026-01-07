@@ -10,18 +10,23 @@ import {
   IconPhone,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const ContactUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen pt-24 pb-12 nunito">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl sora">
-            Contact <span className="text-[#008000]">Us</span>
+            {t("contact_us_page.title_contact")}{" "}
+            <span className="text-[#008000]">
+              {t("contact_us_page.title_us")}
+            </span>
           </h1>
           <p className="mt-4 text-lg text-neutral-400">
-            We&apos;d love to hear from you. Send us a message or reach out
-            directly.
+            {t("contact_us_page.subtitle")}
           </p>
         </div>
 
@@ -29,12 +34,12 @@ const ContactUs = () => {
           {/* Contact Form */}
           <div className="space-y-8 rounded-2xl bg-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
             <h2 className="text-2xl font-bold text-white sora">
-              Send a message
+              {t("contact_us_page.send_message")}
             </h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300">
-                  Full Name
+                  {t("contact_us_page.full_name")}
                 </label>
                 <input
                   type="text"
@@ -44,7 +49,7 @@ const ContactUs = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300">
-                  Email Address
+                  {t("contact_us_page.email_address")}
                 </label>
                 <input
                   type="email"
@@ -54,7 +59,7 @@ const ContactUs = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300">
-                  Message
+                  {t("contact_us_page.message")}
                 </label>
                 <textarea
                   placeholder="How can we help you?"
@@ -63,7 +68,7 @@ const ContactUs = () => {
                 />
               </div>
               <Button className="w-full rounded-xl bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg shadow-lg shadow-[#008000]/20 mt-4">
-                Send Message
+                {t("contact_us_page.submit_btn")}
               </Button>
             </form>
           </div>
@@ -72,13 +77,13 @@ const ContactUs = () => {
           <div className="space-y-10 lg:py-8">
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-white sora">
-                Contact details
+                {t("contact_us_page.contact_details")}
               </h2>
               <p className="text-neutral-400 leading-relaxed">
-                You can also reach us using the details below. <br />
-                We typically respond within{" "}
+                {t("contact_us_page.details_text")} <br />
+                {t("contact_us_page.response_time")}{" "}
                 <span className="text-[#008000] font-bold">
-                  2 – 3 working days
+                  {t("contact_us_page.response_time_val")}
                 </span>
                 .
               </p>
@@ -91,7 +96,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-lg">
-                    Email Address
+                    {t("contact_us_page.email_address")}
                   </h3>
                   <a
                     href="mailto:info@mantlementor.com"
@@ -107,17 +112,19 @@ const ContactUs = () => {
                   <IconPhone size={24} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-bold text-white text-lg">Phone</h3>
+                  <h3 className="font-bold text-white text-lg">
+                    {t("contact_us_page.phone")}
+                  </h3>
                   <div className="grid gap-1 text-neutral-400">
                     <p>
                       <span className="text-neutral-200 font-medium">
-                        Nigeria & Africa:
+                        {t("contact_us_page.region_africa")}
                       </span>{" "}
                       +234 803 897 9738
                     </p>
                     <p>
                       <span className="text-neutral-200 font-medium">
-                        Europe:
+                        {t("contact_us_page.region_europe")}
                       </span>{" "}
                       +33 7 5113 57 27
                     </p>
@@ -128,7 +135,7 @@ const ContactUs = () => {
 
             <div className="space-y-6 pt-6 border-t border-neutral-800">
               <h3 className="font-bold text-white text-lg sora">
-                Social Media
+                {t("contact_us_page.social_media")}
               </h3>
               <div className="flex gap-4">
                 {[
