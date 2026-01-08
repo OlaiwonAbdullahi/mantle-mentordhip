@@ -25,7 +25,7 @@ export default function NotFound() {
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 nunito max-w-lg mx-auto leading-relaxed">
             Oops! The page you are looking for seems to have wandered off. It
-            might have been removed, renamed, or doesn't exist.
+            might have been removed, renamed, or doesnt exist.
           </p>
         </div>
 
