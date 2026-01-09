@@ -133,12 +133,12 @@
     }
   },
   "location_dialog": {
-    "title": "Where are you located?",
+    "title": "Select Your region to proceed",
     "description": "Select your region to proceed with the registration for",
     "nigeria_title": "Nigeria",
-    "nigeria_desc": "Includes all African regions",
+    "nigeria_desc": "Africa – includes Nigeria and all African nations",
     "europe_title": "Europe",
-    "europe_desc": "Includes UK & other EU nations",
+    "europe_desc": "Europe : Includes Belgium & other European nations.",
     "footer": "This helps us provide the correct payment details and curriculum adjustments for your region."
   },
   "registration_page": {
@@ -176,6 +176,7 @@
       "limited_slots": "Only Limited Slots of 10 Participants (6 Saturdays)",
       "waitlist": "If no, would you like to be added on the waiting list and keep you updated?",
       "fee_willingness": "The Mantle Mentorship General Program requires a discounted commitment fee of 100 Euros. This can be paid in the accounts below with proof sent to info@mantlementor.com. Are you willing to pay this fee?",
+      "willingness_to_attend_next": "Would you be willing to attend the  next General Mantle Mentorship Program. We will contact you on the next program as soon as you complete the registration",
       "challenge": "What specific challenge or goal are you currently facing that you hope this mentorship program will help you address, and why is now the right time for you to tackle it?",
       "success_metrics": "If accepted, what would success look like for you six months after the program ends? How will you measure whether the mentorship was worthwhile?",
       "comments": "Any further question, comments or suggestions?"

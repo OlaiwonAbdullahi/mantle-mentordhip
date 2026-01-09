@@ -133,12 +133,12 @@
     }
   },
   "location_dialog": {
-    "title": "Où êtes-vous situé ?",
+    "title": "Sélectionnez votre région pour continuer",
     "description": "Sélectionnez votre région pour procéder à l'inscription pour",
     "nigeria_title": "Nigeria",
-    "nigeria_desc": "Inclut toutes les régions africaines",
+    "nigeria_desc": "Afrique – comprend le Nigéria et tous les pays africains",
     "europe_title": "Europe",
-    "europe_desc": "Inclut le Royaume-Uni et d'autres pays de l'UE",
+    "europe_desc": "Europe : Inclut la Belgique et d'autres pays européens.",
     "footer": "Cela nous aide à fournir les détails de paiement corrects et les ajustements de programme pour votre région."
   },
   "registration_page": {
@@ -176,6 +176,7 @@
       "limited_slots": "Seulement 10 places limitées (6 samedis)",
       "waitlist": "Si non, aimeriez-vous être ajouté à la liste d'attente et être tenu au courant ?",
       "fee_willingness": "Le programme général de Mantle Mentorship nécessite des frais d'engagement réduits de 100 Euros. Cela peut être payé sur les comptes ci-dessous avec une preuve envoyée à info@mantlementor.com. Êtes-vous prêt à payer ces frais ?",
+      "willingness_to_attend_next": "Seriez-vous disposé(e) à participer au prochain programme de mentorat General Mantle ? Nous vous contacterons dès que vous aurez finalisé votre inscription.",
       "challenge": "Quel défi ou objectif spécifique rencontrez-vous actuellement et que vous espérez que ce programme de mentorat vous aidera à relever, et pourquoi est-ce le bon moment pour vous de vous y attaquer ?",
       "success_metrics": "Si vous êtes accepté, à quoi ressemblerait le succès pour vous six mois après la fin du programme ? Comment mesurerez-vous si le mentorat en valait la peine ?",
       "comments": "D'autres questions, commentaires ou suggestions ?"

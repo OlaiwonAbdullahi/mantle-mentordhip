@@ -569,6 +569,34 @@ const RegistrationForm = () => {
                   placeholder={t("registration_page.placeholders.optional")}
                 />
               </div>
+              <div className="space-y-3">
+                <label className="text-sm font-medium text-neutral-300 block leading-relaxed">
+                  {t("registration_page.questions.willingness_to_attend_next")}
+                  <br />
+                </label>
+                <div className="flex gap-4">
+                  <label className="flex items-center gap-2 text-neutral-300 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="attendGeneral"
+                      value="Yes"
+                      onChange={handleChange}
+                      className="accent-[#008000] w-4 h-4"
+                    />{" "}
+                    {t("registration_page.yes")}
+                  </label>
+                  <label className="flex items-center gap-2 text-neutral-300 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="attendGeneral"
+                      value="No"
+                      onChange={handleChange}
+                      className="accent-[#008000] w-4 h-4"
+                    />{" "}
+                    {t("registration_page.no")}
+                  </label>
+                </div>
+              </div>
             </div>
 
             <div className="pt-4">

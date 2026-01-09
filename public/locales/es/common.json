@@ -133,12 +133,12 @@
     }
   },
   "location_dialog": {
-    "title": "¿Dónde te encuentras?",
+    "title": "Seleccione su región para continuar",
     "description": "Selecciona tu región para proceder con el registro para",
     "nigeria_title": "Nigeria",
-    "nigeria_desc": "Incluye todas las regiones africanas",
+    "nigeria_desc": "África: incluye Nigeria y todas las naciones africanas",
     "europe_title": "Europa",
-    "europe_desc": "Incluye el Reino Unido y otras naciones de la UE",
+    "europe_desc": "Europa: incluye Bélgica y otras naciones europeas.",
     "footer": "Esto nos ayuda a proporcionar los detalles de pago correctos y ajustes curriculares para tu región."
   },
   "registration_page": {
@@ -176,6 +176,7 @@
       "limited_slots": "Solo cupos limitados de 10 participantes (6 sábados)",
       "waitlist": "Si no, ¿te gustaría ser añadido a la lista de espera y mantenerte informado?",
       "fee_willingness": "El programa general de Mantle Mentorship requiere una tarifa de compromiso con descuento de 100 euros. Esto se puede pagar en las cuentas a continuación con el comprobante enviado a info@mantlementor.com. ¿Estás dispuesto a pagar esta tarifa?",
+      "willingness_to_attend_next": "¿Le gustaría asistir al próximo Programa de Mentoría General Mantle? Nos pondremos en contacto con usted para informarle sobre el próximo programa tan pronto como complete su inscripción.",
       "challenge": "¿Qué desafío o meta específica estás enfrentando actualmente que esperas que este programa de tutoría te ayude a abordar, y por qué es este el momento adecuado para que lo enfrentes?",
       "success_metrics": "Si eres aceptado, ¿cómo se vería el éxito para ti seis meses después de que termine el programa? ¿Cómo medirás si la tutoría valió la pena?",
       "comments": "¿Alguna otra pregunta, comentario o sugerencia?"
