@@ -122,10 +122,11 @@ const AboutUs = () => {
                 </p>
               </div>
 
-              <div className="space-y-4 text-neutral-400 leading-relaxed text-base lg:text-lg">
+              <div className="space-y-4 text-neutral-400 leading-relaxed text-base lg:text-md">
                 <p>{t("about_us_page.chief_mentor_bio_1")}</p>
                 <p>{t("about_us_page.chief_mentor_bio_2")}</p>
                 <p>{t("about_us_page.chief_mentor_bio_3")}</p>
+                <p>{t("about_us_page.chief_mentor_bio_4")}</p>
               </div>
             </div>
           </div>

@@ -4,8 +4,12 @@ import {
   IconBrandFacebook,
   IconBrandInstagram,
   IconPhone,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+  IconBrandTiktok,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
@@ -31,18 +35,35 @@ const Footer = () => {
                 {t("hero.subtitle")}
               </p>
               <div className="flex gap-4">
-                {[IconBrandInstagram, IconBrandFacebook, IconPhone].map(
-                  (Icon, i) => (
+                {[
+                  {
+                    icon: IconBrandInstagram,
+                    href: " https://www.instagram.com/mantlementor/",
+                  },
+                  {
+                    icon: IconBrandTiktok,
+                    href: "https://www.tiktok.com/@mantle.mentor?_r=1&_t=ZG-92uQLDoTZRo",
+                  },
+                  {
+                    icon: IconBrandYoutube,
+                    href: "https://www.youtube.com/channel/UCYLfc869wMUGarMBQOBtqkg",
+                  },
+                  {
+                    icon: IconBrandLinkedin,
+                    href: "https://www.linkedin.com/company/mantle-mentorship-program",
+                  },
+                  { icon: IconPhone, href: "tel:+2348038979738" },
+                ].map(({ icon: Icon, href }, i) => (
+                  <Link href={href} key={i}>
                     <Button
-                      key={i}
                       size="icon"
                       variant="outline"
                       className="rounded-full border-neutral-700 hover:bg-[#008000] hover:text-white hover:border-[#008000] transition-all bg-transparent text-neutral-400"
                     >
                       <Icon className="h-5 w-5" />
                     </Button>
-                  )
-                )}
+                  </Link>
+                ))}
               </div>
             </div>
 

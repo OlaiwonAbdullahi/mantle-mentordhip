@@ -20,9 +20,9 @@ import { useTranslation } from "react-i18next";
 import { usePathname, useRouter } from "next/navigation";
 
 const languages = [
-  { code: "en", src: "/uk.png", alt: "UK" },
-  { code: "es", src: "/spain.png", alt: "Spain" },
-  { code: "fr", src: "/france.webp", alt: "France" },
+  { code: "en", src: "/uk.png", alt: "English" },
+  { code: "es", src: "/spain.png", alt: "Español" },
+  { code: "fr", src: "/france.webp", alt: "Français" },
 ];
 
 const Navbar = () => {

@@ -141,22 +141,22 @@ const ContactUs = () => {
                 {[
                   {
                     icon: IconBrandInstagram,
-                    href: "#",
+                    href: " https://www.instagram.com/mantlementor/",
                     color: "hover:text-pink-500",
                   },
                   {
                     icon: IconBrandYoutube,
-                    href: "#",
+                    href: "https://www.youtube.com/channel/UCYLfc869wMUGarMBQOBtqkg",
                     color: "hover:text-red-500",
                   },
                   {
                     icon: IconBrandLinkedin,
-                    href: "#",
+                    href: "https://www.linkedin.com/company/mantle-mentorship-program",
                     color: "hover:text-blue-500",
                   },
                   {
                     icon: IconBrandTiktok,
-                    href: "#",
+                    href: "https://www.tiktok.com/@mantle.mentor?_r=1&_t=ZG-92uQLDoTZRo",
                     color: "hover:text-pink-400",
                   },
                 ].map((social, i) => (
