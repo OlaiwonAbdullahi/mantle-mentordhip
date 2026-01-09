@@ -177,8 +177,8 @@ const Programs = () => {
       "Personalized further mentorship plan",
       "Certificate of Completion",
       "One-on-one mentorship session",
-      "Access to Mantle Mentorship social network",
-      "Mentorship from Ebuka Umeh & seasoned mentors",
+      "Access to Mantle Mentorship Professional network.",
+      "Mentorship for the Chief Mentor and other seasoned mentors",
     ],
     isComingSoon: false,
   };
