@@ -26,6 +26,7 @@ import {
   IconUpload,
   IconFileText,
   IconX,
+  IconPaywall,
 } from "@tabler/icons-react";
 import countryList from "country-list";
 import { useTranslation } from "react-i18next";
@@ -575,8 +576,17 @@ const RegistrationForm = () => {
                 size="lg"
                 className="w-full bg-[#008000] hover:bg-[#006400] text-white font-bold h-12 text-lg shadow-lg shadow-[#008000]/20"
               >
-                <IconCheck className="mr-2 h-5 w-5" />{" "}
-                {t("registration_page.submit")}
+                {countryParam != "Nigeria" ? (
+                  <>
+                    <IconCheck className="mr-2 h-5 w-5" />{" "}
+                    {t("registration_page.submit")}
+                  </>
+                ) : (
+                  <>
+                    <IconPaywall className="mr-2 h-5 w-5" />{" "}
+                    {t("registration_page.pay")}
+                  </>
+                )}
               </Button>
             </div>
           </form>
