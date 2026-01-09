@@ -68,7 +68,7 @@ const ComingSoon = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-900/50 nunito">
+    <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-neutral-900/50 nunito">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Left Side: Programs List */}
