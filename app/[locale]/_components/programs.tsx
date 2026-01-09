@@ -17,7 +17,8 @@ import {
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { InfoDialog } from "../programs/_components/infoDialog";
+import Link from "next/link";
+import LocationDialog from "../programs/_components/LocationDialog";
 
 interface ProgramProps {
   title: string;
@@ -149,11 +150,7 @@ const ProgramCard = ({
         </div>
       </CardContent>
       <div className="p-6 pt-0">
-        <InfoDialog>
-          <Button className="w-full cursor-pointer bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg rounded-xl shadow-lg shadow-[#008000]/20">
-            {t("programs_page.enroll_now")}
-          </Button>
-        </InfoDialog>
+        <LocationDialog programTitle={title} />
       </div>
     </Card>
   );

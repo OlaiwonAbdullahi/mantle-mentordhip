@@ -24,9 +24,11 @@ export function middleware(request: NextRequest) {
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = defaultLocale;
-    // e.g. incoming request is /products
-    // The new URL is now /en/products
-    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+
+    // Redirect /register to /en/register while preserving search params
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}${pathname}`;
+    return NextResponse.redirect(url);
   }
 }
 

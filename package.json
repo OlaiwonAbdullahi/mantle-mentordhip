@@ -17,6 +17,7 @@
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "country-list": "^2.4.1",
     "i18next": "^25.7.3",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/country-list": "^2.1.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -131,5 +131,75 @@
       "submit_btn": "Notifícame Cuando Esté Listo",
       "privacy": "Respetamos tu privacidad. Sin spam, nunca."
     }
+  },
+  "location_dialog": {
+    "title": "¿Dónde te encuentras?",
+    "description": "Selecciona tu región para proceder con el registro para",
+    "nigeria_title": "Nigeria",
+    "nigeria_desc": "Incluye todas las regiones africanas",
+    "europe_title": "Europa",
+    "europe_desc": "Incluye el Reino Unido y otras naciones de la UE",
+    "footer": "Esto nos ayuda a proporcionar los detalles de pago correctos y ajustes curriculares para tu región."
+  },
+  "registration_page": {
+    "title": "Regístrate en",
+    "title_brand": "Mantle Mentorship",
+    "subtitle": "Comienza tu viaje hacia el liderazgo y el propósito. Completa la solicitud a continuación.",
+    "form_card_title": "Formulario de Solicitud",
+    "form_card_desc": "Por favor, responde a todas las preguntas con honestidad y amplitud.",
+    "labels": {
+      "full_name": "Nombre Completo",
+      "email": "Dirección de Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "country": "País de Residencia",
+      "education": "Nivel de Educación",
+      "linkedin": "Perfil de LinkedIn"
+    },
+    "placeholders": {
+      "full_name": "Ingresa tu nombre completo",
+      "email": "tu@ejemplo.com",
+      "phone": "ej. +234 800 000 0000",
+      "country_select": "Selecciona tu país...",
+      "education_select": "Selecciona la titulación más alta...",
+      "linkedin": "https://linkedin.com/in/...",
+      "program_select": "Selecciona un programa...",
+      "motivation": "Comparte tu motivación...",
+      "expectations": "Describe tus resultados esperados...",
+      "generic_answer": "Tu respuesta...",
+      "optional": "Opcional..."
+    },
+    "questions": {
+      "program_interest": "¿A cuál de las ofertas de servicio del programa Mantle Mentorship te gustaría asistir?",
+      "why_participate": "¿Por qué quieres participar en el programa Mantle Mentorship?",
+      "expectations": "¿Qué esperas ser capaz de hacer al final del programa?",
+      "general_program_willingness": "¿Estarías dispuesto a asistir al programa general de Mantle Mentorship planeado del 7 de marzo de 2026 al 11 de abril de 2026?",
+      "limited_slots": "Solo cupos limitados de 10 participantes (6 sábados)",
+      "waitlist": "Si no, ¿te gustaría ser añadido a la lista de espera y mantenerte informado?",
+      "fee_willingness": "El programa general de Mantle Mentorship requiere una tarifa de compromiso con descuento de 100 euros. Esto se puede pagar en las cuentas a continuación con el comprobante enviado a info@mantlementor.com. ¿Estás dispuesto a pagar esta tarifa?",
+      "challenge": "¿Qué desafío o meta específica estás enfrentando actualmente que esperas que este programa de tutoría te ayude a abordar, y por qué es este el momento adecuado para que lo enfrentes?",
+      "success_metrics": "Si eres aceptado, ¿cómo se vería el éxito para ti seis meses después de que termine el programa? ¿Cómo medirás si la tutoría valió la pena?",
+      "comments": "¿Alguna otra pregunta, comentario o sugerencia?"
+    },
+    "general_program_details": "Detalles Generales del Programa",
+    "bank_details": {
+      "title": "Detalles de la Cuenta Bancaria",
+      "name_label": "Nombre",
+      "name_value": "Ebuka Valentine Umeh",
+      "bic_label": "Código BIC / SWIFT",
+      "iban_label": "IBAN",
+      "reference_label": "Referencia",
+      "reference_value": "Tu Nombre"
+    },
+    "yes": "Sí",
+    "no": "No",
+    "upload": {
+      "label": "Subir Comprobante",
+      "hint": "Haz clic para subir o arrastra y suelta",
+      "sub_hint": "PNG, JPG o PDF (máx. 5MB)",
+      "success": "Archivo seleccionado con éxito",
+      "remove": "Quitar y reemplazar"
+    },
+    "submit": "Enviar Solicitud",
+    "loading": "Cargando Registro..."
   }
 }
