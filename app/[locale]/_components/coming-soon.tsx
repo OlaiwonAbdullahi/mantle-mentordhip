@@ -19,6 +19,7 @@ import {
   IconChevronUp,
   IconChevronDown,
 } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 interface Program {
   id: string;
@@ -27,41 +28,42 @@ interface Program {
   subItems?: string[];
 }
 
-const programs: Program[] = [
-  {
-    id: "p1",
-    title: "Expert Life Transition Programs",
-    icon: <IconSchool className="h-5 w-5 text-[#008000]" />,
-    subItems: [
-      "High School to University Transition Program",
-      "Tertiary Institution to Job Market Transition Program",
-      "Tertiary Institution to Entrepreneurship Transition Program",
-      "Job Market to Back-to-School Transition Programs",
-      "Career Change Transition Programs",
-      "High School to Polytechnic Transition Program",
-      "Polytechnic to University Transition Program",
-    ],
-  },
-  {
-    id: "p2",
-    title: "Discipline-Based Skilled Program",
-    icon: <IconBook className="h-5 w-5 text-[#008000]" />,
-  },
-  {
-    id: "p3",
-    title: "Project-Based Acquisition Program",
-    icon: <IconBulb className="h-5 w-5 text-[#008000]" />,
-  },
-  {
-    id: "p4",
-    title: "Start-up / Young Business Advisory Programs",
-    icon: <IconRocket className="h-5 w-5 text-[#008000]" />,
-  },
-];
-
 const ComingSoon = () => {
+  const { t } = useTranslation();
   // Set the first program (with sub-items) to be open by default
   const [openProgramId, setOpenProgramId] = useState<string | null>("p1");
+
+  const programs: Program[] = [
+    {
+      id: "p1",
+      title: t("coming_soon_section.programs.p1.title"),
+      icon: <IconSchool className="h-5 w-5 text-[#008000]" />,
+      subItems: [
+        t("coming_soon_section.programs.p1.subItems.item1"),
+        t("coming_soon_section.programs.p1.subItems.item2"),
+        t("coming_soon_section.programs.p1.subItems.item3"),
+        t("coming_soon_section.programs.p1.subItems.item4"),
+        t("coming_soon_section.programs.p1.subItems.item5"),
+        t("coming_soon_section.programs.p1.subItems.item6"),
+        t("coming_soon_section.programs.p1.subItems.item7"),
+      ],
+    },
+    {
+      id: "p2",
+      title: t("coming_soon_section.programs.p2.title"),
+      icon: <IconBook className="h-5 w-5 text-[#008000]" />,
+    },
+    {
+      id: "p3",
+      title: t("coming_soon_section.programs.p3.title"),
+      icon: <IconBulb className="h-5 w-5 text-[#008000]" />,
+    },
+    {
+      id: "p4",
+      title: t("coming_soon_section.programs.p4.title"),
+      icon: <IconRocket className="h-5 w-5 text-[#008000]" />,
+    },
+  ];
 
   const toggleProgram = (id: string) => {
     setOpenProgramId(openProgramId === id ? null : id);
@@ -75,11 +77,13 @@ const ComingSoon = () => {
           <div className="space-y-8 animate-fade-in-up">
             <div>
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-white sora mb-4">
-                Upcoming <span className="text-[#008000]">Programs</span>
+                {t("coming_soon_section.title")}{" "}
+                <span className="text-[#008000]">
+                  {t("coming_soon_section.title_span")}
+                </span>
               </h2>
               <p className="text-neutral-400 text-lg leading-relaxed">
-                Be the first to access our new curated courses designed to
-                accelerate your growth and career transition.
+                {t("coming_soon_section.subtitle")}
               </p>
             </div>
 
@@ -155,10 +159,10 @@ const ComingSoon = () => {
             <Card className="border border-[#008000]/20 shadow-2xl shadow-[#008000]/5 bg-neutral-950/40 overflow-hidden">
               <CardHeader className="space-y-1 pb-2">
                 <CardTitle className="text-2xl font-bold sora text-white">
-                  Join the Waitlist
+                  {t("coming_soon_section.waitlist.title")}
                 </CardTitle>
                 <CardDescription className="text-neutral-400">
-                  Get early access and exclusive updates when we launch.
+                  {t("coming_soon_section.waitlist.description")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -171,12 +175,14 @@ const ComingSoon = () => {
                       htmlFor="name"
                       className="text-sm font-medium leading-none text-neutral-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Full Name
+                      {t("coming_soon_section.waitlist.name_label")}
                     </label>
                     <input
                       id="name"
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
-                      placeholder="Enter your full name"
+                      placeholder={t(
+                        "coming_soon_section.waitlist.name_placeholder"
+                      )}
                       required
                     />
                   </div>
@@ -185,13 +191,15 @@ const ComingSoon = () => {
                       htmlFor="email"
                       className="text-sm font-medium leading-none text-neutral-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Email Address
+                      {t("coming_soon_section.waitlist.email_label")}
                     </label>
                     <input
                       id="email"
                       type="email"
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
-                      placeholder="you@example.com"
+                      placeholder={t(
+                        "coming_soon_section.waitlist.email_placeholder"
+                      )}
                       required
                     />
                   </div>
@@ -202,12 +210,12 @@ const ComingSoon = () => {
                       className="w-full font-bold text-md cursor-pointer bg-[#008000] hover:bg-[#006400] text-white shadow-lg shadow-[#008000]/20 transition-all border-0"
                     >
                       <IconMail className="mr-2 h-4 w-4" />
-                      Notify Me When It&apos;s Ready
+                      {t("coming_soon_section.waitlist.submit_btn")}
                     </Button>
                   </div>
 
                   <p className="text-xs text-center text-neutral-500 mt-4">
-                    We respect your privacy. No spam, ever.
+                    {t("coming_soon_section.waitlist.privacy")}
                   </p>
                 </form>
               </CardContent>

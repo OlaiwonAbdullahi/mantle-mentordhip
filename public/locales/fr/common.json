@@ -93,5 +93,43 @@
     "copyright": "Le Programme de Mentorat Mantle. Tous droits réservés.",
     "privacy_policy": "Politique de confidentialité",
     "terms_of_service": "Conditions d’utilisation"
+  },
+  "coming_soon_section": {
+    "title": "Programmes",
+    "title_span": "À Venir",
+    "subtitle": "Soyez le premier à accéder à nos nouveaux cours sélectionnés conçus pour accélérer votre croissance et votre transition professionnelle.",
+    "programs": {
+      "p1": {
+        "title": "Programmes Experts de Transition de Vie",
+        "subItems": {
+          "item1": "Programme de Transition du Lycée à l'Université",
+          "item2": "Programme de Transition de l'Établissement Tertiaire au Marché du Travail",
+          "item3": "Programme de Transition de l'Établissement Tertiaire à l'Entrepreneuriat",
+          "item4": "Programmes de Transition du Marché du Travail au Retour à l'École",
+          "item5": "Programmes de Transition de Changement de Carrière",
+          "item6": "Programme de Transition du Lycée à l'École Polytechnique",
+          "item7": "Programme de Transition de l'École Polytechnique à l'Université"
+        }
+      },
+      "p2": {
+        "title": "Programme de Compétences Basé sur la Discipline"
+      },
+      "p3": {
+        "title": "Programme d'Acquisition Basé sur des Projets"
+      },
+      "p4": {
+        "title": "Programmes de Conseil pour Start-up / Jeunes Entreprises"
+      }
+    },
+    "waitlist": {
+      "title": "Rejoignez la Liste d'Attente",
+      "description": "Obtenez un accès anticipé et des mises à jour exclusives lors du lancement.",
+      "name_label": "Nom Complet",
+      "name_placeholder": "Entrez votre nom complet",
+      "email_label": "Adresse E-mail",
+      "email_placeholder": "vous@exemple.com",
+      "submit_btn": "Prévenez-moi Quand C'est Prêt",
+      "privacy": "Nous respectons votre vie privée. Pas de spam, jamais."
+    }
   }
 }

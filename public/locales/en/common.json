@@ -93,5 +93,43 @@
     "copyright": "The Mantle Mentorship Program. All rights reserved.",
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service"
+  },
+  "coming_soon_section": {
+    "title": "Upcoming",
+    "title_span": "Programs",
+    "subtitle": "Be the first to access our new curated courses designed to accelerate your growth and career transition.",
+    "programs": {
+      "p1": {
+        "title": "Expert Life Transition Programs",
+        "subItems": {
+          "item1": "High School to University Transition Program",
+          "item2": "Tertiary Institution to Job Market Transition Program",
+          "item3": "Tertiary Institution to Entrepreneurship Transition Program",
+          "item4": "Job Market to Back-to-School Transition Programs",
+          "item5": "Career Change Transition Programs",
+          "item6": "High School to Polytechnic Transition Program",
+          "item7": "Polytechnic to University Transition Program"
+        }
+      },
+      "p2": {
+        "title": "Discipline-Based Skilled Program"
+      },
+      "p3": {
+        "title": "Project-Based Acquisition Program"
+      },
+      "p4": {
+        "title": "Start-up / Young Business Advisory Programs"
+      }
+    },
+    "waitlist": {
+      "title": "Join the Waitlist",
+      "description": "Get early access and exclusive updates when we launch.",
+      "name_label": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "email_label": "Email Address",
+      "email_placeholder": "you@example.com",
+      "submit_btn": "Notify Me When It's Ready",
+      "privacy": "We respect your privacy. No spam, ever."
+    }
   }
 }
