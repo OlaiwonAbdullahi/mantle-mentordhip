@@ -61,7 +61,7 @@ const ProgramCard = ({
       <CardContent className="pt-6 space-y-6">
         <div className="grid sm:grid-cols-2 gap-6">
           <div className="space-y-4">
-            <div className="flex items-start gap-3">
+            <div className="hidden items-start gap-3">
               <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
                 <IconWorld size={20} />
               </div>
