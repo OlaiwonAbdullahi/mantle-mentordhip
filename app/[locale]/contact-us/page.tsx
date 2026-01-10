@@ -13,6 +13,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const ContactUs = () => {
   const { t } = useTranslation();
@@ -54,6 +55,7 @@ const ContactUs = () => {
         message:
           t("contact_us_page.success_message") || "Message sent successfully!",
       });
+      toast.success(`Message sent successfully!`);
       setName("");
       setEmail("");
       setMessage("");

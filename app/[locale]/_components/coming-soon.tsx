@@ -18,8 +18,10 @@ import {
   IconMail,
   IconChevronUp,
   IconChevronDown,
+  IconLoader,
 } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 interface Program {
   id: string;
@@ -32,6 +34,9 @@ const ComingSoon = () => {
   const { t } = useTranslation();
   // Set the first program (with sub-items) to be open by default
   const [openProgramId, setOpenProgramId] = useState<string | null>("p1");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const programs: Program[] = [
     {
@@ -67,6 +72,49 @@ const ComingSoon = () => {
 
   const toggleProgram = (id: string) => {
     setOpenProgramId(openProgramId === id ? null : id);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://mentle-mentorship-backend.onrender.com/api/waitlist",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(
+          t("coming_soon_section.waitlist.success_msg") ||
+            "Successfully joined the waitlist!"
+        );
+        setEmail("");
+        setName("");
+      } else {
+        toast.error(
+          data.message ||
+            t("coming_soon_section.waitlist.error_msg") ||
+            "Something went wrong."
+        );
+      }
+    } catch (error) {
+      console.error("Error joining waitlist:", error);
+      toast.error(
+        t("coming_soon_section.waitlist.error_msg") ||
+          "Failed to join waitlist. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -166,10 +214,7 @@ const ComingSoon = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form
-                  className="space-y-5 mt-4"
-                  onSubmit={(e) => e.preventDefault()}
-                >
+                <form className="space-y-5 mt-4" onSubmit={handleSubmit}>
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
@@ -179,6 +224,9 @@ const ComingSoon = () => {
                     </label>
                     <input
                       id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={loading}
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.name_placeholder"
@@ -196,6 +244,9 @@ const ComingSoon = () => {
                     <input
                       id="email"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={loading}
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.email_placeholder"
@@ -207,10 +258,18 @@ const ComingSoon = () => {
                   <div className="pt-2">
                     <Button
                       size="lg"
-                      className="w-full font-bold text-md cursor-pointer bg-[#008000] hover:bg-[#006400] text-white shadow-lg shadow-[#008000]/20 transition-all border-0"
+                      type="submit"
+                      disabled={loading}
+                      className="w-full font-bold text-md cursor-pointer bg-[#008000] hover:bg-[#006400] text-white shadow-lg shadow-[#008000]/20 transition-all border-0 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <IconMail className="mr-2 h-4 w-4" />
-                      {t("coming_soon_section.waitlist.submit_btn")}
+                      {loading ? (
+                        <IconLoader className="mr-2 h-4 w-4 animate-spin" />
+                      ) : (
+                        <IconMail className="mr-2 h-4 w-4" />
+                      )}
+                      {loading
+                        ? "Joining..."
+                        : t("coming_soon_section.waitlist.submit_btn")}
                     </Button>
                   </div>
 
