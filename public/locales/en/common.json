@@ -131,6 +131,7 @@
       "email_label": "Email Address",
       "email_placeholder": "you@example.com",
       "submit_btn": "Notify Me When It's Ready",
+      "success_msg": "Thank you for your interest! We'll notify you when the program is ready.",
       "privacy": "We respect your privacy. No spam, ever."
     }
   },

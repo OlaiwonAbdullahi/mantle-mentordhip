@@ -132,6 +132,7 @@
       "email_label": "Adresse E-mail",
       "email_placeholder": "vous@exemple.com",
       "submit_btn": "Prévenez-moi Quand C'est Prêt",
+      "success_msg": "Merci pour votre intérêt ! Nous vous notifierons lorsque le programme sera prêt.",
       "privacy": "Nous respectons votre vie privée. Pas de spam, jamais."
     }
   },

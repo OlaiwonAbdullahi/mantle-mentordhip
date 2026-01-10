@@ -131,6 +131,7 @@
       "email_label": "Dirección de Correo Electrónico",
       "email_placeholder": "tu@ejemplo.com",
       "submit_btn": "Notifícame Cuando Esté Listo",
+      "success_msg": "Gracias por tu interés! Nos notificaremos cuando el programa esté listo.",
       "privacy": "Respetamos tu privacidad. Sin spam, nunca."
     }
   },
