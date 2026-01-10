@@ -11,9 +11,65 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { useState } from "react";
 
 const ContactUs = () => {
   const { t } = useTranslation();
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleSend = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+
+    if (!name || !email || !message) {
+      setStatus({
+        type: "error",
+        message:
+          t("contact_us_page.fill_all_fields") || "Please fill in all fields",
+      });
+      return;
+    }
+
+    setLoading(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      await axios.post(
+        "https://mentle-mentorship-backend.onrender.com/api/contact",
+        {
+          name,
+          email,
+          message,
+        }
+      );
+      setStatus({
+        type: "success",
+        message:
+          t("contact_us_page.success_message") || "Message sent successfully!",
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      console.log(error);
+      setStatus({
+        type: "error",
+        message:
+          t("contact_us_page.error_message") ||
+          "Failed to send message. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-12 nunito">
@@ -36,13 +92,15 @@ const ContactUs = () => {
             <h2 className="text-2xl font-bold text-white sora">
               {t("contact_us_page.send_message")}
             </h2>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSend}>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300">
                   {t("contact_us_page.full_name")}
                 </label>
                 <input
                   type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="John Doe"
                   className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
                 />
@@ -53,6 +111,8 @@ const ContactUs = () => {
                 </label>
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="john@example.com"
                   className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
                 />
@@ -62,14 +122,39 @@ const ContactUs = () => {
                   {t("contact_us_page.message")}
                 </label>
                 <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder="How can we help you?"
+                  minLength={10}
                   rows={5}
                   className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600 resize-none"
                 />
               </div>
-              <Button className="w-full rounded-xl bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg shadow-lg shadow-[#008000]/20 mt-4">
-                {t("contact_us_page.submit_btn")}
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-xl bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg shadow-lg shadow-[#008000]/20 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? (
+                  <span className="flex items-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    Sending...
+                  </span>
+                ) : (
+                  t("contact_us_page.submit_btn")
+                )}
               </Button>
+              {status.message && (
+                <div
+                  className={`mt-4 rounded-xl p-4 text-center text-sm font-medium ${
+                    status.type === "success"
+                      ? "bg-green-500/10 text-green-500 border border-green-500/20"
+                      : "bg-red-500/10 text-red-500 border border-red-500/20"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
             </form>
           </div>
 

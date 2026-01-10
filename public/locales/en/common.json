@@ -77,6 +77,8 @@
     "email_address": "Email Address",
     "message": "Message",
     "submit_btn": "Send Message",
+    "success_message": "Message sent successfully!",
+    "error_message": "Failed to send message. Please try again.",
     "contact_details": "Contact details",
     "details_text": "You can also reach us using the details below.",
     "response_time": "We typically respond within",

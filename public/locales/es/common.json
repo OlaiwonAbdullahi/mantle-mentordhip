@@ -77,6 +77,8 @@
     "email_address": "Correo electrónico",
     "message": "Mensaje",
     "submit_btn": "Enviar mensaje",
+    "success_message": "¡Mensaje enviado con éxito!",
+    "error_message": "No se pudo enviar el mensaje. Por favor, inténtelo de nuevo.",
     "contact_details": "Detalles de contacto",
     "details_text": "También puedes comunicarte con nosotros utilizando los detalles a continuación.",
     "response_time": "Normalmente respondemos dentro de",
