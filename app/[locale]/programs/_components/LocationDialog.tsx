@@ -24,11 +24,17 @@ const LocationDialog = ({ programTitle }: LocationDialogProps) => {
 
   const handleSelect = (country: string) => {
     const baseUrl = `/${locale}/register`;
-    const searchParams = new URLSearchParams();
-    if (programTitle) searchParams.append("program", programTitle);
-    searchParams.append("country", country);
 
-    const fullUrl = `${baseUrl}?${searchParams.toString()}`;
+    // Create an object with the data
+    const data = {
+      program: programTitle,
+      country: country,
+    };
+
+    // Convert to JSON string then to Base64
+    const encodedData = btoa(JSON.stringify(data));
+
+    const fullUrl = `${baseUrl}?data=${encodedData}`;
     router.push(fullUrl);
     console.log("Redirecting to:", fullUrl);
   };

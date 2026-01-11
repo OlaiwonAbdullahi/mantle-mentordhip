@@ -49,19 +49,31 @@ const COUNTRIES = Array.from(
 const RegistrationForm = () => {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
-  const programParam = searchParams.get("program");
-  const countryParam = searchParams.get("country");
+  const encodedData = searchParams.get("data");
+
+  let programParam = "";
+  let countryParam = "";
+
+  if (encodedData) {
+    try {
+      const decodedData = JSON.parse(atob(encodedData));
+      programParam = decodedData.program || "";
+      countryParam = decodedData.country || "";
+    } catch (e) {
+      console.error("Failed to decode registration data", e);
+    }
+  }
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    country: countryParam ? decodeURIComponent(countryParam) : "",
+    country: countryParam,
     educationLevel: "",
     linkedin: "",
     motive: "",
     expectations: "",
-    program: programParam ? decodeURIComponent(programParam) : "",
+    program: programParam,
     attendGeneral: "",
     waitlist: "",
     payFee: "",
