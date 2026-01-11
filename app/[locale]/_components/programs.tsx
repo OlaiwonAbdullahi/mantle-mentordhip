@@ -13,22 +13,34 @@ import {
   IconCalendar,
   IconClock,
   IconWorld,
-  IconLock,
+  IconLoader2,
 } from "@tabler/icons-react";
-import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
 import LocationDialog from "../programs/_components/LocationDialog";
+import { useEffect, useState } from "react";
 
 interface ProgramProps {
   title: string;
   description?: string;
   fees?: { amount: string; region: string }[];
-  duration?: { title: string; subtitle: string };
-  classSize?: string;
+  duration?: string;
+  classSize?: string | number;
   frequency?: string;
   mode?: string;
   benefits?: string[];
+}
+
+interface Course {
+  _id: string;
+  title: string;
+  description: string;
+  price_in_ngn: number;
+  price_in_euro: number;
+  classSize: number;
+  frequency: string;
+  mode: string;
+  benefits: string[];
+  duration: string;
 }
 
 const ProgramCard = ({
@@ -45,7 +57,7 @@ const ProgramCard = ({
 
   return (
     <Card
-      className={`relative w-full overflow-hidden transition-all duration-300 ${"max-w-2xl bg-neutral-950/40 border-[#008000]/20 shadow-lg shadow-[#008000]/10 hover:shadow-[#008000]/20"}`}
+      className={`relative w-full overflow-hidden transition-all duration-300 max-w-2xl bg-neutral-950/40 border-[#008000]/20 shadow-lg shadow-[#008000]/10 hover:shadow-[#008000]/20`}
     >
       <CardHeader className={`pb-4 border-b border-neutral-800`}>
         <CardTitle className={`text-2xl font-bold sora text-white`}>
@@ -87,10 +99,7 @@ const ProgramCard = ({
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
                   {t("programs_page.duration_label")}
                 </p>
-                <p className="text-neutral-200 font-semibold">
-                  {duration?.title}
-                </p>
-                <p className="text-xs text-neutral-500">{duration?.subtitle}</p>
+                <p className="text-neutral-200 font-semibold">{duration}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -158,27 +167,32 @@ const ProgramCard = ({
 
 const Programs = () => {
   const { t } = useTranslation();
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const activeProgram = {
-    title: t("programs_page.program_general_title"),
-    description: t("programs_page.program_general_desc"),
-    fees: [
-      { amount: "₦100,000", region: "Africa" },
-      { amount: "€100", region: "Europe" },
-    ],
-    duration: { title: "6 Weeks", subtitle: "6 Saturdays" },
-    classSize: "10 – 20 Students",
-    frequency: "4 Cohorts / Year",
-    mode: "Virtual",
-    benefits: [
-      "Personalized further mentorship plan",
-      "Certificate of Completion",
-      "One-on-one mentorship session",
-      "Access to Mantle Mentorship Professional network.",
-      "Mentorship for the Chief Mentor and other seasoned mentors",
-    ],
-    isComingSoon: false,
-  };
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(
+          "https://mentle-mentorship-backend.onrender.com/api/courses"
+        );
+        const json = await response.json();
+        if (json.success) {
+          setCourses(json.data);
+        } else {
+          setError("Failed to fetch courses");
+        }
+      } catch (err) {
+        setError("An error occurred while fetching courses");
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
 
   return (
     <section id="programs" className="py-24 bg-neutral-900/50 nunito">
@@ -194,9 +208,50 @@ const Programs = () => {
             {t("programs_page.subtitle")}
           </p>
         </div>
-        <div className="flex justify-center mb-24">
-          <ProgramCard {...activeProgram} />
-        </div>
+
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <IconLoader2 className="w-10 h-10 text-[#008000] animate-spin mb-4" />
+            <p className="text-neutral-400">
+              {t("loading", "Loading programs...")}
+            </p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-20">
+            <p className="text-red-500">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="mt-4 px-4 py-2 bg-[#008000] text-white rounded-lg hover:bg-[#006400] transition-colors"
+            >
+              Retry
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-items-center">
+            {courses.map((course) => (
+              <ProgramCard
+                key={course._id}
+                title={course.title}
+                description={course.description}
+                fees={[
+                  {
+                    amount: `₦${course.price_in_ngn.toLocaleString()}`,
+                    region: "Nigeria",
+                  },
+                  {
+                    amount: `€${course.price_in_euro.toLocaleString()}`,
+                    region: "Europe",
+                  },
+                ]}
+                duration={course.duration}
+                classSize={course.classSize}
+                frequency={course.frequency}
+                mode={course.mode}
+                benefits={course.benefits}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
