@@ -103,6 +103,11 @@ const Footer = () => {
                   Join
                 </Button>
               </div>
+              <Link href="https://mantle-mentorship-admin.vercel.app/">
+                <Button className="bg-[#008000] hover:bg-[#006400]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+                  Log in as Admin
+                </Button>
+              </Link>
             </div>
           </div>
 

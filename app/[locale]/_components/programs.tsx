@@ -13,7 +13,7 @@ import {
   IconCalendar,
   IconClock,
   IconWorld,
-  IconLoader2,
+  IconLoader,
 } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import LocationDialog from "../programs/_components/LocationDialog";
@@ -211,7 +211,7 @@ const Programs = () => {
 
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <IconLoader2 className="w-10 h-10 text-[#008000] animate-spin mb-4" />
+            <IconLoader className="w-10 h-10 text-[#008000] animate-spin mb-4" />
             <p className="text-neutral-400">
               {t("loading", "Loading programs...")}
             </p>

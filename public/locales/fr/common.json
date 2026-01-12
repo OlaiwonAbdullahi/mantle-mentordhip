@@ -207,5 +207,28 @@
     "submit": "Envoyer la Demande",
     "pay": " Payer et Soumettre",
     "loading": "Chargement de l'inscription..."
+  },
+  "testimonials": {
+    "title_part1": "Ce que disent",
+    "title_part2": "nos",
+    "title_part3": "mentorés",
+    "subtitle": "Histoires réelles de personnes qui ont transformé leur vie et leur carrière grâce au Programme de Mentorat Mantle.",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Diplômée Universitaire",
+        "content": "La transition de l'université au marché du travail était accablante. Ce programme m'a donné la clarté et la confiance dont j'avais besoin pour décrocher mon premier poste dans une entreprise de technologie de premier plan."
+      },
+      {
+        "name": "Amara Okafor",
+        "role": "Ingénieure Logiciel",
+        "content": "Mantle Mentorship m'a fourni une feuille de route pour ma carrière que je ne pouvais trouver nulle part ailleurs. Les conseils d'experts sur la gestion de la transition ont changé la donne."
+      },
+      {
+        "name": "Jean-Pierre Dubois",
+        "role": "Propriétaire d'Entreprise",
+        "content": "En tant qu'immigrant en Europe, naviguer dans le paysage professionnel était difficile. Le mentorat m'a aidé à comprendre les nuances culturelles et à développer mon entreprise."
+      }
+    ]
   }
 }
