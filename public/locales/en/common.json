@@ -214,19 +214,22 @@
     "subtitle": "Real stories from people who have transformed their lives and careers through the Mantle Mentorship Program.",
     "items": [
       {
-        "name": "Sarah Johnson",
-        "role": "University Graduate",
-        "content": "The transition from university to the job market was overwhelming. This program gave me the clarity and confidence I needed to land my first role in a top-tier tech firm."
+        "name": "Humphrey Onuh",
+        "role": "Operations Engineer, Tennet (Germany)",
+        "content": "I have actively been part of the Mantle Mentorship for over 10 years, and I can confidently say that this mentorship has significantly shaped my career path and mental development. Through its impact, I transitioned from conventional energy into the renewable energy space, and I am now working as an Operating Engineer. Consistent mentorship gave clarity, direction, and definition to both my career and personal growth.",
+        "image": "/humphrey.jpeg"
       },
       {
-        "name": "Amara Okafor",
-        "role": "Software Engineer",
-        "content": "Mantle Mentorship provided me with a roadmap for my career that I couldn't find anywhere else. The expert guidance on transition management was a game-changer."
+        "name": "Cyprian Onyekperem",
+        "role": "PhD Student, (Paris, France)",
+        "content": "In Life, as one makes progressive steps to impacting mankind positively, it becomes noble & imperative at certain junctures to thank persons especially those outside his/her family circles & Church, but who have wielded good & indispensable influences directly or indirectly geared towards the realization of the progressive steps. Mr Ebuka Umeh is one of such persons in my life that deserves such thanks. Right from my Masters degree days till date, his pearls of advice has been exceptional. I remain appreciative of this highly esteemed gesture and this is one of the stimulants which has endeared me to project same to others too, that crossed my path and are receptive of good counsel. Thanks to Mr Ebuka Umeh.",
+        "image": "/cyprian.jpeg"
       },
       {
-        "name": "Jean-Pierre Dubois",
-        "role": "Business Owner",
-        "content": "As an immigrant in Europe, navigating the professional landscape was tough. The mentorship helped me understand the cultural nuances and scale my business."
+        "name": "Job John",
+        "role": "PhD Scholar/Researcher - Australia",
+        "content": "It is hard to streamline Ebuka’s contributions in my life into four sentences. But to keep it short, Ebuka Umeh has been a steady and transformative mentor in my life, long before the Mantle Mentorship Program was created. He supported me academically during my BEng in FUTO and offered guidance through some of my most challenging seasons. His belief in my potential contributed significantly to my journey toward securing a PhD scholarship in Australia. I strongly recommend his mentorship to any young person or professional seeking clarity, direction, and genuine, professional support.",
+        "image": "/job.jpeg"
       }
     ]
   }

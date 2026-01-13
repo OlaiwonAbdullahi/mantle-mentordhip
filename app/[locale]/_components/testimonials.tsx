@@ -9,9 +9,10 @@ interface TestimonialItem {
   name: string;
   role: string;
   content: string;
+  image: string;
 }
 
-const TestimonialCard = ({ name, role, content }: TestimonialItem) => {
+const TestimonialCard = ({ name, role, content, image }: TestimonialItem) => {
   return (
     <Card className="bg-neutral-950/40 border-[#008000]/20 shadow-lg shadow-[#008000]/5 hover:shadow-[#008000]/15 transition-all duration-300 group overflow-hidden relative">
       <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -24,15 +25,13 @@ const TestimonialCard = ({ name, role, content }: TestimonialItem) => {
           ))}
         </div>
 
-        <p className="text-neutral-300 mb-8 leading-relaxed italic sora">
+        <p className="text-neutral-300 mb-8 leading-relaxed italic sora text-sm">
           &quot;{content}&quot;
         </p>
 
         <div className="mt-auto flex items-center gap-4">
           <Avatar className="w-12 h-12 cursor-pointer ring-2 ring-transparent hover:ring-emerald-500/50 transition-all">
-            <AvatarImage
-              src={`https://api.dicebear.com/9.x/glass/svg?seed=${name}`}
-            />
+            <AvatarImage src={image} alt={name} className="object-cover" />
             <AvatarFallback className="bg-linear-to-br from-emerald-500 to-emerald-600 text-white font-semibold">
               {name.charAt(0).toUpperCase()}
             </AvatarFallback>

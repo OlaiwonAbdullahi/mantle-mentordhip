@@ -215,19 +215,22 @@
     "subtitle": "Histoires réelles de personnes qui ont transformé leur vie et leur carrière grâce au Programme de Mentorat Mantle.",
     "items": [
       {
-        "name": "Sarah Johnson",
-        "role": "Diplômée Universitaire",
-        "content": "La transition de l'université au marché du travail était accablante. Ce programme m'a donné la clarté et la confiance dont j'avais besoin pour décrocher mon premier poste dans une entreprise de technologie de premier plan."
+        "name": "Humphrey Onuh",
+        "role": "Ingénieur d’exploitation, Tennet (Allemagne)",
+        "content": "Je fais activement partie du programme de mentorat Mantle depuis plus de 10 ans, et je peux affirmer avec confiance que ce mentorat a profondément façonné mon parcours professionnel et mon développement personnel. Grâce à son impact, je suis passé de l’énergie conventionnelle aux énergies renouvelables, et je travaille aujourd’hui en tant qu’ingénieur d’exploitation. Un mentorat constant m’a apporté clarté, orientation et structure, tant sur le plan professionnel que personnel.",
+        "image": "/testimonials/humphrey.png"
       },
       {
-        "name": "Amara Okafor",
-        "role": "Ingénieure Logiciel",
-        "content": "Mantle Mentorship m'a fourni une feuille de route pour ma carrière que je ne pouvais trouver nulle part ailleurs. Les conseils d'experts sur la gestion de la transition ont changé la donne."
+        "name": "Cyprian Onyekperem",
+        "role": "Doctorant (Paris, France)",
+        "content": "Dans la vie, lorsque l’on progresse vers un impact positif sur l’humanité, il devient noble et essentiel, à certains moments, de remercier des personnes en dehors de son cercle familial ou religieux, mais qui ont exercé une influence bonne et indispensable, directe ou indirecte, dans cette progression. Monsieur Ebuka Umeh est l’une de ces personnes dans ma vie qui mérite une telle reconnaissance. Depuis mes années de master jusqu’à aujourd’hui, ses conseils ont été exceptionnels. Je lui en suis profondément reconnaissant, et cette noble démarche m’inspire à transmettre ces valeurs à d’autres personnes réceptives à de bons conseils. Merci à Monsieur Ebuka Umeh.",
+        "image": "/testimonials/cyprian.png"
       },
       {
-        "name": "Jean-Pierre Dubois",
-        "role": "Propriétaire d'Entreprise",
-        "content": "En tant qu'immigrant en Europe, naviguer dans le paysage professionnel était difficile. Le mentorat m'a aidé à comprendre les nuances culturelles et à développer mon entreprise."
+        "name": "Job John",
+        "role": "Doctorant / Chercheur – Australie",
+        "content": "Il est difficile de résumer l’impact d’Ebuka dans ma vie en quelques phrases. Pour faire simple, Ebuka Umeh a été un mentor constant et transformateur bien avant la création du programme de mentorat Mantle. Il m’a soutenu sur le plan académique durant mon BEng à la FUTO et m’a guidé à travers certaines des périodes les plus difficiles de ma vie. Sa confiance en mon potentiel a joué un rôle clé dans l’obtention de ma bourse de doctorat en Australie. Je recommande vivement son mentorat à tout jeune ou professionnel en quête de clarté, de direction et d’un accompagnement sincère et professionnel.",
+        "image": "/testimonials/job.png"
       }
     ]
   }
