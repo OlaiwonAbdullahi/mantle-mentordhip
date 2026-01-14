@@ -668,7 +668,7 @@ const RegistrationForm = () => {
                   ? "Processing..."
                   : formData.location === "Europe"
                   ? t("registration_page.submit")
-                  : t("registration_page.pay")}
+                  : `Pay ₦${courseDetails?.price_in_ngn.toLocaleString()} and Submit `}
               </Button>
             </div>
           </form>

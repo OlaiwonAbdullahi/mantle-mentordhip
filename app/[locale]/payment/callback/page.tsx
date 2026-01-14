@@ -13,6 +13,7 @@ import {
   IconPhone,
   IconBriefcase,
   IconChevronRight,
+  IconSquareRoundedCheck,
 } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -65,11 +66,15 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
           {/* Header */}
           <div className="flex flex-col items-center text-center space-y-4">
             <div className="p-4 bg-[#008000]/10 rounded-full">
-              <IconCircleCheck size={48} className="text-[#008000]" />
+              <IconSquareRoundedCheck
+                size={48}
+                className="text-[#008000]"
+                stroke={1.5}
+              />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-white sora uppercase tracking-tight">
-                Enrollment Success
+                Registration Successful
               </h2>
               <p className="text-neutral-400 nunito">
                 Your spot in the program has been secured.
