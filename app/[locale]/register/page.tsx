@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,13 +36,18 @@ import { useParams } from "next/navigation";
 
 const EDUCATION_LEVELS = ["SSCE", "OND", "HND", "BSC", "MSc", "PhD", "Others"];
 
-const ALL_PROGRAMS = [
-  "General Mantle Mentorship Program",
-  "Expert Life Transition Programs",
-  "Discipline-Based Skilled Program",
-  "Project-Based Acquisition Program",
-  "Start-up / Young Business Advisory Programs",
-];
+interface Course {
+  _id: string;
+  title: string;
+  description: string;
+  price_in_ngn: number;
+  price_in_euro: number;
+  classSize: number;
+  frequency: string;
+  mode: string;
+  benefits: string[];
+  duration: string;
+}
 
 const RegistrationForm = () => {
   const { t } = useTranslation();
@@ -88,6 +93,7 @@ const RegistrationForm = () => {
     receiptName: "",
     paymentMethod: locationParam === "Africa" ? "paystack" : "manual",
   });
+  const [courseDetails, setCourseDetails] = useState<Course | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -119,6 +125,23 @@ const RegistrationForm = () => {
     e.stopPropagation();
     setFormData((prev) => ({ ...prev, receipt: null, receiptName: "" }));
   };
+
+  const fetchCourseDetails = async () => {
+    try {
+      const res = await fetch(
+        `https://mentle-mentorship-backend.onrender.com/api/courses/${courseIdParam}`
+      );
+      const data = await res.json();
+      console.log(data);
+      setCourseDetails(data.data);
+    } catch (error) {
+      console.error("Failed to fetch course details", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCourseDetails();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -234,7 +257,27 @@ const RegistrationForm = () => {
         </p>
       </div>
 
-      <Card className="border border-[#008000]/20 shadow-2xl shadow-[#008000]/5 bg-neutral-950/40 animate-fade-in-up md:p-6">
+      <Card className="relative border border-[#008000]/20 shadow-2xl shadow-[#008000]/5 bg-neutral-950/40 animate-fade-in-up md:p-6">
+        <div className="absolute -top-6 -right-2 md:-right-4 z-30 group">
+          <div className="relative overflow-hidden px-8 py-4 rounded-3xl bg-neutral-900 border border-[#008000]/40 shadow-[0_20px_40px_-15px_rgba(0,128,0,0.1)] transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+            <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-[#008000]/10 blur-[60px] rounded-full pointer-events-none" />
+
+            <div className="relative flex flex-col items-center">
+              <span className="text-[10px] font-black uppercase tracking-[3px] text-[#008000] mb-1">
+                price
+              </span>
+              <span className="text-2xl font-black text-white sora tracking-tight">
+                {courseDetails
+                  ? formData.location === "Africa"
+                    ? `₦${courseDetails.price_in_ngn.toLocaleString()}`
+                    : `€${courseDetails.price_in_euro.toLocaleString()}`
+                  : "..."}
+              </span>
+            </div>
+
+            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-linear-to-r from-transparent via-white/5 to-transparent transition-all duration-1000 group-hover:translate-x-[200%]" />
+          </div>
+        </div>
         <CardHeader className="space-y-1 pb-6 border-b border-neutral-800">
           <CardTitle className="text-xl md:text-2xl font-bold sora text-white flex items-center gap-2">
             <IconTarget className="text-[#008000] fill-current/10" />
@@ -361,15 +404,14 @@ const RegistrationForm = () => {
                 onChange={handleChange}
                 className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors appearance-none"
                 required
+                disabled
               >
                 <option value="" disabled>
                   {t("registration_page.placeholders.program_select")}
                 </option>
-                {ALL_PROGRAMS.map((prog, i) => (
-                  <option key={i} value={prog}>
-                    {prog}
-                  </option>
-                ))}
+                <option value={courseDetails?.title}>
+                  {courseDetails?.title}
+                </option>
               </select>
             </div>
 
