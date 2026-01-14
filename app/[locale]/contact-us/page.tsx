@@ -42,7 +42,7 @@ const ContactUs = () => {
     setStatus({ type: null, message: "" });
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/contact`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         name,
         email,
         message,

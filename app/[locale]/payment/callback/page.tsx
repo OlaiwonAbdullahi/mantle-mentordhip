@@ -237,7 +237,7 @@ const CallbackContent = () => {
     const verifyPayment = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/payments/verify`,
+          `${process.env.NEXT_PUBLIC_API_URL}/payments/verify`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
