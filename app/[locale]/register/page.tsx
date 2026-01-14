@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,11 +29,10 @@ import {
   IconX,
   IconPaywall,
   IconLoader2,
-  IconCircleCheck,
 } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
+import { useParams } from "next/navigation";
 
 const EDUCATION_LEVELS = ["SSCE", "OND", "HND", "BSC", "MSc", "PhD", "Others"];
 
@@ -49,8 +48,9 @@ const RegistrationForm = () => {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   const encodedData = searchParams.get("data");
-  const reference = searchParams.get("reference");
 
   let programParam = "";
   let locationParam: "Africa" | "Europe" = "Africa";
@@ -68,8 +68,6 @@ const RegistrationForm = () => {
   }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isVerifying, setIsVerifying] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -90,39 +88,6 @@ const RegistrationForm = () => {
     receiptName: "",
     paymentMethod: locationParam === "Africa" ? "paystack" : "manual",
   });
-
-  // Handle Paystack Verification
-  useEffect(() => {
-    if (reference && !isVerifying && !isSuccess) {
-      const verifyPayment = async () => {
-        setIsVerifying(true);
-        try {
-          const response = await fetch(
-            "https://mentle-mentorship-backend.onrender.com/api/payments/verify",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ reference }),
-            }
-          );
-          const data = await response.json();
-          console.log(data);
-          if (data.success) {
-            setIsSuccess(true);
-            toast.success("Payment verified successfully!");
-          } else {
-            toast.error(data.message || "Payment verification failed");
-          }
-        } catch (error) {
-          console.error("Verification error:", error);
-          toast.error("An error occurred during verification");
-        } finally {
-          setIsVerifying(false);
-        }
-      };
-      verifyPayment();
-    }
-  }, [reference]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -239,8 +204,10 @@ const RegistrationForm = () => {
         const enrollData = await enrollRes.json();
 
         if (enrollData.success) {
-          setIsSuccess(true);
           toast.success("Application submitted successfully!");
+          router.push(
+            `/${locale}/payment/callback?status=success&method=manual`
+          );
         } else {
           throw new Error(enrollData.message || "Enrollment failed");
         }
@@ -252,53 +219,6 @@ const RegistrationForm = () => {
       setIsSubmitting(false);
     }
   };
-
-  if (isSuccess || isVerifying) {
-    return (
-      <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[60vh]">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center space-y-6 max-w-md p-8 rounded-3xl border border-[#008000]/20 bg-neutral-950 shadow-2xl"
-        >
-          {isVerifying ? (
-            <div className="space-y-4">
-              <IconLoader2
-                size={64}
-                className="text-[#008000] animate-spin mx-auto"
-              />
-              <h2 className="text-2xl font-bold text-white sora">
-                Verifying Payment...
-              </h2>
-              <p className="text-neutral-400">
-                Please wait while we confirm your transaction with Paystack.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              <div className="p-4 bg-[#008000]/10 rounded-full w-fit mx-auto">
-                <IconCircleCheck size={64} className="text-[#008000]" />
-              </div>
-              <h2 className="text-3xl font-bold text-white sora">
-                Application Received!
-              </h2>
-              <p className="text-neutral-400">
-                {formData.location === "Africa"
-                  ? "Your payment was successful and your enrollment is confirmed."
-                  : "Your application and receipt have been submitted. Our team will review your manual payment shortly."}
-              </p>
-              <Button
-                onClick={() => router.push("/")}
-                className="w-full bg-[#008000] hover:bg-[#006400] text-white font-bold h-12 rounded-xl"
-              >
-                Return Home
-              </Button>
-            </div>
-          )}
-        </motion.div>
-      </div>
-    );
-  }
 
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 max-w-4xl nunito">
