@@ -129,7 +129,7 @@ const RegistrationForm = () => {
   const fetchCourseDetails = async () => {
     try {
       const res = await fetch(
-        `https://mentle-mentorship-backend.onrender.com/api/courses/${courseIdParam}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/courses/${courseIdParam}`
       );
       const data = await res.json();
       console.log(data);
@@ -170,7 +170,7 @@ const RegistrationForm = () => {
       if (formData.location === "Africa") {
         // Africa Flow: Submit then Redirect
         const enrollRes = await fetch(
-          "https://mentle-mentorship-backend.onrender.com/api/enrollments",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/enrollments`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -185,7 +185,7 @@ const RegistrationForm = () => {
         }
 
         const paymentRes = await fetch(
-          "https://mentle-mentorship-backend.onrender.com/api/payments/initiate",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/payments/initiate`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -218,7 +218,7 @@ const RegistrationForm = () => {
         }
 
         const enrollRes = await fetch(
-          "https://mentle-mentorship-backend.onrender.com/api/enrollments",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/enrollments`,
           {
             method: "POST",
             body: formDataPayload,

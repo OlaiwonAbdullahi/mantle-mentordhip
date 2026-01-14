@@ -177,7 +177,7 @@ const Programs = () => {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "https://mentle-mentorship-backend.onrender.com/api/courses"
+          `${process.env.NEXT_PUBLIC_BASE_URL}/courses`
         );
         const json = await response.json();
         console.log(json);

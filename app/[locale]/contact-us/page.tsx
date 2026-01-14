@@ -42,14 +42,11 @@ const ContactUs = () => {
     setStatus({ type: null, message: "" });
 
     try {
-      await axios.post(
-        "https://mentle-mentorship-backend.onrender.com/api/contact",
-        {
-          name,
-          email,
-          message,
-        }
-      );
+      await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/contact`, {
+        name,
+        email,
+        message,
+      });
       setStatus({
         type: "success",
         message:

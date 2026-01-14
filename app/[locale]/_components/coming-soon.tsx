@@ -80,7 +80,7 @@ const ComingSoon = () => {
 
     try {
       const response = await fetch(
-        "https://mentle-mentorship-backend.onrender.com/api/waitlist",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/waitlist`,
         {
           method: "POST",
           headers: {
