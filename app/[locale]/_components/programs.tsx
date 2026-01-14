@@ -20,6 +20,7 @@ import LocationDialog from "../programs/_components/LocationDialog";
 import { useEffect, useState } from "react";
 
 interface ProgramProps {
+  id: string;
   title: string;
   description?: string;
   fees?: { amount: string; region: string }[];
@@ -44,6 +45,7 @@ interface Course {
 }
 
 const ProgramCard = ({
+  id,
   title,
   description,
   fees,
@@ -159,7 +161,7 @@ const ProgramCard = ({
         </div>
       </CardContent>
       <div className="p-6 pt-0">
-        <LocationDialog programTitle={title} />
+        <LocationDialog courseId={id} programTitle={title} />
       </div>
     </Card>
   );
@@ -232,6 +234,7 @@ const Programs = () => {
             {courses.map((course) => (
               <ProgramCard
                 key={course._id}
+                id={course._id}
                 title={course.title}
                 description={course.description}
                 fees={[

@@ -13,22 +13,24 @@ import { IconChevronRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 
 interface LocationDialogProps {
-  programTitle?: string;
+  courseId: string;
+  programTitle: string;
 }
 
-const LocationDialog = ({ programTitle }: LocationDialogProps) => {
+const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
   const { t } = useTranslation();
   const router = useRouter();
   const params = useParams();
   const locale = params.locale as string;
 
-  const handleSelect = (country: string) => {
+  const handleSelect = (location: "Africa" | "Europe") => {
     const baseUrl = `/${locale}/register`;
 
     // Create an object with the data
     const data = {
+      courseId: courseId,
       program: programTitle,
-      country: country,
+      location: location,
     };
 
     // Convert to JSON string then to Base64
@@ -60,7 +62,7 @@ const LocationDialog = ({ programTitle }: LocationDialogProps) => {
 
         <div className="p-6 grid gap-4">
           <Button
-            onClick={() => handleSelect("Nigeria")}
+            onClick={() => handleSelect("Africa")}
             className="group flex items-center cursor-pointer justify-between p-4 h-24 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:border-[#008000]/50 hover:bg-[#008000]/5 transition-all text-left"
           >
             <div className="flex items-center gap-4">
