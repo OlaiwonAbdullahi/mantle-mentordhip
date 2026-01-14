@@ -178,6 +178,7 @@ const Programs = () => {
           "https://mentle-mentorship-backend.onrender.com/api/courses"
         );
         const json = await response.json();
+        console.log(json);
         if (json.success) {
           setCourses(json.data);
         } else {

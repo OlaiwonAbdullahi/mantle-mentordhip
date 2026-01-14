@@ -7,7 +7,7 @@ import { initReactI18next } from "react-i18next";
 i18n.use(initReactI18next).init({
   lng: "en",
   fallbackLng: "en",
-  supportedLngs: ["en", "fr", "es"],
+  supportedLngs: ["en", "fr", "es", "nl"],
   ns: ["common"],
   defaultNS: "common",
   resources: {
@@ -19,6 +19,9 @@ i18n.use(initReactI18next).init({
     },
     es: {
       common: require("../../../public/locales/es/common.json"),
+    },
+    nl: {
+      common: require("../../../public/locales/nl/common.json"),
     },
   },
   interpolation: {

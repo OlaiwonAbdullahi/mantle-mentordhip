@@ -1,0 +1,236 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about_us": "Over Ons",
+    "programs": "Programma's",
+    "contact_us": "Contacteer Ons",
+    "get_started": "AAN DE SLAG"
+  },
+  "hero": {
+    "virtual": "Virtueel",
+    "cohorts_yr": "4 Cohorten/jaar",
+    "global": "Globaal",
+    "title_part1": "Het",
+    "title_part2": "Mantle Mentorschaps",
+    "title_part3": "Programma",
+    "subtitle": "De mantel van praktische en levensgebaseerde vaardigheden doorgeven aan de volgende generatie toekomstige leiders.",
+    "learn_more": "MEER INFO",
+    "apply_now": "NU SOLLICITEREN"
+  },
+  "about_us_page": {
+    "title_about": "Over",
+    "title_us": "Ons",
+    "why_title": "Waarom de Mantle Mentorschapsprogramma's?",
+    "why_text": "De Mantle Mentorschapsprogramma's streven ernaar om veel jonge mensen en professionals duidelijkheid en richting te geven over hun doel, vooral tijdens verschillende academische en professionele overgangsfasen in hun leven, gebaseerd op deskundige ervaring van verschillende mentoren in het verleden om mentees te helpen hun unieke pad naar hun bestemming en doel voor het specifieke seizoen van hun leven te ontdekken, waardoor kostbare levens- en professionele fouten worden vermeden die soms onomkeerbaar kunnen zijn.",
+    "benefits_title": "Extra voordelen om deel te nemen aan de",
+    "benefits_subtitle": "Mantle Mentorschapsprogramma's",
+    "benefit_1": "Deskundige begeleiding vanuit professionele ervaring met succesvolle mentees op alle continenten.",
+    "benefit_2": "Op maat gemaakt curriculum voor elke mentee na een één-op-één sessie om uw toekomstige mentorschapsbehoeften te projecteren",
+    "benefit_3": "Experts in transitiemanagement vanuit de verschillende stadia in de reis van mentees",
+    "benefit_4": "Globaal netwerk van mentees-alumni op 6 continenten.",
+    "benefit_5": "Korting op gepubliceerde mentorschapsboeken",
+    "benefit_6": "Uitnodiging voor periodieke Mantle Mentorschaps Alumni Conferentie waar huidige mentees voormalige mentees ontmoeten en ervaringen delen.",
+    "benefit_7": "Lage deelnamekosten voor de programma's",
+    "chief_mentor_name": "Ebuka Umeh",
+    "chief_mentor_role": "Hoofdmentor, Mantle Mentorschapsprogramma",
+    "chief_mentor_bio_1": "Ebuka Umeh is een bedrijfsleider met meer dan 20 jaar ervaring in het bieden van mentorschap aan verschillende leeftijdsgroepen en professionals op zowel professionele als levensgebaseerde zaken. Zijn liefde voor het mentoren van anderen en het bieden van ongebruikelijke richting aan mentees heeft ertoe geleid dat hij in veel kennisgebaseerde en jeugdgemeenschappen heeft gediend, waaronder rollen als lead en mentor binnen Google-communities tussen 2018 – 2023.",
+    "chief_mentor_bio_2": " Hij heeft een bachelordiploma in engineering en 4 masterdiploma's die variëren over engineering (Nigeria), economie (Frankrijk), bedrijfsmanagement (Frankrijk) en een Executive MBA uit de VS. Hij is expertconsulent voor Atheneum, Dialectica & Trappetti Group. Hij biedt advies voor de Institution of Engineering & Technology (IET) UK en is niet-uitvoerend directeur bij Carina Global Realty. ",
+    "chief_mentor_bio_3": "In 2021 hield hij een mentorsessie genaamd de Young Founders Masterclass gericht op jonge mensen tussen 15 – 25 jaar via Eruptify Academy om begeleiding te bieden over de basisprincipes van het opzetten van een bedrijf en het schalen van bestaande bedrijven voor jonge Afrikaanse jongeren.",
+    "chief_mentor_bio_4": "Van 2023 tot heden voert hij onder het platform Youth without Walls (YWY) een jaarlijkse mentorsessie uit met jongeren tussen 13 – 35 jaar, waarbij hij ongebruikelijke kennis biedt aan meer dan 150+ jongeren in België jaarlijks. Hij heeft met succes veel jonge mensen op alle continenten van de wereld gementord. Hij is betrokken bij veel publieke mentorsspreekbeurten in verschillende culturen."
+  },
+  "programs_page": {
+    "title_our": "Onze",
+    "title_programs": "Programma's",
+    "subtitle": "Kies het pad dat past bij uw reis naar leiderschap.",
+    "program_general_title": "Algemeen Mantle Mentorschapsprogramma",
+    "program_general_desc": "Een uitgebreide 6-weken mentorschapsreis ontworpen om u uit te rusten met praktische en levensgebaseerde vaardigheden voor toekomstig leiderschap.",
+    "fee_label": "Kosten",
+    "duration_label": "Duur",
+    "class_size_label": "Klasgrootte",
+    "frequency_label": "Frequentie",
+    "mode_label": "Modus",
+    "what_you_get_label": "Wat u krijgt",
+    "enroll_now": "Nu Inschrijven",
+    "coming_soon": "Binnenkort Beschikbaar",
+    "review_upcoming_title": "Bekijk Onze",
+    "review_upcoming_subtitle": "Aankomende",
+    "review_upcoming_programs": "Programma's",
+    "review_upcoming_desc": "We breiden ons mentorschap uit naar elke fase van uw reis.",
+    "program_hs_uni": "Overgangsprogramma Middelbare School naar Universiteit",
+    "program_tertiary_job": "Overgangsprogramma Hoger Onderwijs naar Arbeidsmarkt",
+    "program_tertiary_ent": "Overgangsprogramma Hoger Onderwijs naar Ondernemerschap",
+    "program_job_school": "Overgangsprogramma's Arbeidsmarkt naar Terug naar School",
+    "program_career_change": "Overgangsprogramma's Carrièreverandering",
+    "program_hs_poly": "Overgangsprogramma Middelbare School naar Polytechniek",
+    "program_poly_uni": "Overgangsprogramma Polytechniek naar Universiteit",
+    "program_discipline": "Discipline-gebaseerd vaardigheidsprogramma",
+    "program_project": "Project-gebaseerd acquisitieprogramma",
+    "program_startup": "Start-up/Jonge Bedrijf Adviesprogramma's",
+    "in_development": "Dit programma is momenteel in ontwikkeling. Kom later terug voor details."
+  },
+  "contact_us_page": {
+    "title_contact": "Contacteer",
+    "title_us": "Ons",
+    "subtitle": "We horen graag van u. Stuur ons een bericht of neem direct contact op.",
+    "send_message": "Stuur een bericht",
+    "full_name": "Volledige Naam",
+    "email_address": "E-mailadres",
+    "message": "Bericht",
+    "submit_btn": "Bericht Versturen",
+    "success_message": "Bericht succesvol verzonden!",
+    "error_message": "Versturen van bericht mislukt. Probeer opnieuw.",
+    "contact_details": "Contactgegevens",
+    "details_text": "U kunt ons ook bereiken via de onderstaande gegevens.",
+    "response_time": "We reageren meestal binnen",
+    "response_time_val": "2 – 3 werkdagen",
+    "phone": "Telefoon",
+    "region_africa": "Nigeria & Afrika:",
+    "region_europe": "Europa:",
+    "social_media": "Sociale Media"
+  },
+  "footer": {
+    "company": "Bedrijf",
+    "subscribe_title": "Abonneren op updates",
+    "join": "Deelnemen",
+    "copyright": "The Mantle Mentorship Program. Alle rechten voorbehouden.",
+    "privacy_policy": "Privacybeleid",
+    "terms_of_service": "Servicevoorwaarden"
+  },
+  "coming_soon_section": {
+    "title": "Aankomende",
+    "title_span": "Programma's",
+    "subtitle": "Wees de eerste die toegang krijgt tot onze nieuwe samengestelde cursussen ontworpen om uw groei en carrièreovergang te versnellen.",
+    "programs": {
+      "p1": {
+        "title": "Expert Levensovergangsprogramma's",
+        "subItems": {
+          "item1": "Overgangsprogramma Middelbare School naar Universiteit",
+          "item2": "Overgangsprogramma Hoger Onderwijs naar Arbeidsmarkt",
+          "item3": "Overgangsprogramma Hoger Onderwijs naar Ondernemerschap",
+          "item4": "Overgangsprogramma's Arbeidsmarkt naar Terug naar School",
+          "item5": "Overgangsprogramma's Carrièreverandering",
+          "item6": "Overgangsprogramma Middelbare School naar Polytechniek",
+          "item7": "Overgangsprogramma Polytechniek naar Universiteit"
+        }
+      },
+      "p2": {
+        "title": "Discipline-gebaseerd Vaardigheidsprogramma"
+      },
+      "p3": {
+        "title": "Project-gebaseerd Acquisitieprogramma"
+      },
+      "p4": {
+        "title": "Start-up / Jonge Bedrijf Adviesprogramma's"
+      }
+    },
+    "waitlist": {
+      "title": "Sluit aan bij de Wachtlijst",
+      "description": "Krijg vroege toegang en exclusieve updates bij de lancering.",
+      "name_label": "Volledige Naam",
+      "name_placeholder": "Voer uw volledige naam in",
+      "email_label": "E-mailadres",
+      "email_placeholder": "u@voorbeeld.com",
+      "submit_btn": "Waarschuw Me Wanneer Het Klaar Is",
+      "success_msg": "Bedankt voor uw interesse! We waarschuwen u wanneer het programma klaar is.",
+      "privacy": "We respecteren uw privacy. Geen spam, ooit."
+    }
+  },
+  "location_dialog": {
+    "title": "Selecteer Uw regio om door te gaan",
+    "description": "Selecteer uw regio om door te gaan met de registratie voor",
+    "nigeria_title": "Nigeria",
+    "nigeria_desc": "Afrika – inclusief Nigeria en alle Afrikaanse landen",
+    "europe_title": "Europa",
+    "europe_desc": "Europa: Inclusief België & andere Europese landen.",
+    "footer": "Dit helpt ons de juiste betalingsgegevens en curriculumaanpassingen voor uw regio te bieden."
+  },
+  "registration_page": {
+    "title": "Registreren voor",
+    "title_brand": "Mantle Mentorschaps",
+    "subtitle": "Begin uw reis naar leiderschap en doel. Vul het onderstaande sollicitatieformulier in.",
+    "form_card_title": "Sollicitatieformulier",
+    "form_card_desc": "Beantwoord alle vragen eerlijk en uitgebreid.",
+    "labels": {
+      "full_name": "Volledige Naam",
+      "email": "E-mailadres",
+      "phone": "Telefoonnummer",
+      "country": "Land van Verblijf",
+      "education": "Opleidingsniveau",
+      "linkedin": "LinkedIn Profiel"
+    },
+    "placeholders": {
+      "full_name": "Voer uw volledige naam in",
+      "email": "u@voorbeeld.com",
+      "phone": "bijv. +234 800 000 0000",
+      "country_select": "Selecteer uw land...",
+      "education_select": "Selecteer hoogste kwalificatie...",
+      "linkedin": "https://linkedin.com/in/...",
+      "program_select": "Selecteer een programma...",
+      "motivation": "Deel uw motivatie...",
+      "expectations": "Beschrijf uw verwachte resultaten...",
+      "generic_answer": "Uw antwoord...",
+      "optional": "Optioneel..."
+    },
+    "questions": {
+      "program_interest": "Welke van de Mantle Mentorschapsprogramma dienstenaanbiedingen wilt u bijwonen?",
+      "why_participate": "Waarom wilt u deelnemen aan het Mantle Mentorschapsprogramma?",
+      "expectations": "Wat verwacht u aan het einde van het programma te kunnen doen?",
+      "general_program_willingness": "Bent u bereid deel te nemen aan het Algemene Mantle Mentorschapsprogramma gepland van 7 maart 2026 - 11 april 2026?",
+      "limited_slots": "Slechts Beperkte Plaatsen van 10 Deelnemers (6 Zaterdagen)",
+      "waitlist": "Indien nee, wilt u dan op de wachtlijst worden geplaatst en op de hoogte worden gehouden?",
+      "fee_willingness": "Het Algemene Mantle Mentorschapsprogramma vereist een gereduceerde deelnamekost van 100 Euro. Dit kan worden betaald op de onderstaande rekeningen met bewijs gestuurd naar info@mantlementor.com. Bent u bereid deze kosten te betalen?",
+      "willingness_to_attend_next": "Bent u bereid deel te nemen aan het volgende Algemene Mantle Mentorschapsprogramma. We nemen contact met u op over het volgende programma zodra u de registratie voltooit",
+      "challenge": "Welke specifieke uitdaging of doel ondervindt u momenteel die u hoopt dat dit mentorschapsprogramma zal helpen aanpakken, en waarom is nu het juiste moment om het aan te pakken?",
+      "success_metrics": "Indien geaccepteerd, hoe zou succes er voor u uitzien zes maanden na het einde van het programma? Hoe meet u of het mentorschap de moeite waard was?",
+      "comments": "Verdere vragen, opmerkingen of suggesties?"
+    },
+    "general_program_details": "Details Algemeen Programma",
+    "bank_details": {
+      "title": "Bankrekeninggegevens",
+      "name_label": "Naam",
+      "name_value": "Ebuka Valentine Umeh",
+      "bic_label": "BIC / SWIFT code",
+      "iban_label": "IBAN",
+      "reference_label": "Referentie",
+      "reference_value": "Uw Naam"
+    },
+    "yes": "Ja",
+    "no": "Nee",
+    "upload": {
+      "label": "Bon Uploaden",
+      "hint": "Klik om te uploaden of sleep en laat vallen",
+      "sub_hint": "PNG, JPG of PDF (max. 5MB)",
+      "success": "Bestand succesvol geselecteerd",
+      "remove": "Verwijderen en vervangen"
+    },
+    "submit": "Sollicitatie Indienen",
+    "pay": "Betalen en Indienen",
+    "loading": "Registratie Laden..."
+  },
+  "testimonials": {
+    "title_part1": "Wat Onze",
+    "title_part2": "Mentees",
+    "title_part3": "Zeggen",
+    "subtitle": "Echte verhalen van mensen die hun leven en carrière hebben getransformeerd door het Mantle Mentorschapsprogramma.",
+    "items": [
+      {
+        "name": "Humphrey Onuh",
+        "role": "Operations Engineer, Tennet (Duitsland)",
+        "content": "Ik neem al meer dan 10 jaar actief deel aan de Mantle Mentorschapsprogramma, en ik kan met vertrouwen zeggen dat dit mentorschap mijn carrièrepad en mentale ontwikkeling aanzienlijk heeft gevormd. Door de impact ben ik overgestapt van conventionele energie naar de hernieuwbare energiesector, en werk ik nu als Operating Engineer. Consistente mentorschap gaf duidelijkheid, richting en definitie aan zowel mijn carrière als persoonlijke groei.",
+        "image": "/humphrey.jpeg"
+      },
+      {
+        "name": "Cyprian Onyekperem",
+        "role": "PhD Student, (Parijs, Frankrijk)",
+        "content": "In het leven, terwijl men vooruitgang boekt in het positief beïnvloeden van de mensheid, wordt het nobel & noodzakelijk op bepaalde kruispunten om personen te bedanken, vooral die buiten zijn/haar familiekring & Kerk, maar die goede & onmisbare invloeden hebben uitgeoefend direct of indirect gericht op de realisatie van de vooruitgang. Mr Ebuka Umeh is een van zulke personen in mijn leven die zulke dank verdient. Vanaf mijn masterdagen tot op heden is zijn parels van advies uitzonderlijk geweest. Ik blijf dankbaar voor dit hooggewaardeerde gebaar en dit is een van de stimulansen die mij hebben aangezet om hetzelfde te projecteren naar anderen die mijn pad kruisen en ontvankelijk zijn voor goed advies. Bedankt aan Mr Ebuka Umeh.",
+        "image": "/cyprian.jpeg"
+      },
+      {
+        "name": "Job John",
+        "role": "PhD Scholar/Researcher - Australië",
+        "content": "Het is moeilijk om Ebuka’s bijdragen in mijn leven te beperken tot vier zinnen. Maar om het kort te houden, Ebuka Umeh is een stabiele en transformerende mentor in mijn leven geweest, lang voordat het Mantle Mentorschapsprogramma werd gecreëerd. Hij ondersteunde me academisch tijdens mijn BEng in FUTO en bood begeleiding door sommige van mijn meest uitdagende seizoenen. Zijn geloof in mijn potentieel droeg aanzienlijk bij aan mijn reis naar het verkrijgen van een PhD-beurs in Australië. Ik raad zijn mentorschap sterk aan aan elke jonge persoon of professional die duidelijkheid, richting en echte, professionele ondersteuning zoekt.",
+        "image": "/job.jpeg"
+      }
+    ]
+  }
+}

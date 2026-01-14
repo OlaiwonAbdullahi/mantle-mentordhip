@@ -23,6 +23,7 @@ const languages = [
   { code: "en", src: "/uk.png", alt: "English" },
   { code: "es", src: "/spain.png", alt: "Español" },
   { code: "fr", src: "/france.webp", alt: "Français" },
+  { code: "nl", src: "/netherland.webp", alt: "Dutch" },
 ];
 
 const Navbar = () => {
@@ -94,7 +95,7 @@ const Navbar = () => {
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang)}
-                    className="cursor-pointer text-neutral-300 focus:bg-neutral-800 focus:text-neutral-100"
+                    className="cursor-pointer text-neutral-300 nunito focus:bg-neutral-800 focus:text-neutral-100"
                   >
                     <div className="flex items-center gap-2">
                       <Image
@@ -102,7 +103,7 @@ const Navbar = () => {
                         alt={lang.alt}
                         width={20}
                         height={20}
-                        className="rounded-sm object-cover"
+                        className="rounded-[2px] object-contain h-5 w-5"
                       />
                       <span>{lang.alt}</span>
                     </div>
