@@ -16,8 +16,9 @@ import {
   IconLoader,
 } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
-import LocationDialog from "../programs/_components/LocationDialog";
 import { useEffect, useState } from "react";
+import LocationDialog from "../programs/_components/LocationDialog";
+import ScheduleDialog from "../programs/_components/ScheduleDialog";
 
 interface ProgramProps {
   id: string;
@@ -160,8 +161,13 @@ const ProgramCard = ({
           </ul>
         </div>
       </CardContent>
-      <div className="p-6 pt-0">
-        <LocationDialog courseId={id} programTitle={title} />
+      <div className="p-6 pt-0 flex item-center justify-between gap-4">
+        <div className="w-1/2 ">
+          <LocationDialog courseId={id} programTitle={title} />
+        </div>
+        <div className="w-1/2">
+          <ScheduleDialog courseId={id} programTitle={title} />
+        </div>
       </div>
     </Card>
   );

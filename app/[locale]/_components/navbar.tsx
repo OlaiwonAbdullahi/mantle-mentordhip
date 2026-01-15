@@ -31,7 +31,6 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Initialize with the current language or default to first one
   const selectedLang =
     languages.find((l) => l.code === i18n.language) || languages[0];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
