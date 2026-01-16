@@ -19,7 +19,29 @@ import {
   IconChevronUp,
   IconChevronDown,
   IconLoader,
+  IconStar,
+  IconHeart,
+  IconCrown,
+  IconTrophy,
+  IconTarget,
+  IconFlare,
+  IconDevices,
+  IconCode,
+  IconDatabase,
+  IconChartBar,
+  IconUser,
+  IconSettings,
+  IconTool,
+  IconPalette,
+  IconMessage,
+  IconPhone,
+  IconLayout,
+  IconShield,
+  IconBrain,
+  IconCpu,
+  IconSparkles,
 } from "@tabler/icons-react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
@@ -32,43 +54,80 @@ interface Program {
 
 const ComingSoon = () => {
   const { t } = useTranslation();
-  // Set the first program (with sub-items) to be open by default
-  const [openProgramId, setOpenProgramId] = useState<string | null>("p1");
+  const [programs, setPrograms] = useState<Program[]>([]);
+  const [openProgramId, setOpenProgramId] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const programs: Program[] = [
-    {
-      id: "p1",
-      title: t("coming_soon_section.programs.p1.title"),
-      icon: <IconSchool className="h-5 w-5 text-[#008000]" />,
-      subItems: [
-        t("coming_soon_section.programs.p1.subItems.item1"),
-        t("coming_soon_section.programs.p1.subItems.item2"),
-        t("coming_soon_section.programs.p1.subItems.item3"),
-        t("coming_soon_section.programs.p1.subItems.item4"),
-        t("coming_soon_section.programs.p1.subItems.item5"),
-        t("coming_soon_section.programs.p1.subItems.item6"),
-        t("coming_soon_section.programs.p1.subItems.item7"),
-      ],
-    },
-    {
-      id: "p2",
-      title: t("coming_soon_section.programs.p2.title"),
-      icon: <IconBook className="h-5 w-5 text-[#008000]" />,
-    },
-    {
-      id: "p3",
-      title: t("coming_soon_section.programs.p3.title"),
-      icon: <IconBulb className="h-5 w-5 text-[#008000]" />,
-    },
-    {
-      id: "p4",
-      title: t("coming_soon_section.programs.p4.title"),
-      icon: <IconRocket className="h-5 w-5 text-[#008000]" />,
-    },
+  const availableIcons = [
+    <IconSchool className="h-5 w-5 text-[#008000]" key={1} />,
+    <IconBook className="h-5 w-5 text-[#008000]" key={2} />,
+    <IconBulb className="h-5 w-5 text-[#008000]" key={3} />,
+    <IconRocket className="h-5 w-5 text-[#008000]" key={4} />,
+    <IconStar className="h-5 w-5 text-[#008000]" key={5} />,
+    <IconHeart className="h-5 w-5 text-[#008000]" key={6} />,
+    <IconCrown className="h-5 w-5 text-[#008000]" key={7} />,
+    <IconTrophy className="h-5 w-5 text-[#008000]" key={8} />,
+    <IconTarget className="h-5 w-5 text-[#008000]" key={9} />,
+    <IconFlare className="h-5 w-5 text-[#008000]" key={10} />,
+    <IconDevices className="h-5 w-5 text-[#008000]" key={11} />,
+    <IconCode className="h-5 w-5 text-[#008000]" key={12} />,
+    <IconDatabase className="h-5 w-5 text-[#008000]" key={13} />,
+    <IconChartBar className="h-5 w-5 text-[#008000]" key={14} />,
+    <IconUser className="h-5 w-5 text-[#008000]" key={15} />,
+    <IconSettings className="h-5 w-5 text-[#008000]" key={16} />,
+    <IconTool className="h-5 w-5 text-[#008000]" key={17} />,
+    <IconPalette className="h-5 w-5 text-[#008000]" key={18} />,
+    <IconMessage className="h-5 w-5 text-[#008000]" key={19} />,
+    <IconPhone className="h-5 w-5 text-[#008000]" key={20} />,
+    <IconLayout className="h-5 w-5 text-[#008000]" key={21} />,
+    <IconShield className="h-5 w-5 text-[#008000]" key={22} />,
+    <IconBrain className="h-5 w-5 text-[#008000]" key={23} />,
+    <IconCpu className="h-5 w-5 text-[#008000]" key={24} />,
+    <IconSparkles className="h-5 w-5 text-[#008000]" key={25} />,
   ];
+
+  useEffect(() => {
+    const fetchComingSoonPrograms = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/commingsoon`
+        );
+        const result = await response.json();
+
+        if (result.success && result.data) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const mappedPrograms: Program[] = result.data.map((item: any) => {
+            // Use item._id to pick a consistent icon from the available list
+            const iconIndex = item._id
+              ? item._id
+                  .split("")
+                  .reduce(
+                    (acc: number, char: string) => acc + char.charCodeAt(0),
+                    0
+                  ) % availableIcons.length
+              : Math.floor(Math.random() * availableIcons.length);
+
+            return {
+              id: item._id,
+              title: item.title,
+              icon: availableIcons[iconIndex],
+              subItems: item.subItems,
+            };
+          });
+          setPrograms(mappedPrograms);
+          if (mappedPrograms.length > 0) {
+            setOpenProgramId(mappedPrograms[0].id);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching coming soon programs:", error);
+      }
+    };
+
+    fetchComingSoonPrograms();
+  }, []);
 
   const toggleProgram = (id: string) => {
     setOpenProgramId(openProgramId === id ? null : id);
@@ -139,12 +198,15 @@ const ComingSoon = () => {
               {programs.map((program) => (
                 <div
                   key={program.id}
-                  className={`group rounded-xl border bg-neutral-950/40 transition-all duration-200 overflow-hidden ${
+                  className={`group relative rounded-xl border bg-neutral-950/40 transition-all duration-200 overflow-hidden ${
                     openProgramId === program.id
                       ? "border-[#008000]/50 shadow-lg shadow-[#008000]/10"
                       : "border-neutral-800 hover:border-[#008000]/30"
                   }`}
                 >
+                  <div className="absolute top-3 right-3 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider text-[#008000] bg-[#008000]/10 border border-[#008000]/20 rounded-full backdrop-blur-sm select-none z-10 animate-pulse">
+                    coming soon!
+                  </div>
                   <button
                     onClick={() => toggleProgram(program.id)}
                     className="flex items-center justify-between w-full p-5 text-left"

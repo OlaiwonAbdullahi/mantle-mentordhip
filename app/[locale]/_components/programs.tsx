@@ -161,11 +161,11 @@ const ProgramCard = ({
           </ul>
         </div>
       </CardContent>
-      <div className="p-6 pt-0 flex item-center justify-between gap-4">
-        <div className="w-1/2 ">
+      <div className="p-6 pt-0 flex item-center justify-between gap-4 md:flex-row flex-col">
+        <div className="md:w-1/2 w-full ">
           <LocationDialog courseId={id} programTitle={title} />
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2 w-full">
           <ScheduleDialog courseId={id} programTitle={title} />
         </div>
       </div>
