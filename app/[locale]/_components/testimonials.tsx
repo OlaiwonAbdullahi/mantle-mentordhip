@@ -3,8 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { IconQuote, IconStarFilled } from "@tabler/icons-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface TestimonialItem {
   name: string;
@@ -32,7 +31,7 @@ const TestimonialCard = ({ name, role, content, image }: TestimonialItem) => {
 
         <div className="mt-auto flex items-center gap-4">
           <Avatar className="w-12 h-12 cursor-pointer ring-2 ring-transparent hover:ring-emerald-500/50 transition-all">
-            <Image src={image} alt={name} className="object-cover" />
+            <AvatarImage src={image} alt={name} className="object-cover" />
             <AvatarFallback className="bg-linear-to-br from-emerald-500 to-emerald-600 text-white font-semibold">
               {name.charAt(0).toUpperCase()}
             </AvatarFallback>
