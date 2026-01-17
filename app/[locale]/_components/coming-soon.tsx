@@ -92,7 +92,7 @@ const ComingSoon = () => {
     const fetchComingSoonPrograms = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/commingsoon`
+          `${process.env.NEXT_PUBLIC_API_URL}/commingsoon`,
         );
         const result = await response.json();
 
@@ -105,7 +105,7 @@ const ComingSoon = () => {
                   .split("")
                   .reduce(
                     (acc: number, char: string) => acc + char.charCodeAt(0),
-                    0
+                    0,
                   ) % availableIcons.length
               : Math.floor(Math.random() * availableIcons.length);
 
@@ -146,7 +146,7 @@ const ComingSoon = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ name, email }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -154,7 +154,7 @@ const ComingSoon = () => {
       if (response.ok) {
         toast.success(
           t("coming_soon_section.waitlist.success_msg") ||
-            "Successfully joined the waitlist!"
+            "Successfully joined the waitlist!",
         );
         setEmail("");
         setName("");
@@ -162,14 +162,14 @@ const ComingSoon = () => {
         toast.error(
           data.message ||
             t("coming_soon_section.waitlist.error_msg") ||
-            "Something went wrong."
+            "Something went wrong.",
         );
       }
     } catch (error) {
       console.error("Error joining waitlist:", error);
       toast.error(
         t("coming_soon_section.waitlist.error_msg") ||
-          "Failed to join waitlist. Please try again."
+          "Failed to join waitlist. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -215,7 +215,7 @@ const ComingSoon = () => {
                       <div className="p-2 rounded-lg bg-[#008000]/10 transition-colors">
                         {program.icon}
                       </div>
-                      <span className=" text-lg sora text-white">
+                      <span className=" text-md sora text-white">
                         {program.title}
                       </span>
                     </div>
@@ -291,7 +291,7 @@ const ComingSoon = () => {
                       disabled={loading}
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
                       placeholder={t(
-                        "coming_soon_section.waitlist.name_placeholder"
+                        "coming_soon_section.waitlist.name_placeholder",
                       )}
                       required
                     />
@@ -311,7 +311,7 @@ const ComingSoon = () => {
                       disabled={loading}
                       className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
                       placeholder={t(
-                        "coming_soon_section.waitlist.email_placeholder"
+                        "coming_soon_section.waitlist.email_placeholder",
                       )}
                       required
                     />
