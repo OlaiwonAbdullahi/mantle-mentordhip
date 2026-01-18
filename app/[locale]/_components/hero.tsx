@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center gap-10">
         {/* Badge */}
         <div className="animate-fade-in-up">
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-full py-1.5 px-4 flex items-center gap-3 text-sm font-medium text-neutral-300   shadow-xl shadow-[#A020F0]/5">
+          <div className="bg-neutral-100/50 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-full py-1.5 px-4 flex items-center gap-3 text-sm font-medium text-neutral-600 dark:text-neutral-300 shadow-xl shadow-[#A020F0]/5">
             <span>{t("hero.virtual")}</span>
             <IconPointFilled size={10} className="text-[#A020F0]" />
             <span>{t("hero.cohorts_yr")}</span>
@@ -23,9 +23,9 @@ const Hero = () => {
 
         {/* Text Content */}
         <div className="text-center max-w-4xl space-y-6 animate-fade-in-up delay-100">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold   tracking-tight text-white leading-[1.1]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
             {t("hero.title_part1")}{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-200 via-white to-neutral-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-600 via-neutral-900 to-neutral-500 dark:from-neutral-200 dark:via-white dark:to-neutral-400">
               {t("hero.title_part2")}
             </span>{" "}
             <br className="hidden md:block" />
@@ -33,13 +33,13 @@ const Hero = () => {
               {t("hero.title_part3")}
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-neutral-400   max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t("hero.subtitle")}
           </p>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row   items-center gap-4 animate-fade-in-up delay-200 w-full justify-center">
+        <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up delay-200 w-full justify-center">
           <Link href={`/${i18n.language}/about-us`}>
             <Button
               size="lg"
@@ -65,9 +65,9 @@ const Hero = () => {
         {/* Image Showcase */}
         <div className="relative mt-12 group animate-fade-in-up delay-300 perspective-1000">
           {/* Glow effect behind image */}
-          <div className="absolute -inset-1 bg-linear-to-r from-[#A020F0]/20 to-neutral-800/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
+          <div className="absolute -inset-1 bg-linear-to-r from-[#A020F0]/20 to-neutral-400/20 dark:to-neutral-800/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
 
-          <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-3 shadow-2xl transition-transform duration-700 hover:rotate-1 hover:scale-[1.01]">
+          <div className="relative rounded-3xl border border-black/5 dark:border-white/10 bg-white/5 backdrop-blur-sm p-3 shadow-2xl transition-transform duration-700 hover:rotate-1 hover:scale-[1.01]">
             <div className="rounded-2xl overflow-hidden relative">
               <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent z-10 pointer-events-none" />
               <Image
@@ -75,7 +75,7 @@ const Hero = () => {
                 alt="Mantle Mentorship Session"
                 width={800}
                 height={450}
-                className="w-full h-auto object-cover rounded-2xl transform transition-transform duration-700 group-hover:scale-105"
+                className="w-[800px] h-auto object-cover rounded-2xl transform transition-transform duration-700 group-hover:scale-105"
                 priority
               />
             </div>

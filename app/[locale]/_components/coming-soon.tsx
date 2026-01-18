@@ -176,19 +176,19 @@ const ComingSoon = () => {
   };
 
   return (
-    <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-neutral-900/50  ">
+    <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-neutral-50 dark:bg-neutral-900/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Left Side: Programs List */}
           <div className="space-y-8 animate-fade-in-up">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-white   mb-4">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-foreground mb-4">
                 {t("coming_soon_section.title")}{" "}
-                <span className="text-[ #A020F0]">
+                <span className="text-[#A020F0]">
                   {t("coming_soon_section.title_span")}
                 </span>
               </h2>
-              <p className="text-neutral-400 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 {t("coming_soon_section.subtitle")}
               </p>
             </div>
@@ -197,10 +197,10 @@ const ComingSoon = () => {
               {programs.map((program) => (
                 <div
                   key={program.id}
-                  className={`group relative rounded-xl border bg-neutral-950/40 transition-all duration-200 overflow-hidden ${
+                  className={`group relative rounded-xl border bg-white dark:bg-neutral-950/40 transition-all duration-200 overflow-hidden ${
                     openProgramId === program.id
                       ? "border-[#A020F0]/50 shadow-lg shadow-[#A020F0]/10"
-                      : "border-neutral-800 hover:border-[#A020F0]/30"
+                      : "border-neutral-200 dark:border-neutral-800 hover:border-[#A020F0]/30"
                   }`}
                 >
                   <div className="absolute top-3 right-3 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider text-[#A020F0] bg-[#A020F0]/10 border border-[#A020F0]/20 rounded-full backdrop-blur-sm select-none z-10 animate-pulse">
@@ -214,12 +214,12 @@ const ComingSoon = () => {
                       <div className="p-2 rounded-lg bg-[#A020F0]/10 transition-colors">
                         {program.icon}
                       </div>
-                      <span className=" text-md   text-white">
+                      <span className="text-md text-foreground">
                         {program.title}
                       </span>
                     </div>
                     {program.subItems && program.subItems.length >= 1 && (
-                      <div className="text-neutral-500 group-hover:text-[ #A020F0] transition-colors">
+                      <div className="text-neutral-500 group-hover:text-[#A020F0] transition-colors">
                         {openProgramId === program.id ? (
                           <IconChevronUp className="h-5 w-5" />
                         ) : (
@@ -238,12 +238,12 @@ const ComingSoon = () => {
                   >
                     <div className="overflow-hidden">
                       {program.subItems && (
-                        <ul className="px-5 pb-5 pt-0 space-y-3 border-t border-dashed border-neutral-800 mt-2">
+                        <ul className="px-5 pb-5 pt-0 space-y-3 border-t border-dashed border-neutral-100 dark:border-neutral-800 mt-2">
                           <div className="h-2"></div>
                           {program.subItems.map((item, idx) => (
                             <li
                               key={idx}
-                              className="flex items-start gap-3 text-neutral-400 hover:text-white transition-colors p-2 rounded-md hover:bg-white/5"
+                              className="flex items-start gap-3 text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-white/5"
                             >
                               <IconCheck className="h-5 w-5 text-[#A020F0] shrink-0 mt-0.5" />
                               <span className="text-sm font-medium leading-normal">
@@ -265,12 +265,12 @@ const ComingSoon = () => {
             className="lg:sticky lg:top-8 animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <Card className="border border-[#A020F0]/20 shadow-2xl shadow-[#A020F0]/5 bg-neutral-950/40 overflow-hidden">
+            <Card className="border border-neutral-200 dark:border-[#A020F0]/20 shadow-2xl shadow-[#A020F0]/5 bg-white dark:bg-neutral-950/40 overflow-hidden">
               <CardHeader className="space-y-1 pb-2">
-                <CardTitle className="text-2xl font-bold   text-white">
+                <CardTitle className="text-2xl font-bold text-foreground">
                   {t("coming_soon_section.waitlist.title")}
                 </CardTitle>
-                <CardDescription className="text-neutral-400">
+                <CardDescription className="text-muted-foreground">
                   {t("coming_soon_section.waitlist.description")}
                 </CardDescription>
               </CardHeader>
@@ -279,7 +279,7 @@ const ComingSoon = () => {
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
-                      className="text-sm font-medium leading-none text-neutral-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {t("coming_soon_section.waitlist.name_label")}
                     </label>
@@ -288,7 +288,7 @@ const ComingSoon = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       disabled={loading}
-                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[ #A020F0]/50"
+                      className="flex h-11 w-full rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 px-3 py-2 text-sm text-foreground ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#A020F0]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.name_placeholder",
                       )}
@@ -298,7 +298,7 @@ const ComingSoon = () => {
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
-                      className="text-sm font-medium leading-none text-neutral-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {t("coming_soon_section.waitlist.email_label")}
                     </label>
@@ -308,7 +308,7 @@ const ComingSoon = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={loading}
-                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[ #A020F0]/50"
+                      className="flex h-11 w-full rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 px-3 py-2 text-sm text-foreground ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#A020F0]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.email_placeholder",
                       )}

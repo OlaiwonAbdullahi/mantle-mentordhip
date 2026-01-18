@@ -60,14 +60,16 @@ const ProgramCard = ({
 
   return (
     <Card
-      className={`relative w-full overflow-hidden transition-all duration-300 max-w-2xl bg-neutral-950/40 border-[#A020F0]/20 shadow-lg shadow-[#A020F0]/10 hover:shadow-[#A020F0]/20`}
+      className={`relative w-full overflow-hidden transition-all duration-300 max-w-2xl bg-white dark:bg-neutral-950/40 border-neutral-200 dark:border-[#A020F0]/20 shadow-lg shadow-[#A020F0]/5 dark:shadow-[#A020F0]/10 hover:shadow-[#A020F0]/15 dark:hover:shadow-[#A020F0]/20`}
     >
-      <CardHeader className={`pb-4 border-b border-neutral-800`}>
-        <CardTitle className={`text-2xl font-bold   text-white`}>
+      <CardHeader
+        className={`pb-4 border-b border-neutral-100 dark:border-neutral-800`}
+      >
+        <CardTitle className={`text-2xl font-bold text-foreground`}>
           {title}
         </CardTitle>
         {description && (
-          <CardDescription className="text-neutral-400 text-base mt-2">
+          <CardDescription className="text-muted-foreground text-base mt-2">
             {description}
           </CardDescription>
         )}
@@ -85,9 +87,9 @@ const ProgramCard = ({
                   {t("programs_page.fee_label")}
                 </p>
                 {fees?.map((fee, i) => (
-                  <p key={i} className="text-neutral-200 font-semibold">
+                  <p key={i} className="text-foreground font-semibold">
                     {fee.amount}{" "}
-                    <span className="text-xs text-neutral-500 font-normal">
+                    <span className="text-xs text-muted-foreground font-normal">
                       ({fee.region})
                     </span>
                   </p>
@@ -102,7 +104,7 @@ const ProgramCard = ({
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
                   {t("programs_page.duration_label")}
                 </p>
-                <p className="text-neutral-200 font-semibold">{duration}</p>
+                <p className="text-foreground font-semibold">{duration}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -113,7 +115,7 @@ const ProgramCard = ({
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
                   {t("programs_page.class_size_label")}
                 </p>
-                <p className="text-neutral-200 font-semibold">{classSize}</p>
+                <p className="text-foreground font-semibold">{classSize}</p>
               </div>
             </div>
           </div>
@@ -127,7 +129,7 @@ const ProgramCard = ({
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
                   {t("programs_page.frequency_label")}
                 </p>
-                <p className="text-neutral-200 font-semibold">{frequency}</p>
+                <p className="text-foreground font-semibold">{frequency}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -138,19 +140,22 @@ const ProgramCard = ({
                 <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
                   {t("programs_page.mode_label")}
                 </p>
-                <p className="text-neutral-200 font-semibold">{mode}</p>
+                <p className="text-foreground font-semibold">{mode}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-4 border-t border-neutral-800">
-          <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
+        <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800">
+          <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-4">
             {t("programs_page.what_you_get_label")}
           </p>
           <ul className="space-y-3">
             {benefits?.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-neutral-300">
+              <li
+                key={i}
+                className="flex items-start gap-3 text-neutral-600 dark:text-neutral-300"
+              >
                 <IconCheck
                   className="text-[#A020F0] shrink-0 mt-0.5"
                   size={18}
@@ -204,16 +209,19 @@ const Programs = () => {
   }, []);
 
   return (
-    <section id="programs" className="py-24 bg-neutral-900/50  ">
+    <section
+      id="programs"
+      className="py-24 bg-neutral-50 dark:bg-neutral-900/50"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl  ">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {t("programs_page.title_our")}{" "}
             <span className="text-[#A020F0]">
               {t("programs_page.title_programs")}
             </span>
           </h2>
-          <p className="mt-4 text-lg text-neutral-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             {t("programs_page.subtitle")}
           </p>
         </div>

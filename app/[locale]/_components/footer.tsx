@@ -16,14 +16,14 @@ const Footer = () => {
   const { t, i18n } = useTranslation();
   return (
     <div>
-      <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20  ">
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 pt-16 pb-16 bg-neutral-50 dark:bg-black/20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 mb-16 lg:mb-24">
             <div className="w-full lg:w-1/3 space-y-8">
               <div className="flex items-center gap-3">
                 <Image src="/logo.svg" alt="logo" width={200} height={200} />
               </div>
-              <p className="text-neutral-400 font-medium leading-relaxed">
+              <p className="text-muted-foreground font-medium leading-relaxed">
                 {t("hero.subtitle")}
               </p>
               <div className="flex gap-4">
@@ -50,7 +50,7 @@ const Footer = () => {
                     <Button
                       size="icon"
                       variant="outline"
-                      className="rounded-full border-neutral-700 hover:bg-[#A020F0] hover:text-white hover:border-[#A020F0] transition-all bg-transparent text-neutral-400"
+                      className="rounded-full border-neutral-300 dark:border-neutral-700 hover:bg-[#A020F0] hover:text-white hover:border-[#A020F0] transition-all bg-transparent text-muted-foreground"
                     >
                       <Icon className="h-5 w-5" />
                     </Button>
@@ -60,10 +60,10 @@ const Footer = () => {
             </div>
 
             <div className="w-full lg:w-1/3 space-y-6">
-              <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-foreground italic font-bold">
                 Company
               </h4>
-              <ul className="space-y-4 text-sm text-neutral-400">
+              <ul className="space-y-4 text-sm text-muted-foreground">
                 {[
                   { label: t("navbar.about_us"), href: "about-us" },
                   { label: t("navbar.contact_us"), href: "contact-us" },
@@ -82,28 +82,28 @@ const Footer = () => {
             </div>
 
             <div className="w-full lg:w-1/3 space-y-8">
-              <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-foreground italic font-bold">
                 {t("footer.subscribe_title")}
               </h4>
               <div className="flex gap-2">
                 <input
                   type="email"
                   placeholder="email@address.com"
-                  className="flex-1 rounded-full bg-neutral-900/50 px-4 text-sm font-bold outline-none border border-neutral-800 focus:border-[#A020F0]/50 text-neutral-300 transition-all placeholder:text-neutral-600"
+                  className="flex-1 rounded-full bg-white dark:bg-neutral-900/50 px-4 text-sm font-bold outline-none border border-neutral-200 dark:border-neutral-800 focus:border-[#A020F0]/50 text-foreground transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
                 />
                 <Button className="rounded-full font-black italic uppercase px-6 bg-[#A020F0] hover:bg-[#7C1BB0] text-white">
                   Join
                 </Button>
               </div>
               <Link href="https://mantle-mentorship-admin.vercel.app/">
-                <Button className="bg-[#A020F0] hover:bg-[#7C1BB0]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+                <Button className="bg-[#A020F0] hover:bg-[#7C1BB0]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-white italic font-bold">
                   Log in as Admin
                 </Button>
               </Link>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between border-t border-neutral-800 pt-12 gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+          <div className="flex flex-col md:flex-row items-center justify-between border-t border-neutral-100 dark:border-neutral-800 pt-12 gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
             <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} {t("footer.copyright")}
             </p>

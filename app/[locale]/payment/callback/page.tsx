@@ -58,14 +58,14 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
       animate={{ opacity: 1, y: 0 }}
       className="w-full max-w-2xl mx-auto"
     >
-      <div className="relative bg-neutral-950 border border-[ #A020F0]/30 rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-[#A020F0]/30 rounded-3xl overflow-hidden shadow-2xl">
         {/* Glow effect */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-[ #A020F0] to-transparent opacity-50" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-[#A020F0] to-transparent opacity-50" />
 
         <div className="p-8 md:p-10 space-y-8">
           {/* Header */}
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="p-4 bg-[ #A020F0]/10 rounded-full">
+            <div className="p-4 bg-[#A020F0]/10 rounded-full">
               <IconSquareRoundedCheck
                 size={48}
                 className="text-[#A020F0]"
@@ -73,10 +73,10 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white   uppercase tracking-tight">
+              <h2 className="text-3xl font-bold text-foreground uppercase tracking-tight">
                 Registration Successful
               </h2>
-              <p className="text-neutral-400  ">
+              <p className="text-muted-foreground">
                 Your spot in the program has been secured.
               </p>
             </div>
@@ -88,31 +88,31 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
               {/* Left Column */}
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
+                  <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]">
                     Student Details
                   </p>
-                  <div className="flex items-center gap-3 text-white">
-                    <IconUser size={18} className="text-neutral-500" />
+                  <div className="flex items-center gap-3 text-foreground">
+                    <IconUser size={18} className="text-muted-foreground" />
                     <span className="font-semibold">{data.fullName}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-neutral-400 text-sm">
-                    <IconMail size={16} className="text-neutral-600" />
+                  <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                    <IconMail size={16} className="text-muted-foreground/60" />
                     <span>{data.email}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-neutral-400 text-sm">
-                    <IconPhone size={16} className="text-neutral-600" />
+                  <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                    <IconPhone size={16} className="text-muted-foreground/60" />
                     <span>{data.phone}</span>
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]  ">
+                  <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]">
                     Program
                   </p>
-                  <div className="flex items-start gap-3 text-white">
+                  <div className="flex items-start gap-3 text-foreground">
                     <IconBriefcase
                       size={18}
-                      className="text-neutral-500 mt-1 shrink-0"
+                      className="text-muted-foreground mt-1 shrink-0"
                     />
                     <span className="font-semibold leading-tight">
                       {data.serviceOffering}
@@ -124,24 +124,24 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
               {/* Right Column */}
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
+                  <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]">
                     Transaction Info
                   </p>
-                  <div className="flex items-center justify-between text-sm py-1 border-b border-neutral-800/50">
-                    <span className="text-neutral-500">Status</span>
-                    <span className="text-[ #A020F0] font-bold uppercase text-[10px] bg-[ #A020F0]/10 px-2 py-0.5 rounded-full">
+                  <div className="flex items-center justify-between text-sm py-1 border-b border-neutral-100 dark:border-neutral-800/50">
+                    <span className="text-muted-foreground">Status</span>
+                    <span className="text-[#A020F0] font-bold uppercase text-[10px] bg-[#A020F0]/10 px-2 py-0.5 rounded-full">
                       {data.status}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-sm py-1 border-b border-neutral-800/50">
-                    <span className="text-neutral-500">Method</span>
-                    <span className="text-white capitalize">
+                  <div className="flex items-center justify-between text-sm py-1 border-b border-neutral-100 dark:border-neutral-800/50">
+                    <span className="text-muted-foreground">Method</span>
+                    <span className="text-foreground capitalize">
                       {data.paymentMethod}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm py-1">
-                    <span className="text-neutral-500">Date</span>
-                    <span className="text-white">
+                    <span className="text-muted-foreground">Date</span>
+                    <span className="text-foreground">
                       {formatDate(data.paidAt || data.createdAt)}
                     </span>
                   </div>
@@ -149,19 +149,19 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
 
                 {data.paystackReference && (
                   <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
+                    <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]">
                       Reference
                     </p>
                     <div
                       onClick={() => handleCopy(data.paystackReference!)}
-                      className="flex items-center justify-between bg-neutral-900/50 p-2 rounded-lg border border-neutral-800 cursor-pointer hover:bg-neutral-900 transition-colors group"
+                      className="flex items-center justify-between bg-neutral-50 dark:bg-neutral-900/50 p-2 rounded-lg border border-neutral-100 dark:border-neutral-800 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors group"
                     >
-                      <span className="text-xs font-mono text-neutral-400 truncate mr-2">
+                      <span className="text-xs font-mono text-muted-foreground truncate mr-2">
                         {data.paystackReference}
                       </span>
                       <IconCopy
                         size={14}
-                        className="text-neutral-600 group-hover:text-[ #A020F0]"
+                        className="text-muted-foreground dark:text-neutral-600 group-hover:text-[#A020F0]"
                       />
                     </div>
                   </div>
@@ -171,21 +171,21 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
 
             {/* Questions Section */}
             {data.furtherQuestions && (
-              <div className="p-4 bg-neutral-900/30 rounded-2xl border border-neutral-800/50 space-y-2">
-                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em]  ">
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900/30 rounded-2xl border border-neutral-100 dark:border-neutral-800/50 space-y-2">
+                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
                   Additional Comments
                 </p>
-                <p className="text-neutral-300 text-sm italic">
+                <p className="text-foreground/80 text-sm italic">
                   &apos;{data.furtherQuestions}&apos;
                 </p>
               </div>
             )}
           </div>
 
-          <div className="pt-6 border-t border-neutral-800/50 flex flex-col sm:flex-row gap-4">
+          <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800/50 flex flex-col sm:flex-row gap-4">
             <Button
               onClick={() => router.push("/")}
-              className="flex-1 bg-white hover:bg-neutral-200 text-black font-bold h-12 rounded-xl transition-all flex items-center justify-center gap-2"
+              className="flex-1 bg-foreground text-background hover:bg-foreground/90 font-bold h-12 rounded-xl transition-all flex items-center justify-center gap-2"
             >
               Back to Website
               <IconChevronRight size={18} />
@@ -198,10 +198,10 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
         <div className="absolute top-0 left-0 w-32 h-32 bg-[ #A020F0]/5 blur-3xl rounded-full" />
       </div>
 
-      <p className="text-center text-neutral-500 text-xs mt-6  ">
+      <p className="text-center text-muted-foreground text-xs mt-6">
         A confirmation email has been sent to{" "}
-        <span className="text-neutral-300">{data.email}</span>. Please check
-        your inbox (and spam folder) for further instructions.
+        <span className="text-foreground font-medium">{data.email}</span>.
+        Please check your inbox (and spam folder) for further instructions.
       </p>
     </motion.div>
   );
@@ -276,17 +276,17 @@ const CallbackContent = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[ #A020F0]/20 bg-neutral-950 shadow-2xl"
+            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-neutral-200 dark:border-[#A020F0]/20 bg-white dark:bg-neutral-950 shadow-2xl"
           >
             <div className="space-y-4">
               <IconLoader
                 size={64}
-                className="text-[ #A020F0] animate-spin mx-auto"
+                className="text-[#A020F0] animate-spin mx-auto"
               />
-              <h2 className="text-2xl font-bold text-white  ">
+              <h2 className="text-2xl font-bold text-foreground">
                 Verifying Payment...
               </h2>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Please wait while we confirm your transaction with Paystack.
               </p>
             </div>
@@ -299,23 +299,23 @@ const CallbackContent = () => {
               key="generic-success"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[ #A020F0]/20 bg-neutral-950 shadow-2xl"
+              className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-neutral-200 dark:border-[#A020F0]/20 bg-white dark:bg-neutral-950 shadow-2xl"
             >
               <div className="space-y-4">
-                <div className="p-4 bg-[ #A020F0]/10 rounded-full w-fit mx-auto">
-                  <IconCircleCheck size={64} className="text-[ #A020F0]" />
+                <div className="p-4 bg-[#A020F0]/10 rounded-full w-fit mx-auto">
+                  <IconCircleCheck size={64} className="text-[#A020F0]" />
                 </div>
-                <h2 className="text-3xl font-bold text-white  ">
+                <h2 className="text-3xl font-bold text-foreground">
                   Application Received!
                 </h2>
-                <p className="text-neutral-400">
+                <p className="text-muted-foreground">
                   {method === "manual"
                     ? "Your application and receipt have been submitted. Our team will review your manual payment shortly."
                     : "Your payment has been verified and your enrollment is confirmed. Welcome to the program!"}
                 </p>
                 <Button
                   onClick={() => router.push("/")}
-                  className="w-full bg-[ #A020F0] hover:bg-[#006400] text-white font-bold h-12 rounded-xl transition-all"
+                  className="w-full bg-[#A020F0] hover:bg-[#7C1BB0] text-white font-bold h-12 rounded-xl transition-all"
                 >
                   Return Home
                 </Button>
@@ -327,22 +327,22 @@ const CallbackContent = () => {
             key="error"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-red-500/20 bg-neutral-950 shadow-2xl"
+            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-red-500/20 bg-white dark:bg-neutral-950 shadow-2xl"
           >
             <div className="space-y-4">
               <div className="p-4 bg-red-500/10 rounded-full w-fit mx-auto">
                 <IconX size={64} className="text-red-500" />
               </div>
-              <h2 className="text-3xl font-bold text-white  ">
+              <h2 className="text-3xl font-bold text-foreground">
                 Verification Failed
               </h2>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 {error ||
                   "We couldn't verify your payment. Please contact support if you believe this is an error."}
               </p>
               <Button
                 onClick={() => router.push("/")}
-                className="w-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold h-12 rounded-xl transition-all"
+                className="w-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 text-white font-bold h-12 rounded-xl transition-all"
               >
                 Back to Home
               </Button>
@@ -359,7 +359,7 @@ const Page = () => {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-neutral-950 flex items-center justify-center text-[ #A020F0]">
+        <div className="min-h-screen bg-background flex items-center justify-center text-[#A020F0]">
           <IconLoader className="animate-spin mr-2" />
           {t("loading", "Loading...")}
         </div>

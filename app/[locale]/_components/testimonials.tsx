@@ -14,7 +14,7 @@ interface TestimonialItem {
 
 const TestimonialCard = ({ name, role, content, image }: TestimonialItem) => {
   return (
-    <Card className="bg-neutral-950/40 border-[#A020F0]/20 shadow-lg shadow-[#A020F0]/5 hover:shadow-[#A020F0]/15 transition-all duration-300 group overflow-hidden relative">
+    <Card className="bg-white dark:bg-neutral-950/40 border-neutral-100 dark:border-[#A020F0]/20 shadow-lg shadow-[#A020F0]/5 hover:shadow-[#A020F0]/15 transition-all duration-300 group overflow-hidden relative">
       <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
         <IconQuote size={80} className="text-[#A020F0]" />
       </div>
@@ -25,7 +25,7 @@ const TestimonialCard = ({ name, role, content, image }: TestimonialItem) => {
           ))}
         </div>
 
-        <p className="text-neutral-300 mb-8 leading-relaxed italic   text-sm">
+        <p className="text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed italic text-sm">
           &quot;{content}&quot;
         </p>
 
@@ -38,8 +38,8 @@ const TestimonialCard = ({ name, role, content, image }: TestimonialItem) => {
           </Avatar>
 
           <div>
-            <h4 className="text-white font-bold  ">{name}</h4>
-            <p className="text-neutral-500 text-sm  ">{role}</p>
+            <h4 className="text-foreground font-bold">{name}</h4>
+            <p className="text-muted-foreground text-sm">{role}</p>
           </div>
         </div>
       </CardContent>
@@ -57,18 +57,18 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-neutral-900/30   overflow-hidden"
+      className="py-24 bg-white dark:bg-neutral-900/30 overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 text-center animate-fade-in-up">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl   mb-4">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
             {t("testimonials.title_part1")}{" "}
             <span className="text-[#A020F0]">
               {t("testimonials.title_part2")}
             </span>{" "}
             {t("testimonials.title_part3")}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-neutral-400">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             {t("testimonials.subtitle")}
           </p>
         </div>

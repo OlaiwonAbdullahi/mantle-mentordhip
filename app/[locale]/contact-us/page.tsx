@@ -71,29 +71,29 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12  ">
+    <div className="min-h-screen pt-24 pb-12 bg-background">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl  ">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             {t("contact_us_page.title_contact")}{" "}
             <span className="text-[#A020F0]">
               {t("contact_us_page.title_us")}
             </span>
           </h1>
-          <p className="mt-4 text-lg text-neutral-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             {t("contact_us_page.subtitle")}
           </p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
           {/* Contact Form */}
-          <div className="space-y-8 rounded-2xl bg-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
-            <h2 className="text-2xl font-bold text-white  ">
+          <div className="space-y-8 rounded-2xl bg-white dark:bg-white/5 p-8 border border-neutral-200 dark:border-white/10 backdrop-blur-sm shadow-xl dark:shadow-2xl">
+            <h2 className="text-2xl font-bold text-foreground">
               {t("contact_us_page.send_message")}
             </h2>
             <form className="space-y-6" onSubmit={handleSend}>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-neutral-300">
+                <label className="text-sm font-medium text-muted-foreground">
                   {t("contact_us_page.full_name")}
                 </label>
                 <input
@@ -101,11 +101,11 @@ const ContactUs = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600"
+                  className="w-full rounded-xl bg-neutral-50 dark:bg-neutral-900/50 px-4 py-3 text-sm font-medium text-foreground outline-none border border-neutral-200 dark:border-neutral-800 focus:border-[#A020F0] focus:ring-1 focus:ring-[#A020F0] transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-neutral-300">
+                <label className="text-sm font-medium text-muted-foreground">
                   {t("contact_us_page.email_address")}
                 </label>
                 <input
@@ -113,11 +113,11 @@ const ContactUs = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="john@example.com"
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600"
+                  className="w-full rounded-xl bg-neutral-50 dark:bg-neutral-900/50 px-4 py-3 text-sm font-medium text-foreground outline-none border border-neutral-200 dark:border-neutral-800 focus:border-[#A020F0] focus:ring-1 focus:ring-[#A020F0] transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-neutral-300">
+                <label className="text-sm font-medium text-muted-foreground">
                   {t("contact_us_page.message")}
                 </label>
                 <textarea
@@ -126,13 +126,13 @@ const ContactUs = () => {
                   placeholder="How can we help you?"
                   minLength={10}
                   rows={5}
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600 resize-none"
+                  className="w-full rounded-xl bg-neutral-50 dark:bg-neutral-900/50 px-4 py-3 text-sm font-medium text-foreground outline-none border border-neutral-200 dark:border-neutral-800 focus:border-[#A020F0] focus:ring-1 focus:ring-[#A020F0] transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600 resize-none"
                 />
               </div>
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-[#A020F0] hover:bg-[#A020F0]/90 text-white font-bold py-6 text-lg shadow-lg shadow-[ #A020F0]/20 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-xl bg-[#A020F0] hover:bg-[#A020F0]/90 text-white font-bold py-6 text-lg shadow-lg shadow-[#A020F0]/20 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
@@ -160,10 +160,10 @@ const ContactUs = () => {
           {/* Contact Details */}
           <div className="space-y-10 lg:py-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-white  ">
+              <h2 className="text-2xl font-bold text-foreground">
                 {t("contact_us_page.contact_details")}
               </h2>
-              <p className="text-neutral-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {t("contact_us_page.details_text")} <br />
                 {t("contact_us_page.response_time")}{" "}
                 <span className="text-[#A020F0] font-bold">
@@ -179,12 +179,12 @@ const ContactUs = () => {
                   <IconMail size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg">
+                  <h3 className="font-bold text-foreground text-lg">
                     {t("contact_us_page.email_address")}
                   </h3>
                   <a
                     href="mailto:info@mantlementor.com"
-                    className="text-neutral-400 hover:text-[#A020F0] transition-colors"
+                    className="text-muted-foreground hover:text-[#A020F0] transition-colors"
                   >
                     info@mantlementor.com
                   </a>
@@ -196,18 +196,18 @@ const ContactUs = () => {
                   <IconPhone size={24} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-bold text-white text-lg">
+                  <h3 className="font-bold text-foreground text-lg">
                     {t("contact_us_page.phone")}
                   </h3>
-                  <div className="grid gap-1 text-neutral-400">
+                  <div className="grid gap-1 text-muted-foreground">
                     <p>
-                      <span className="text-neutral-200 font-medium">
+                      <span className="text-foreground/80 font-medium">
                         {t("contact_us_page.region_africa")}
                       </span>{" "}
                       +234 803 897 9738
                     </p>
                     <p>
-                      <span className="text-neutral-200 font-medium">
+                      <span className="text-foreground/80 font-medium">
                         {t("contact_us_page.region_europe")}
                       </span>{" "}
                       +33 7 5113 57 27
@@ -217,8 +217,8 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="space-y-6 pt-6 border-t border-neutral-800">
-              <h3 className="font-bold text-white text-lg  ">
+            <div className="space-y-6 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+              <h3 className="font-bold text-foreground text-lg">
                 {t("contact_us_page.social_media")}
               </h3>
               <div className="flex gap-4">
@@ -247,7 +247,7 @@ const ContactUs = () => {
                   <a
                     key={i}
                     href={social.href}
-                    className={`rounded-full bg-neutral-900 border border-neutral-800 p-4 text-neutral-400 hover:border-transparent hover:bg-neutral-800 transition-all duration-300 ${social.color}`}
+                    className={`rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-4 text-muted-foreground dark:text-neutral-400 hover:border-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 ${social.color}`}
                   >
                     <social.icon size={24} />
                   </a>
@@ -256,7 +256,7 @@ const ContactUs = () => {
             </div>
 
             {/* Decorative Element */}
-            <div className="hidden lg:block relative mt-8 h-48 rounded-2xl overflow-hidden border border-white/5">
+            <div className="hidden lg:block relative mt-8 h-48 rounded-2xl overflow-hidden border border-black/5 dark:border-white/5">
               <Image
                 src="/hero.jpeg"
                 alt="Contact Us"

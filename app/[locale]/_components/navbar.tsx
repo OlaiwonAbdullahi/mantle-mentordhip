@@ -6,6 +6,8 @@ import {
   IconArrowUpRight,
   IconChevronDown,
   IconMenu,
+  IconSun,
+  IconMoon,
   IconX,
 } from "@tabler/icons-react";
 import Image from "next/image";
@@ -18,6 +20,8 @@ import {
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { usePathname, useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 const languages = [
   { code: "en", src: "/uk.png", alt: "English" },
@@ -30,6 +34,13 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
+
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const selectedLang =
     languages.find((l) => l.code === i18n.language) || languages[0];
@@ -82,6 +93,19 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer text-foreground"
+              aria-label="Toggle theme"
+            >
+              {!mounted ? (
+                <div className="w-6 h-6" /> // Placeholder to avoid layout shift
+              ) : theme === "dark" ? (
+                <IconSun size={20} />
+              ) : (
+                <IconMoon size={20} />
+              )}
+            </button>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
                 <Image
@@ -95,13 +119,13 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="bg-neutral-900 border-neutral-800"
+                className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800"
               >
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang)}
-                    className="cursor-pointer text-neutral-300   focus:bg-neutral-800 focus:text-neutral-100"
+                    className="cursor-pointer text-neutral-700 dark:text-neutral-300 focus:bg-neutral-100 dark:focus:bg-neutral-800 focus:text-neutral-900 dark:focus:text-neutral-100"
                   >
                     <div className="flex items-center gap-2">
                       <Image
@@ -135,18 +159,18 @@ const Navbar = () => {
               className="lg:hidden cursor-pointer"
               onClick={toggleMobileMenu}
             >
-              <IconMenu color="#ffffff" />
+              <IconMenu className="text-foreground" />
             </div>
           </div>
         </div>
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-black/95 lg:hidden flex flex-col p-6 animate-in slide-in-from-right duration-300">
+          <div className="fixed inset-0 z-50 bg-background/95 lg:hidden flex flex-col p-6 animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between mb-8">
               <Image src="/logo.svg" alt="logo" width={60} height={60} />
               <div className="cursor-pointer" onClick={toggleMobileMenu}>
-                <IconX color="#ffffff" size={32} />
+                <IconX className="text-foreground" size={32} />
               </div>
             </div>
 
@@ -159,8 +183,8 @@ const Navbar = () => {
                     href={item.href}
                     className={`text-2xl font-bold transition-colors ${
                       isActive
-                        ? "text-black border-b-2 border-black"
-                        : "text-neutral-600 hover:text-black"
+                        ? "text-[#A020F0] border-b-2 border-[#A020F0]"
+                        : "text-neutral-600 dark:text-neutral-400 hover:text-foreground"
                     }`}
                     onClick={toggleMobileMenu}
                   >
