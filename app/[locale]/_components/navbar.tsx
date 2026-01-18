@@ -73,7 +73,7 @@ const Navbar = () => {
                 alt="logo"
                 width={200}
                 height={200}
-                className="md:w-[200px] w-[120px] md:h-[80px] h-[50px]"
+                className="md:w-[200px] w-[100px] md:h-[80px] h-[45px]"
               />
             </Link>
           </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer text-foreground"
