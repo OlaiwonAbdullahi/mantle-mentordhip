@@ -258,7 +258,7 @@ const ContactUs = () => {
             {/* Decorative Element */}
             <div className="hidden lg:block relative mt-8 h-48 rounded-2xl overflow-hidden border border-black/5 dark:border-white/5">
               <Image
-                src="/hero.jpeg"
+                src="/contact.jpg"
                 alt="Contact Us"
                 fill
                 className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"

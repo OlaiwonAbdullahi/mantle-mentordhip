@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center gap-10">
         {/* Badge */}
         <div className="animate-fade-in-up">
-          <div className="bg-neutral-100/50 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-full py-1.5 px-4 flex items-center gap-3 text-sm font-medium text-neutral-600 dark:text-neutral-300 shadow-xl shadow-[#A020F0]/5">
+          <div className="bg-neutral-100/20 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-full py-1.5 px-4 flex items-center gap-3 text-sm font-medium text-neutral-600 dark:text-neutral-300 shadow-xl shadow-[#A020F0]/5">
             <span>{t("hero.virtual")}</span>
             <IconPointFilled size={10} className="text-[#A020F0]" />
             <span>{t("hero.cohorts_yr")}</span>
