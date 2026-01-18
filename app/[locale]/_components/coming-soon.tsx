@@ -99,7 +99,6 @@ const ComingSoon = () => {
         if (result.success && result.data) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const mappedPrograms: Program[] = result.data.map((item: any) => {
-            // Use item._id to pick a consistent icon from the available list
             const iconIndex = item._id
               ? item._id
                   .split("")
@@ -113,7 +112,7 @@ const ComingSoon = () => {
               id: item._id,
               title: item.title,
               icon: availableIcons[iconIndex],
-              subItems: item.subItems,
+              subItems: item.subtitle,
             };
           });
           setPrograms(mappedPrograms);
@@ -219,7 +218,7 @@ const ComingSoon = () => {
                         {program.title}
                       </span>
                     </div>
-                    {program.subItems && (
+                    {program.subItems && program.subItems.length >= 1 && (
                       <div className="text-neutral-500 group-hover:text-[#008000] transition-colors">
                         {openProgramId === program.id ? (
                           <IconChevronUp className="h-5 w-5" />
