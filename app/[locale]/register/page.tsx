@@ -270,7 +270,7 @@ const RegistrationForm = () => {
                 {courseDetails
                   ? formData.location === "Africa"
                     ? `₦${courseDetails.price_in_ngn.toLocaleString()}`
-                    : `€${courseDetails.price_in_euro.toLocaleString()}`
+                    : `${courseDetails.price_in_euro.toLocaleString()}€`
                   : "..."}
               </span>
             </div>
