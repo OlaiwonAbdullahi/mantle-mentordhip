@@ -73,7 +73,7 @@ const Navbar = () => {
                 alt="logo"
                 width={200}
                 height={200}
-                className="md:w-[200px] w-[120px] md:h-[80px] h-[50px]"
+                className="md:w-50 w-30 md:h-20 h-12.5"
               />
             </Link>
           </div>
@@ -174,7 +174,13 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-background/95 lg:hidden flex flex-col p-6 animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between mb-8">
-              <Image src="/logo.svg" alt="logo" width={60} height={60} />
+              <Image
+                src="/logo.svg"
+                alt="logo"
+                width={200}
+                height={200}
+                className="md:w-50 w-30 md:h-20 h-12.5"
+              />
               <div className="cursor-pointer" onClick={toggleMobileMenu}>
                 <IconX className="text-foreground" size={32} />
               </div>
