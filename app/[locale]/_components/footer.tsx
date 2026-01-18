@@ -82,10 +82,10 @@ const Footer = () => {
             </div>
 
             <div className="w-full lg:w-1/3 space-y-8">
-              <h4 className="text-xs uppercase tracking-[0.2em] text-foreground italic font-bold">
+              <h4 className=" hidden text-xs uppercase tracking-[0.2em] text-foreground italic font-bold">
                 {t("footer.subscribe_title")}
               </h4>
-              <div className="flex gap-2">
+              <div className="hidden gap-2">
                 <input
                   type="email"
                   placeholder="email@address.com"
@@ -95,7 +95,7 @@ const Footer = () => {
                   Join
                 </Button>
               </div>
-              <Link href="https://mantle-mentorship-admin.vercel.app/">
+              <Link href="https://admin.mantlementor.com/">
                 <Button className="bg-[#A020F0] hover:bg-[#7C1BB0]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-white italic font-bold">
                   Log in as Admin
                 </Button>
