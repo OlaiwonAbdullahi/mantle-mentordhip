@@ -61,31 +61,31 @@ const ComingSoon = () => {
   const [loading, setLoading] = useState(false);
 
   const availableIcons = [
-    <IconSchool className="h-5 w-5 text-[#008000]" key={1} />,
-    <IconBook className="h-5 w-5 text-[#008000]" key={2} />,
-    <IconBulb className="h-5 w-5 text-[#008000]" key={3} />,
-    <IconRocket className="h-5 w-5 text-[#008000]" key={4} />,
-    <IconStar className="h-5 w-5 text-[#008000]" key={5} />,
-    <IconHeart className="h-5 w-5 text-[#008000]" key={6} />,
-    <IconCrown className="h-5 w-5 text-[#008000]" key={7} />,
-    <IconTrophy className="h-5 w-5 text-[#008000]" key={8} />,
-    <IconTarget className="h-5 w-5 text-[#008000]" key={9} />,
-    <IconFlare className="h-5 w-5 text-[#008000]" key={10} />,
-    <IconDevices className="h-5 w-5 text-[#008000]" key={11} />,
-    <IconCode className="h-5 w-5 text-[#008000]" key={12} />,
-    <IconDatabase className="h-5 w-5 text-[#008000]" key={13} />,
-    <IconChartBar className="h-5 w-5 text-[#008000]" key={14} />,
-    <IconUser className="h-5 w-5 text-[#008000]" key={15} />,
-    <IconSettings className="h-5 w-5 text-[#008000]" key={16} />,
-    <IconTool className="h-5 w-5 text-[#008000]" key={17} />,
-    <IconPalette className="h-5 w-5 text-[#008000]" key={18} />,
-    <IconMessage className="h-5 w-5 text-[#008000]" key={19} />,
-    <IconPhone className="h-5 w-5 text-[#008000]" key={20} />,
-    <IconLayout className="h-5 w-5 text-[#008000]" key={21} />,
-    <IconShield className="h-5 w-5 text-[#008000]" key={22} />,
-    <IconBrain className="h-5 w-5 text-[#008000]" key={23} />,
-    <IconCpu className="h-5 w-5 text-[#008000]" key={24} />,
-    <IconSparkles className="h-5 w-5 text-[#008000]" key={25} />,
+    <IconSchool className="h-5 w-5 text-[#A020F0]" key={1} />,
+    <IconBook className="h-5 w-5 text-[#A020F0]" key={2} />,
+    <IconBulb className="h-5 w-5 text-[#A020F0]" key={3} />,
+    <IconRocket className="h-5 w-5 text-[#A020F0]" key={4} />,
+    <IconStar className="h-5 w-5 text-[#A020F0]" key={5} />,
+    <IconHeart className="h-5 w-5 text-[#A020F0]" key={6} />,
+    <IconCrown className="h-5 w-5 text-[#A020F0]" key={7} />,
+    <IconTrophy className="h-5 w-5 text-[#A020F0]" key={8} />,
+    <IconTarget className="h-5 w-5 text-[#A020F0]" key={9} />,
+    <IconFlare className="h-5 w-5 text-[#A020F0]" key={10} />,
+    <IconDevices className="h-5 w-5 text-[#A020F0]" key={11} />,
+    <IconCode className="h-5 w-5 text-[#A020F0]" key={12} />,
+    <IconDatabase className="h-5 w-5 text-[#A020F0]" key={13} />,
+    <IconChartBar className="h-5 w-5 text-[#A020F0]" key={14} />,
+    <IconUser className="h-5 w-5 text-[#A020F0]" key={15} />,
+    <IconSettings className="h-5 w-5 text-[#A020F0]" key={16} />,
+    <IconTool className="h-5 w-5 text-[#A020F0]" key={17} />,
+    <IconPalette className="h-5 w-5 text-[#A020F0]" key={18} />,
+    <IconMessage className="h-5 w-5 text-[#A020F0]" key={19} />,
+    <IconPhone className="h-5 w-5 text-[#A020F0]" key={20} />,
+    <IconLayout className="h-5 w-5 text-[#A020F0]" key={21} />,
+    <IconShield className="h-5 w-5 text-[#A020F0]" key={22} />,
+    <IconBrain className="h-5 w-5 text-[#A020F0]" key={23} />,
+    <IconCpu className="h-5 w-5 text-[#A020F0]" key={24} />,
+    <IconSparkles className="h-5 w-5 text-[#A020F0]" key={25} />,
   ];
 
   useEffect(() => {
@@ -176,15 +176,15 @@ const ComingSoon = () => {
   };
 
   return (
-    <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-neutral-900/50 nunito">
+    <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-neutral-900/50  ">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Left Side: Programs List */}
           <div className="space-y-8 animate-fade-in-up">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-white sora mb-4">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-white   mb-4">
                 {t("coming_soon_section.title")}{" "}
-                <span className="text-[#008000]">
+                <span className="text-[ #A020F0]">
                   {t("coming_soon_section.title_span")}
                 </span>
               </h2>
@@ -199,11 +199,11 @@ const ComingSoon = () => {
                   key={program.id}
                   className={`group relative rounded-xl border bg-neutral-950/40 transition-all duration-200 overflow-hidden ${
                     openProgramId === program.id
-                      ? "border-[#008000]/50 shadow-lg shadow-[#008000]/10"
-                      : "border-neutral-800 hover:border-[#008000]/30"
+                      ? "border-[#A020F0]/50 shadow-lg shadow-[#A020F0]/10"
+                      : "border-neutral-800 hover:border-[#A020F0]/30"
                   }`}
                 >
-                  <div className="absolute top-3 right-3 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider text-[#008000] bg-[#008000]/10 border border-[#008000]/20 rounded-full backdrop-blur-sm select-none z-10 animate-pulse">
+                  <div className="absolute top-3 right-3 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider text-[#A020F0] bg-[#A020F0]/10 border border-[#A020F0]/20 rounded-full backdrop-blur-sm select-none z-10 animate-pulse">
                     coming soon!
                   </div>
                   <button
@@ -211,15 +211,15 @@ const ComingSoon = () => {
                     className="flex items-center justify-between w-full p-5 text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-[#008000]/10 transition-colors">
+                      <div className="p-2 rounded-lg bg-[#A020F0]/10 transition-colors">
                         {program.icon}
                       </div>
-                      <span className=" text-md sora text-white">
+                      <span className=" text-md   text-white">
                         {program.title}
                       </span>
                     </div>
                     {program.subItems && program.subItems.length >= 1 && (
-                      <div className="text-neutral-500 group-hover:text-[#008000] transition-colors">
+                      <div className="text-neutral-500 group-hover:text-[ #A020F0] transition-colors">
                         {openProgramId === program.id ? (
                           <IconChevronUp className="h-5 w-5" />
                         ) : (
@@ -245,7 +245,7 @@ const ComingSoon = () => {
                               key={idx}
                               className="flex items-start gap-3 text-neutral-400 hover:text-white transition-colors p-2 rounded-md hover:bg-white/5"
                             >
-                              <IconCheck className="h-5 w-5 text-[#008000] shrink-0 mt-0.5" />
+                              <IconCheck className="h-5 w-5 text-[#A020F0] shrink-0 mt-0.5" />
                               <span className="text-sm font-medium leading-normal">
                                 {item}
                               </span>
@@ -265,9 +265,9 @@ const ComingSoon = () => {
             className="lg:sticky lg:top-8 animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <Card className="border border-[#008000]/20 shadow-2xl shadow-[#008000]/5 bg-neutral-950/40 overflow-hidden">
+            <Card className="border border-[#A020F0]/20 shadow-2xl shadow-[#A020F0]/5 bg-neutral-950/40 overflow-hidden">
               <CardHeader className="space-y-1 pb-2">
-                <CardTitle className="text-2xl font-bold sora text-white">
+                <CardTitle className="text-2xl font-bold   text-white">
                   {t("coming_soon_section.waitlist.title")}
                 </CardTitle>
                 <CardDescription className="text-neutral-400">
@@ -288,7 +288,7 @@ const ComingSoon = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       disabled={loading}
-                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
+                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[ #A020F0]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.name_placeholder",
                       )}
@@ -308,7 +308,7 @@ const ComingSoon = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={loading}
-                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[#008000]/50"
+                      className="flex h-11 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-200 ring-offset-neutral-950 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:border-[ #A020F0]/50"
                       placeholder={t(
                         "coming_soon_section.waitlist.email_placeholder",
                       )}
@@ -321,7 +321,7 @@ const ComingSoon = () => {
                       size="lg"
                       type="submit"
                       disabled={loading}
-                      className="w-full font-bold text-md cursor-pointer bg-[#008000] hover:bg-[#006400] text-white shadow-lg shadow-[#008000]/20 transition-all border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full font-bold text-md cursor-pointer bg-[#A020F0] hover:bg-[#7C1BB0] text-white shadow-lg shadow-[#A020F0]/20 transition-all border-0 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <IconLoader className="mr-2 h-4 w-4 animate-spin" />

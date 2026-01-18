@@ -43,12 +43,12 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
 
   return (
     <Dialog>
-      <DialogTrigger className="w-full h-12 flex items-center nunito justify-center cursor-pointer bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg rounded-xl shadow-lg shadow-[#008000]/20 transition-all active:scale-[0.98]">
+      <DialogTrigger className="w-full h-12 flex items-center   justify-center cursor-pointer bg-[#A020F0] hover:bg-[#7C1BB0] text-white font-bold py-6 text-lg rounded-xl shadow-lg shadow-[#A020F0]/20 transition-all active:scale-[0.98]">
         {t("programs_page.enroll_now")}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-neutral-950 nunito md:max-w-[500px]! border-neutral-800 text-white p-0 overflow-hidden">
+      <DialogContent className="sm:max-w-md bg-neutral-950   md:max-w-[500px]! border-neutral-800 text-white p-0 overflow-hidden">
         <DialogHeader className="p-6 pb-2">
-          <DialogTitle className="text-2xl font-bold sora flex items-center gap-2">
+          <DialogTitle className="text-2xl font-bold   flex items-center gap-2">
             {t("location_dialog.title")}
           </DialogTitle>
           <DialogDescription className="text-neutral-400 text-base">
@@ -63,10 +63,10 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
         <div className="p-6 grid gap-4">
           <Button
             onClick={() => handleSelect("Africa")}
-            className="group flex items-center cursor-pointer justify-between p-4 h-24 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:border-[#008000]/50 hover:bg-[#008000]/5 transition-all text-left"
+            className="group flex items-center cursor-pointer justify-between p-4 h-24 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:border-[#A020F0]/50 hover:bg-[#A020F0]/5 transition-all text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-neutral-800 group-hover:border-[#008000]/30 transition-colors">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-neutral-800 group-hover:border-[#A020F0]/30 transition-colors">
                 <Image
                   src="/nigeria.webp"
                   alt="Nigeria"
@@ -75,7 +75,7 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
                 />
               </div>
               <div>
-                <h4 className="text-lg font-bold sora text-white text-wrap">
+                <h4 className="text-lg font-bold   text-white text-wrap">
                   {t("location_dialog.nigeria_title")}
                 </h4>
                 <p className="text-sm text-neutral-500 text-wrap">
@@ -83,15 +83,15 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
                 </p>
               </div>
             </div>
-            <IconChevronRight className="text-neutral-600 group-hover:text-[#008000] transition-colors" />
+            <IconChevronRight className="text-neutral-600 group-hover:text-[#A020F0] transition-colors" />
           </Button>
 
           <Button
             onClick={() => handleSelect("Europe")}
-            className="group flex items-center cursor-pointer justify-between p-4 h-24 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:border-[#008000]/50 hover:bg-[#008000]/5 transition-all text-left"
+            className="group flex items-center cursor-pointer justify-between p-4 h-24 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:border-[#A020F0]/50 hover:bg-[#A020F0]/5 transition-all text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-neutral-800 group-hover:border-[#008000]/30 transition-colors">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-neutral-800 group-hover:border-[#A020F0]/30 transition-colors">
                 <Image
                   src="/europe.png"
                   alt="Europe"
@@ -100,7 +100,7 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
                 />
               </div>
               <div>
-                <h4 className="text-lg font-bold sora text-white text-wrap">
+                <h4 className="text-lg font-bold   text-white text-wrap">
                   {t("location_dialog.europe_title")}
                 </h4>
                 <p className="text-sm text-neutral-500 text-wrap">
@@ -108,7 +108,7 @@ const LocationDialog = ({ courseId, programTitle }: LocationDialogProps) => {
                 </p>
               </div>
             </div>
-            <IconChevronRight className="text-neutral-600 group-hover:text-[#008000] transition-colors" />
+            <IconChevronRight className="text-neutral-600 group-hover:text-[#A020F0] transition-colors" />
           </Button>
         </div>
 

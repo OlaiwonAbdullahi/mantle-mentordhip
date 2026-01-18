@@ -98,7 +98,7 @@ const RegistrationForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value, type } = e.target;
     if (type === "radio") {
@@ -129,7 +129,7 @@ const RegistrationForm = () => {
   const fetchCourseDetails = async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseIdParam}`
+        `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseIdParam}`,
       );
       const data = await res.json();
       console.log(data);
@@ -175,7 +175,7 @@ const RegistrationForm = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
-          }
+          },
         );
         const enrollData = await enrollRes.json();
         console.log(enrollData);
@@ -195,7 +195,7 @@ const RegistrationForm = () => {
               customerEmail: formData.email,
               customerPhone: formData.phone,
             }),
-          }
+          },
         );
         const paymentData = await paymentRes.json();
         console.log(paymentData);
@@ -222,14 +222,14 @@ const RegistrationForm = () => {
           {
             method: "POST",
             body: formDataPayload,
-          }
+          },
         );
         const enrollData = await enrollRes.json();
 
         if (enrollData.success) {
           toast.success("Application submitted successfully!");
           router.push(
-            `/${locale}/payment/callback?status=success&method=manual`
+            `/${locale}/payment/callback?status=success&method=manual`,
           );
         } else {
           throw new Error(enrollData.message || "Enrollment failed");
@@ -244,11 +244,11 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 max-w-4xl nunito">
+    <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 max-w-4xl  ">
       <div className="mb-8 text-center animate-fade-in-up">
-        <h1 className="text-3xl font-bold tracking-tighter md:text-5xl text-white sora mb-4">
+        <h1 className="text-3xl font-bold tracking-tighter md:text-5xl text-white   mb-4">
           {t("registration_page.title")}{" "}
-          <span className="text-[#008000]">
+          <span className="text-[#A020F0]">
             {t("registration_page.title_brand")}
           </span>
         </h1>
@@ -257,16 +257,16 @@ const RegistrationForm = () => {
         </p>
       </div>
 
-      <Card className="relative border border-[#008000]/20 shadow-2xl shadow-[#008000]/5 bg-neutral-950/40 animate-fade-in-up md:p-6">
+      <Card className="relative border border-[#A020F0]/20 shadow-2xl shadow-[#A020F0]/5 bg-neutral-950/40 animate-fade-in-up md:p-6">
         <div className="absolute -top-6 -right-2 md:-right-4 z-30 group">
-          <div className="relative overflow-hidden px-8 py-4 rounded-3xl bg-neutral-900 border border-[#008000]/40 shadow-[0_20px_40px_-15px_rgba(0,128,0,0.1)] transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-            <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-[#008000]/10 blur-[60px] rounded-full pointer-events-none" />
+          <div className="relative overflow-hidden px-8 py-4 rounded-3xl bg-neutral-900 border border-[#A020F0]/40 shadow-[0_20px_40px_-15px_rgba(160,32,240,0.1)] transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+            <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-[#A020F0]/10 blur-[60px] rounded-full pointer-events-none" />
 
             <div className="relative flex flex-col items-center">
-              <span className="text-[10px] font-black uppercase tracking-[3px] text-[#008000] mb-1">
+              <span className="text-[10px] font-black uppercase tracking-[3px] text-[#A020F0] mb-1">
                 price
               </span>
-              <span className="text-2xl font-black text-white sora tracking-tight">
+              <span className="text-2xl font-black text-white   tracking-tight">
                 {courseDetails
                   ? formData.location === "Africa"
                     ? `₦${courseDetails.price_in_ngn.toLocaleString()}`
@@ -279,8 +279,8 @@ const RegistrationForm = () => {
           </div>
         </div>
         <CardHeader className="space-y-1 pb-6 border-b border-neutral-800">
-          <CardTitle className="text-xl md:text-2xl font-bold sora text-white flex items-center gap-2">
-            <IconTarget className="text-[#008000] fill-current/10" />
+          <CardTitle className="text-xl md:text-2xl font-bold   text-white flex items-center gap-2">
+            <IconTarget className="text-[#A020F0] fill-current/10" />
             {t("registration_page.form_card_title")}
           </CardTitle>
           <CardDescription className="text-neutral-400">
@@ -292,21 +292,21 @@ const RegistrationForm = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconUser size={16} className="text-[#008000]" />{" "}
+                  <IconUser size={16} className="text-[#A020F0]" />{" "}
                   {t("registration_page.labels.full_name")}
                 </label>
                 <input
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors"
                   placeholder={t("registration_page.placeholders.full_name")}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconMail size={16} className="text-[#008000]" />{" "}
+                  <IconMail size={16} className="text-[#A020F0]" />{" "}
                   {t("registration_page.labels.email")}
                 </label>
                 <input
@@ -314,28 +314,28 @@ const RegistrationForm = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A020F0] transition-colors"
                   placeholder={t("registration_page.placeholders.email")}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconPhone size={16} className="text-[#008000]" />{" "}
+                  <IconPhone size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.labels.phone")}
                 </label>
                 <input
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors"
                   placeholder={t("registration_page.placeholders.phone")}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconMapPin size={16} className="text-[#008000]" />{" "}
+                  <IconMapPin size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.labels.country")}
                 </label>
                 <select
@@ -349,7 +349,7 @@ const RegistrationForm = () => {
                       paymentMethod: val === "Africa" ? "paystack" : "manual",
                     }));
                   }}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors appearance-none"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors appearance-none"
                   required
                 >
                   <option value="Africa">Africa</option>
@@ -358,14 +358,14 @@ const RegistrationForm = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconCertificate size={16} className="text-[#008000]" />{" "}
+                  <IconCertificate size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.labels.education")}
                 </label>
                 <select
                   name="educationLevel"
                   value={formData.educationLevel}
                   onChange={handleChange}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors appearance-none"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors appearance-none"
                   required
                 >
                   <option value="" disabled>
@@ -380,14 +380,14 @@ const RegistrationForm = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconBrandLinkedin size={16} className="text-[#008000]" />{" "}
+                  <IconBrandLinkedin size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.labels.linkedin")}
                 </label>
                 <input
                   name="linkedInProfile"
                   value={formData.linkedInProfile}
                   onChange={handleChange}
-                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors"
+                  className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors"
                   placeholder={t("registration_page.placeholders.linkedin")}
                 />
               </div>
@@ -395,14 +395,14 @@ const RegistrationForm = () => {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                <IconSchool size={16} className="text-[#008000]" />{" "}
+                <IconSchool size={16} className="text-[ #A020F0]" />{" "}
                 {t("registration_page.questions.program_interest")}
               </label>
               <select
                 name="serviceOffering"
                 value={formData.serviceOffering}
                 onChange={handleChange}
-                className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors appearance-none"
+                className="flex h-12 w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors appearance-none"
                 required
                 disabled
               >
@@ -418,7 +418,7 @@ const RegistrationForm = () => {
             <div className="space-y-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconHelp size={16} className="text-[#008000]" />{" "}
+                  <IconHelp size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.questions.why_participate")}
                 </label>
                 <textarea
@@ -426,14 +426,14 @@ const RegistrationForm = () => {
                   value={formData.motivation}
                   onChange={handleChange}
                   rows={3}
-                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors resize-none"
+                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors resize-none"
                   placeholder={t("registration_page.placeholders.motivation")}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconTarget size={16} className="text-[#008000]" />{" "}
+                  <IconTarget size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.questions.expectations")}
                 </label>
                 <textarea
@@ -441,7 +441,7 @@ const RegistrationForm = () => {
                   value={formData.expectedOutcomes}
                   onChange={handleChange}
                   rows={3}
-                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors resize-none"
+                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors resize-none"
                   placeholder={t("registration_page.placeholders.expectations")}
                   required
                 />
@@ -450,7 +450,7 @@ const RegistrationForm = () => {
 
             <div className="p-4 rounded-xl border border-neutral-800 bg-neutral-900/20 space-y-6">
               <h3 className="text-lg font-semibold text-white flex items-center gap-2 border-b border-neutral-800 pb-2">
-                <IconCalendar size={18} className="text-[#008000]" />{" "}
+                <IconCalendar size={18} className="text-[#A020F0]" />{" "}
                 {t("registration_page.general_program_details")}
               </h3>
 
@@ -466,7 +466,7 @@ const RegistrationForm = () => {
                       value="Yes"
                       checked={formData.willingToAttendNext === true}
                       onChange={handleChange}
-                      className="accent-[#008000] w-4 h-4"
+                      className="accent-[ #A020F0] w-4 h-4"
                     />{" "}
                     {t("registration_page.yes")}
                   </label>
@@ -477,7 +477,7 @@ const RegistrationForm = () => {
                       value="No"
                       checked={formData.willingToAttendNext === false}
                       onChange={handleChange}
-                      className="accent-[#008000] w-4 h-4"
+                      className="accent-[ #A020F0] w-4 h-4"
                     />{" "}
                     {t("registration_page.no")}
                   </label>
@@ -491,7 +491,7 @@ const RegistrationForm = () => {
                       {t("registration_page.questions.fee_willingness")}
                     </label>
                     <div className="bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs text-neutral-500 font-mono">
-                      <p className="mb-1 uppercase tracking-widest text-[#008000] font-bold">
+                      <p className="mb-1 uppercase tracking-widest text-[ #A020F0] font-bold">
                         {t("registration_page.bank_details.title")}
                       </p>
                       <div className="flex justify-between">
@@ -521,7 +521,7 @@ const RegistrationForm = () => {
                           value="Yes"
                           checked={formData.feeCommitment === true}
                           onChange={handleChange}
-                          className="accent-[#008000] w-4 h-4"
+                          className="accent-[ #A020F0] w-4 h-4"
                           required
                         />{" "}
                         {t("registration_page.yes")}
@@ -533,7 +533,7 @@ const RegistrationForm = () => {
                           value="No"
                           checked={formData.feeCommitment === false}
                           onChange={handleChange}
-                          className="accent-[#008000] w-4 h-4"
+                          className="accent-[ #A020F0] w-4 h-4"
                         />{" "}
                         {t("registration_page.no")}
                       </label>
@@ -542,7 +542,7 @@ const RegistrationForm = () => {
 
                   <div className="space-y-3">
                     <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                      <IconUpload size={16} className="text-[#008000]" />{" "}
+                      <IconUpload size={16} className="text-[ #A020F0]" />{" "}
                       {t("registration_page.upload.label")}
                     </label>
                     <div
@@ -551,8 +551,8 @@ const RegistrationForm = () => {
                       }
                       className={`relative group cursor-pointer border-2 border-dashed rounded-xl p-8 transition-all duration-300 flex flex-col items-center justify-center gap-3 ${
                         formData.receipt
-                          ? "border-[#008000] bg-[#008000]/5"
-                          : "border-neutral-800 bg-neutral-900/40 hover:border-[#008000]/50"
+                          ? "border-[ #A020F0] bg-[ #A020F0]/5"
+                          : "border-neutral-800 bg-neutral-900/40 hover:border-[ #A020F0]/50"
                       }`}
                     >
                       <input
@@ -564,7 +564,7 @@ const RegistrationForm = () => {
                       />
                       {formData.receipt ? (
                         <div className="flex flex-col items-center gap-2 text-center">
-                          <IconFileText size={28} className="text-[#008000]" />
+                          <IconFileText size={28} className="text-[ #A020F0]" />
                           <p className="text-sm font-semibold text-white truncate max-w-[250px]">
                             {formData.receiptName}
                           </p>
@@ -580,10 +580,10 @@ const RegistrationForm = () => {
                         <>
                           <IconUpload
                             size={32}
-                            className="text-neutral-400 group-hover:text-[#008000]"
+                            className="text-neutral-400 group-hover:text-[ #A020F0]"
                           />
                           <div className="text-center">
-                            <p className="text-sm font-semibold text-white group-hover:text-[#008000]">
+                            <p className="text-sm font-semibold text-white group-hover:text-[ #A020F0]">
                               {t("registration_page.upload.hint")}
                             </p>
                             <p className="text-xs text-neutral-500 mt-1">
@@ -601,7 +601,7 @@ const RegistrationForm = () => {
             <div className="grid gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-start gap-2">
-                  <IconTarget size={16} className="text-[#008000] mt-1" />{" "}
+                  <IconTarget size={16} className="text-[ #A020F0] mt-1" />{" "}
                   <span>{t("registration_page.questions.challenge")}</span>
                 </label>
                 <textarea
@@ -609,16 +609,16 @@ const RegistrationForm = () => {
                   value={formData.challenges}
                   onChange={handleChange}
                   rows={3}
-                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors resize-none"
+                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors resize-none"
                   placeholder={t(
-                    "registration_page.placeholders.generic_answer"
+                    "registration_page.placeholders.generic_answer",
                   )}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-start gap-2">
-                  <IconTarget size={16} className="text-[#008000] mt-1" />{" "}
+                  <IconTarget size={16} className="text-[ #A020F0] mt-1" />{" "}
                   <span>
                     {t("registration_page.questions.success_metrics")}
                   </span>
@@ -628,16 +628,16 @@ const RegistrationForm = () => {
                   value={formData.successMeasurement}
                   onChange={handleChange}
                   rows={3}
-                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors resize-none"
+                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors resize-none"
                   placeholder={t(
-                    "registration_page.placeholders.generic_answer"
+                    "registration_page.placeholders.generic_answer",
                   )}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-300 flex items-center gap-2">
-                  <IconMessage size={16} className="text-[#008000]" />{" "}
+                  <IconMessage size={16} className="text-[ #A020F0]" />{" "}
                   {t("registration_page.questions.comments")}
                 </label>
                 <textarea
@@ -645,7 +645,7 @@ const RegistrationForm = () => {
                   value={formData.furtherQuestions}
                   onChange={handleChange}
                   rows={2}
-                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#008000] transition-colors resize-none"
+                  className="flex w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3 py-2 text-neutral-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[ #A020F0] transition-colors resize-none"
                   placeholder={t("registration_page.placeholders.optional")}
                 />
               </div>
@@ -655,7 +655,7 @@ const RegistrationForm = () => {
               <Button
                 disabled={isSubmitting}
                 size="lg"
-                className="w-full bg-[#008000] hover:bg-[#006400] text-white font-bold h-12 text-lg shadow-lg shadow-[#008000]/20 rounded-xl"
+                className="w-full bg-[ #A020F0] hover:bg-[#006400] text-white font-bold h-12 text-lg shadow-lg shadow-[ #A020F0]/20 rounded-xl"
               >
                 {isSubmitting ? (
                   <IconLoader2 className="mr-2 h-5 w-5 animate-spin" />
@@ -667,8 +667,8 @@ const RegistrationForm = () => {
                 {isSubmitting
                   ? "Processing..."
                   : formData.location === "Europe"
-                  ? t("registration_page.submit")
-                  : `Pay ₦${courseDetails?.price_in_ngn.toLocaleString()} and Submit `}
+                    ? t("registration_page.submit")
+                    : `Pay ₦${courseDetails?.price_in_ngn.toLocaleString()} and Submit `}
               </Button>
             </div>
           </form>
@@ -683,7 +683,7 @@ const Page = () => {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-neutral-950 flex items-center justify-center text-[#008000]">
+        <div className="min-h-screen bg-neutral-950 flex items-center justify-center text-[ #A020F0]">
           {t("registration_page.loading")}
         </div>
       }

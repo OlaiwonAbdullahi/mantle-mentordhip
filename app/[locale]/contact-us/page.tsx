@@ -71,12 +71,12 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 nunito">
+    <div className="min-h-screen pt-24 pb-12  ">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl sora">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl  ">
             {t("contact_us_page.title_contact")}{" "}
-            <span className="text-[#008000]">
+            <span className="text-[#A020F0]">
               {t("contact_us_page.title_us")}
             </span>
           </h1>
@@ -88,7 +88,7 @@ const ContactUs = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
           {/* Contact Form */}
           <div className="space-y-8 rounded-2xl bg-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
-            <h2 className="text-2xl font-bold text-white sora">
+            <h2 className="text-2xl font-bold text-white  ">
               {t("contact_us_page.send_message")}
             </h2>
             <form className="space-y-6" onSubmit={handleSend}>
@@ -101,7 +101,7 @@ const ContactUs = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600"
                 />
               </div>
               <div className="space-y-2">
@@ -113,7 +113,7 @@ const ContactUs = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="john@example.com"
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600"
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600"
                 />
               </div>
               <div className="space-y-2">
@@ -126,13 +126,13 @@ const ContactUs = () => {
                   placeholder="How can we help you?"
                   minLength={10}
                   rows={5}
-                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[#008000] focus:ring-1 focus:ring-[#008000] transition-all placeholder:text-neutral-600 resize-none"
+                  className="w-full rounded-xl bg-neutral-900/50 px-4 py-3 text-sm font-medium text-neutral-200 outline-none border border-neutral-800 focus:border-[ #A020F0] focus:ring-1 focus:ring-[ #A020F0] transition-all placeholder:text-neutral-600 resize-none"
                 />
               </div>
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-[#008000] hover:bg-[#006400] text-white font-bold py-6 text-lg shadow-lg shadow-[#008000]/20 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-xl bg-[#A020F0] hover:bg-[#A020F0]/90 text-white font-bold py-6 text-lg shadow-lg shadow-[ #A020F0]/20 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
@@ -147,7 +147,7 @@ const ContactUs = () => {
                 <div
                   className={`mt-4 rounded-xl p-4 text-center text-sm font-medium ${
                     status.type === "success"
-                      ? "bg-green-500/10 text-green-500 border border-green-500/20"
+                      ? "bg-green-500/10 text-purple-500 border border-green-500/20"
                       : "bg-red-500/10 text-red-500 border border-red-500/20"
                   }`}
                 >
@@ -160,13 +160,13 @@ const ContactUs = () => {
           {/* Contact Details */}
           <div className="space-y-10 lg:py-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-white sora">
+              <h2 className="text-2xl font-bold text-white  ">
                 {t("contact_us_page.contact_details")}
               </h2>
               <p className="text-neutral-400 leading-relaxed">
                 {t("contact_us_page.details_text")} <br />
                 {t("contact_us_page.response_time")}{" "}
-                <span className="text-[#008000] font-bold">
+                <span className="text-[#A020F0] font-bold">
                   {t("contact_us_page.response_time_val")}
                 </span>
                 .
@@ -175,7 +175,7 @@ const ContactUs = () => {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-[#008000]/10 p-3 text-[#008000]">
+                <div className="rounded-full bg-[#A020F0]/10 p-3 text-[#A020F0]">
                   <IconMail size={24} />
                 </div>
                 <div>
@@ -184,7 +184,7 @@ const ContactUs = () => {
                   </h3>
                   <a
                     href="mailto:info@mantlementor.com"
-                    className="text-neutral-400 hover:text-[#008000] transition-colors"
+                    className="text-neutral-400 hover:text-[#A020F0] transition-colors"
                   >
                     info@mantlementor.com
                   </a>
@@ -192,7 +192,7 @@ const ContactUs = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-[#008000]/10 p-3 text-[#008000]">
+                <div className="rounded-full bg-[#A020F0]/10 p-3 text-[#A020F0]">
                   <IconPhone size={24} />
                 </div>
                 <div className="space-y-2">
@@ -218,7 +218,7 @@ const ContactUs = () => {
             </div>
 
             <div className="space-y-6 pt-6 border-t border-neutral-800">
-              <h3 className="font-bold text-white text-lg sora">
+              <h3 className="font-bold text-white text-lg  ">
                 {t("contact_us_page.social_media")}
               </h3>
               <div className="flex gap-4">
@@ -263,7 +263,7 @@ const ContactUs = () => {
                 fill
                 className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#008000]/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#A020F0]/20 to-transparent" />
             </div>
           </div>
         </div>

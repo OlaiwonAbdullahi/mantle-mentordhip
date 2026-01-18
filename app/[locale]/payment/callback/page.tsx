@@ -58,25 +58,25 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
       animate={{ opacity: 1, y: 0 }}
       className="w-full max-w-2xl mx-auto"
     >
-      <div className="relative bg-neutral-950 border border-[#008000]/30 rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative bg-neutral-950 border border-[ #A020F0]/30 rounded-3xl overflow-hidden shadow-2xl">
         {/* Glow effect */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-[#008000] to-transparent opacity-50" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-[ #A020F0] to-transparent opacity-50" />
 
         <div className="p-8 md:p-10 space-y-8">
           {/* Header */}
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="p-4 bg-[#008000]/10 rounded-full">
+            <div className="p-4 bg-[ #A020F0]/10 rounded-full">
               <IconSquareRoundedCheck
                 size={48}
-                className="text-[#008000]"
+                className="text-[#A020F0]"
                 stroke={1.5}
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white sora uppercase tracking-tight">
+              <h2 className="text-3xl font-bold text-white   uppercase tracking-tight">
                 Registration Successful
               </h2>
-              <p className="text-neutral-400 nunito">
+              <p className="text-neutral-400  ">
                 Your spot in the program has been secured.
               </p>
             </div>
@@ -88,7 +88,7 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
               {/* Left Column */}
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[#008000] uppercase tracking-[0.2em] nunito">
+                  <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
                     Student Details
                   </p>
                   <div className="flex items-center gap-3 text-white">
@@ -106,7 +106,7 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
                 </div>
 
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[#008000] uppercase tracking-[0.2em] nunito">
+                  <p className="text-[10px] font-bold text-[#A020F0] uppercase tracking-[0.2em]  ">
                     Program
                   </p>
                   <div className="flex items-start gap-3 text-white">
@@ -124,12 +124,12 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
               {/* Right Column */}
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <p className="text-[10px] font-bold text-[#008000] uppercase tracking-[0.2em] nunito">
+                  <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
                     Transaction Info
                   </p>
                   <div className="flex items-center justify-between text-sm py-1 border-b border-neutral-800/50">
                     <span className="text-neutral-500">Status</span>
-                    <span className="text-[#008000] font-bold uppercase text-[10px] bg-[#008000]/10 px-2 py-0.5 rounded-full">
+                    <span className="text-[ #A020F0] font-bold uppercase text-[10px] bg-[ #A020F0]/10 px-2 py-0.5 rounded-full">
                       {data.status}
                     </span>
                   </div>
@@ -149,7 +149,7 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
 
                 {data.paystackReference && (
                   <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-[#008000] uppercase tracking-[0.2em] nunito">
+                    <p className="text-[10px] font-bold text-[ #A020F0] uppercase tracking-[0.2em]  ">
                       Reference
                     </p>
                     <div
@@ -161,7 +161,7 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
                       </span>
                       <IconCopy
                         size={14}
-                        className="text-neutral-600 group-hover:text-[#008000]"
+                        className="text-neutral-600 group-hover:text-[ #A020F0]"
                       />
                     </div>
                   </div>
@@ -172,7 +172,7 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
             {/* Questions Section */}
             {data.furtherQuestions && (
               <div className="p-4 bg-neutral-900/30 rounded-2xl border border-neutral-800/50 space-y-2">
-                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em] nunito">
+                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-[0.2em]  ">
                   Additional Comments
                 </p>
                 <p className="text-neutral-300 text-sm italic">
@@ -194,11 +194,11 @@ const SuccessReceipt = ({ data }: { data: EnrollmentData }) => {
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#008000]/5 blur-3xl rounded-full" />
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#008000]/5 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-[ #A020F0]/5 blur-3xl rounded-full" />
+        <div className="absolute top-0 left-0 w-32 h-32 bg-[ #A020F0]/5 blur-3xl rounded-full" />
       </div>
 
-      <p className="text-center text-neutral-500 text-xs mt-6 nunito">
+      <p className="text-center text-neutral-500 text-xs mt-6  ">
         A confirmation email has been sent to{" "}
         <span className="text-neutral-300">{data.email}</span>. Please check
         your inbox (and spam folder) for further instructions.
@@ -218,7 +218,7 @@ const CallbackContent = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [enrollmentData, setEnrollmentData] = useState<EnrollmentData | null>(
-    null
+    null,
   );
 
   useEffect(() => {
@@ -242,7 +242,7 @@ const CallbackContent = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ reference }),
-          }
+          },
         );
         const data = await response.json();
         console.log("Verification response:", data);
@@ -268,7 +268,7 @@ const CallbackContent = () => {
   }, [reference, method, status]);
 
   return (
-    <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[70vh] nunito">
+    <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[70vh]  ">
       <AnimatePresence mode="wait">
         {isVerifying ? (
           <motion.div
@@ -276,14 +276,14 @@ const CallbackContent = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[#008000]/20 bg-neutral-950 shadow-2xl"
+            className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[ #A020F0]/20 bg-neutral-950 shadow-2xl"
           >
             <div className="space-y-4">
               <IconLoader
                 size={64}
-                className="text-[#008000] animate-spin mx-auto"
+                className="text-[ #A020F0] animate-spin mx-auto"
               />
-              <h2 className="text-2xl font-bold text-white sora">
+              <h2 className="text-2xl font-bold text-white  ">
                 Verifying Payment...
               </h2>
               <p className="text-neutral-400">
@@ -299,13 +299,13 @@ const CallbackContent = () => {
               key="generic-success"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[#008000]/20 bg-neutral-950 shadow-2xl"
+              className="text-center space-y-6 max-w-md w-full p-8 rounded-3xl border border-[ #A020F0]/20 bg-neutral-950 shadow-2xl"
             >
               <div className="space-y-4">
-                <div className="p-4 bg-[#008000]/10 rounded-full w-fit mx-auto">
-                  <IconCircleCheck size={64} className="text-[#008000]" />
+                <div className="p-4 bg-[ #A020F0]/10 rounded-full w-fit mx-auto">
+                  <IconCircleCheck size={64} className="text-[ #A020F0]" />
                 </div>
-                <h2 className="text-3xl font-bold text-white sora">
+                <h2 className="text-3xl font-bold text-white  ">
                   Application Received!
                 </h2>
                 <p className="text-neutral-400">
@@ -315,7 +315,7 @@ const CallbackContent = () => {
                 </p>
                 <Button
                   onClick={() => router.push("/")}
-                  className="w-full bg-[#008000] hover:bg-[#006400] text-white font-bold h-12 rounded-xl transition-all"
+                  className="w-full bg-[ #A020F0] hover:bg-[#006400] text-white font-bold h-12 rounded-xl transition-all"
                 >
                   Return Home
                 </Button>
@@ -333,7 +333,7 @@ const CallbackContent = () => {
               <div className="p-4 bg-red-500/10 rounded-full w-fit mx-auto">
                 <IconX size={64} className="text-red-500" />
               </div>
-              <h2 className="text-3xl font-bold text-white sora">
+              <h2 className="text-3xl font-bold text-white  ">
                 Verification Failed
               </h2>
               <p className="text-neutral-400">
@@ -359,7 +359,7 @@ const Page = () => {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-neutral-950 flex items-center justify-center text-[#008000]">
+        <div className="min-h-screen bg-neutral-950 flex items-center justify-center text-[ #A020F0]">
           <IconLoader className="animate-spin mr-2" />
           {t("loading", "Loading...")}
         </div>

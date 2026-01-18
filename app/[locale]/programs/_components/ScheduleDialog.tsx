@@ -61,7 +61,7 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
         setError(null);
         try {
           const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/schedules/courses/${courseId}`
+            `${process.env.NEXT_PUBLIC_API_URL}/schedules/courses/${courseId}`,
           );
           const json = await response.json();
           if (json.success) {
@@ -91,21 +91,21 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="w-full h-12 rounded-xl bg-transparent border-[#008000] text-[#008000] text-lg hover:bg-[#008000]/20 hover:text-[#008000]"
+          className="w-full h-12 rounded-xl bg-transparent border-[#A020F0] text-[#A020F0] text-lg hover:bg-[#A020F0]/20 hover:text-[#A020F0]"
         >
           {t("programs_page.view_schedule", "View Program Schedule")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl bg-neutral-950 nunito md:max-w-[700px] border-neutral-800 text-white p-0 overflow-hidden scrollbar-hide">
+      <DialogContent className="sm:max-w-2xl bg-neutral-950   md:max-w-[700px] border-neutral-800 text-white p-0 overflow-hidden scrollbar-hide">
         <DialogHeader className="p-6 pb-2 border-b border-neutral-800">
-          <DialogTitle className="text-2xl font-bold sora flex items-center gap-2">
-            <IconCalendar className="text-[#008000]" />
+          <DialogTitle className="text-2xl font-bold   flex items-center gap-2">
+            <IconCalendar className="text-[#A020F0]" />
             {t("schedule_dialog.title", "Program Schedule")}
           </DialogTitle>
           <DialogDescription className="text-neutral-400 text-base">
             {t(
               "schedule_dialog.description",
-              "Weekly breakdown of upcoming sessions for"
+              "Weekly breakdown of upcoming sessions for",
             )}{" "}
             <span className="text-white font-medium italic">
               {programTitle}
@@ -116,7 +116,7 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
         <div className="max-h-[60vh] overflow-y-auto p-6 scrollbar-hide">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20">
-              <IconLoader className="w-10 h-10 text-[#008000] animate-spin mb-4" />
+              <IconLoader className="w-10 h-10 text-[#A020F0] animate-spin mb-4" />
               <p className="text-neutral-400">Loading schedule...</p>
             </div>
           ) : error ? (
@@ -127,7 +127,7 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
               <p className="text-red-500 font-medium">{error}</p>
               <Button
                 variant="ghost"
-                className="mt-4 text-[#008000] hover:bg-[#008000]/10"
+                className="mt-4 text-[#A020F0] hover:bg-[#A020F0]/10"
                 onClick={() => setIsOpen(false)}
               >
                 Close
@@ -147,20 +147,20 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
                   key={schedule._id}
                   className="relative scrollbar-hide pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-neutral-800 last:before:bottom-auto last:before:h-8"
                 >
-                  <div className="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#008000] shadow-[0_0_8px_rgba(0,128,0,0.5)]" />
+                  <div className="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-[#A020F0] shadow-[0_0_8px_rgba(160,32,240,0.5)]" />
 
-                  <div className="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 hover:border-[#008000]/30 transition-all group">
+                  <div className="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 hover:border-[#A020F0]/30 transition-all group">
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
                       <div className="flex items-center gap-3">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#008000]/10 text-[#008000] text-xs font-bold uppercase tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#A020F0]/10 text-[#A020F0] text-xs font-bold uppercase tracking-wider">
                           Week {schedule.week}
                         </span>
-                        <h4 className="text-lg font-bold sora text-white group-hover:text-[#008000] transition-colors">
+                        <h4 className="text-lg font-bold   text-white group-hover:text-[#A020F0] transition-colors">
                           {schedule.title}
                         </h4>
                       </div>
                       <div className="flex items-center gap-2 text-neutral-400 text-sm">
-                        <IconClock size={16} className="text-[#008000]" />
+                        <IconClock size={16} className="text-[#A020F0]" />
                         {schedule.date ? formatDate(schedule.date) : "TBD"}
                       </div>
                     </div>
@@ -189,7 +189,7 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
 
         <div className="bg-neutral-900/50 p-4 border-t border-neutral-800 flex justify-end">
           <Button
-            className="bg-[#008000] hover:bg-[#006400] text-white rounded-xl px-6"
+            className="bg-[#A020F0] hover:bg-[#7C1BB0] text-white rounded-xl px-6"
             onClick={() => setIsOpen(false)}
           >
             Close

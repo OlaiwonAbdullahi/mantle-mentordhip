@@ -53,25 +53,32 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="sticky top-0 z-50 md:p-5 p-2 bg-transparent nunito">
+      <nav className="sticky top-0 z-50 md:p-5 p-2 bg-transparent  ">
         <div className="mx-auto flex max-w-7xl items-center justify-between md:px-6 px-2 md:py-4 py-2">
           <div className="flex items-center gap-3">
             <Link href={`/${currentLocale}`}>
-              <Image src="/mantleLogo.png" alt="logo" width={75} height={75} />
+              <Image src="/logo.svg" alt="logo" width={200} height={200} />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-10 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-md text-neutral-300 hover:text-neutral-100 transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-md transition-colors ${
+                    isActive
+                      ? "text-[#A020F0] font-semibold border-b-2 border-[#A020F0]"
+                      : "text-neutral-500 hover:text-neutral-400"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-4">
@@ -94,7 +101,7 @@ const Navbar = () => {
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang)}
-                    className="cursor-pointer text-neutral-300 nunito focus:bg-neutral-800 focus:text-neutral-100"
+                    className="cursor-pointer text-neutral-300   focus:bg-neutral-800 focus:text-neutral-100"
                   >
                     <div className="flex items-center gap-2">
                       <Image
@@ -114,11 +121,11 @@ const Navbar = () => {
             <Link href={`/${currentLocale}/programs`}>
               <Button
                 size="lg"
-                className="hidden lg:flex rounded-full font-bold bg-[#008000] hover:bg-transparent hover:text-neutral-300 hover:border hover:border-[#008000] cursor-pointer p-3 shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+                className="hidden lg:flex rounded-full font-bold bg-[#A020F0] hover:bg-transparent hover:text-neutral-300 hover:border hover:border-[#A020F0] cursor-pointer p-3 shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
               >
                 <span>{t("navbar.get_started")}</span>
                 <div className="p-1.5 rounded-full bg-white">
-                  <IconArrowUpRight color="#008000" />
+                  <IconArrowUpRight color="#A020F0" />
                 </div>
               </Button>
             </Link>
@@ -137,23 +144,30 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-black/95 lg:hidden flex flex-col p-6 animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between mb-8">
-              <Image src="/mantleLogo.png" alt="logo" width={60} height={60} />
+              <Image src="/logo.svg" alt="logo" width={60} height={60} />
               <div className="cursor-pointer" onClick={toggleMobileMenu}>
                 <IconX color="#ffffff" size={32} />
               </div>
             </div>
 
             <div className="flex flex-col gap-8 items-center text-center">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-2xl font-bold text-neutral-300 hover:text-[#008000] transition-colors"
-                  onClick={toggleMobileMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`text-2xl font-bold transition-colors ${
+                      isActive
+                        ? "text-black border-b-2 border-black"
+                        : "text-neutral-600 hover:text-black"
+                    }`}
+                    onClick={toggleMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
 
               <Link
                 href={`/${currentLocale}/programs`}

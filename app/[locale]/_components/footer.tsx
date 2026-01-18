@@ -16,20 +16,12 @@ const Footer = () => {
   const { t, i18n } = useTranslation();
   return (
     <div>
-      <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20 nunito">
+      <footer className="border-t border-neutral-600 pt-16 pb-16 bg-black/20  ">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 mb-16 lg:mb-24">
             <div className="w-full lg:w-1/3 space-y-8">
               <div className="flex items-center gap-3">
-                <Image
-                  src="/mantleLogo.png"
-                  alt="logo"
-                  width={75}
-                  height={75}
-                />
-                <span className="text-2xl text-neutral-300 sora tracking-tight font-bold">
-                  The Mantle Mentorship Program
-                </span>
+                <Image src="/logo.svg" alt="logo" width={200} height={200} />
               </div>
               <p className="text-neutral-400 font-medium leading-relaxed">
                 {t("hero.subtitle")}
@@ -58,7 +50,7 @@ const Footer = () => {
                     <Button
                       size="icon"
                       variant="outline"
-                      className="rounded-full border-neutral-700 hover:bg-[#008000] hover:text-white hover:border-[#008000] transition-all bg-transparent text-neutral-400"
+                      className="rounded-full border-neutral-700 hover:bg-[#A020F0] hover:text-white hover:border-[#A020F0] transition-all bg-transparent text-neutral-400"
                     >
                       <Icon className="h-5 w-5" />
                     </Button>
@@ -80,7 +72,7 @@ const Footer = () => {
                   <li key={item.href}>
                     <a
                       href={`/${i18n.language}/${item.href}`}
-                      className="hover:text-[#008000] transition-colors uppercase italic font-bold"
+                      className="hover:text-[#A020F0] transition-colors uppercase italic font-bold"
                     >
                       {item.label}
                     </a>
@@ -97,14 +89,14 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="email@address.com"
-                  className="flex-1 rounded-full bg-neutral-900/50 px-4 text-sm font-bold outline-none border border-neutral-800 focus:border-[#008000]/50 text-neutral-300 transition-all placeholder:text-neutral-600"
+                  className="flex-1 rounded-full bg-neutral-900/50 px-4 text-sm font-bold outline-none border border-neutral-800 focus:border-[#A020F0]/50 text-neutral-300 transition-all placeholder:text-neutral-600"
                 />
-                <Button className="rounded-full font-black italic uppercase px-6 bg-[#008000] hover:bg-[#006400] text-white">
+                <Button className="rounded-full font-black italic uppercase px-6 bg-[#A020F0] hover:bg-[#7C1BB0] text-white">
                   Join
                 </Button>
               </div>
               <Link href="https://mantle-mentorship-admin.vercel.app/">
-                <Button className="bg-[#008000] hover:bg-[#006400]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
+                <Button className="bg-[#A020F0] hover:bg-[#7C1BB0]/80 cursor-pointer text-xs uppercase tracking-[0.2em] text-neutral-200 italic font-bold">
                   Log in as Admin
                 </Button>
               </Link>
@@ -116,10 +108,10 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} {t("footer.copyright")}
             </p>
             <div className="flex gap-12 italic">
-              <a href="#" className="hover:text-[#008000] transition-colors">
+              <a href="#" className="hover:text-[#A020F0] transition-colors">
                 {t("footer.privacy_policy")}
               </a>
-              <a href="#" className="hover:text-[#008000] transition-colors">
+              <a href="#" className="hover:text-[#A020F0] transition-colors">
                 {t("footer.terms_of_service")}
               </a>
             </div>

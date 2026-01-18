@@ -60,10 +60,10 @@ const ProgramCard = ({
 
   return (
     <Card
-      className={`relative w-full overflow-hidden transition-all duration-300 max-w-2xl bg-neutral-950/40 border-[#008000]/20 shadow-lg shadow-[#008000]/10 hover:shadow-[#008000]/20`}
+      className={`relative w-full overflow-hidden transition-all duration-300 max-w-2xl bg-neutral-950/40 border-[#A020F0]/20 shadow-lg shadow-[#A020F0]/10 hover:shadow-[#A020F0]/20`}
     >
       <CardHeader className={`pb-4 border-b border-neutral-800`}>
-        <CardTitle className={`text-2xl font-bold sora text-white`}>
+        <CardTitle className={`text-2xl font-bold   text-white`}>
           {title}
         </CardTitle>
         {description && (
@@ -77,7 +77,7 @@ const ProgramCard = ({
         <div className="grid sm:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div className="hidden items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
+              <div className="p-2 rounded-lg bg-[#A020F0]/10 text-[#A020F0]">
                 <IconWorld size={20} />
               </div>
               <div>
@@ -95,7 +95,7 @@ const ProgramCard = ({
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
+              <div className="p-2 rounded-lg bg-[#A020F0]/10 text-[#A020F0]">
                 <IconClock size={20} />
               </div>
               <div>
@@ -106,7 +106,7 @@ const ProgramCard = ({
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
+              <div className="p-2 rounded-lg bg-[#A020F0]/10 text-[#A020F0]">
                 <IconUsers size={20} />
               </div>
               <div>
@@ -120,7 +120,7 @@ const ProgramCard = ({
 
           <div className="space-y-4">
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
+              <div className="p-2 rounded-lg bg-[#A020F0]/10 text-[#A020F0]">
                 <IconCalendar size={20} />
               </div>
               <div>
@@ -131,7 +131,7 @@ const ProgramCard = ({
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#008000]/10 text-[#008000]">
+              <div className="p-2 rounded-lg bg-[#A020F0]/10 text-[#A020F0]">
                 <IconWorld size={20} />
               </div>
               <div>
@@ -152,7 +152,7 @@ const ProgramCard = ({
             {benefits?.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-neutral-300">
                 <IconCheck
-                  className="text-[#008000] shrink-0 mt-0.5"
+                  className="text-[#A020F0] shrink-0 mt-0.5"
                   size={18}
                 />
                 <span className="text-sm">{item}</span>
@@ -204,12 +204,12 @@ const Programs = () => {
   }, []);
 
   return (
-    <section id="programs" className="py-24 bg-neutral-900/50 nunito">
+    <section id="programs" className="py-24 bg-neutral-900/50  ">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl sora">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl  ">
             {t("programs_page.title_our")}{" "}
-            <span className="text-[#008000]">
+            <span className="text-[#A020F0]">
               {t("programs_page.title_programs")}
             </span>
           </h2>
@@ -220,7 +220,7 @@ const Programs = () => {
 
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <IconLoader className="w-10 h-10 text-[#008000] animate-spin mb-4" />
+            <IconLoader className="w-10 h-10 text-[#A020F0] animate-spin mb-4" />
             <p className="text-neutral-400">
               {t("loading", "Loading programs...")}
             </p>
@@ -230,13 +230,19 @@ const Programs = () => {
             <p className="text-red-500">{error}</p>
             <button
               onClick={() => window.location.reload()}
-              className="mt-4 px-4 py-2 bg-[#008000] text-white rounded-lg hover:bg-[#006400] transition-colors"
+              className="mt-4 px-4 py-2 bg-[#A020F0] text-white rounded-lg hover:bg-[#7C1BB0] transition-colors"
             >
               Retry
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-items-center">
+          <div
+            className={`grid gap-8 items-start ${
+              courses.length === 1
+                ? "grid-cols-1 justify-items-center"
+                : "grid-cols-1 lg:grid-cols-2 justify-items-center"
+            }`}
+          >
             {courses.map((course) => (
               <ProgramCard
                 key={course._id}

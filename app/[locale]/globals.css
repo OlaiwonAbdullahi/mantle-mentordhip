@@ -131,14 +131,11 @@
   font-family: "Sora";
   src: url("/fonts/Sora-Regular.ttf") format("truetype");
 }
-
-.nunito {
-  font-family: "Nunito";
+@font-face {
+  font-family: "SKClarke";
+  src: url("/fonts/SKClarke-Regular.ttf") format("truetype");
 }
 
-.sora {
-  font-family: "Sora";
-}
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -151,4 +148,7 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+body {
+  font-family: "SKClarke";
 }

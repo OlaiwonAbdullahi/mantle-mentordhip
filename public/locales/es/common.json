@@ -120,7 +120,7 @@
         "title": "Programa de Adquisición Basado en Proyectos"
       },
       "p4": {
-        "title": "Programas de Asesoramiento para Start-ups / Jóvenes Empresas"
+        "title": "Programas de Ase miento para Start-ups / Jóvenes Empresas"
       }
     },
     "waitlist": {
@@ -217,19 +217,19 @@
         "name": "Humphrey Onuh",
         "role": "Ingeniero de Operaciones, Tennet (Alemania)",
         "content": "He sido parte activa del programa de mentoría Mantle durante más de 10 años, y puedo decir con total confianza que esta mentoría ha moldeado significativamente mi trayectoria profesional y mi desarrollo personal. Gracias a su impacto, pasé del sector energético convencional al de energías renovables, y actualmente trabajo como Ingeniero de Operaciones. Una mentoría constante me brindó claridad, dirección y una definición sólida tanto en mi carrera como en mi crecimiento personal.",
-        "image": "/testimonials/humphrey.png"
+        "image": "/Humphrey.png"
       },
       {
         "name": "Cyprian Onyekperem",
         "role": "Estudiante de Doctorado (París, Francia)",
         "content": "En la vida, a medida que uno avanza para impactar positivamente a la humanidad, se vuelve noble e imprescindible, en ciertos momentos, agradecer a personas fuera del círculo familiar o religioso, pero que han ejercido influencias buenas e indispensables, directa o indirectamente, para lograr ese progreso. El Sr. Ebuka Umeh es una de esas personas en mi vida que merece este reconocimiento. Desde mis años de maestría hasta hoy, sus consejos han sido excepcionales. Sigo profundamente agradecido por este gesto tan estimado, el cual también me inspira a replicarlo con otros que se cruzan en mi camino y son receptivos a un buen consejo. Gracias al Sr. Ebuka Umeh.",
-        "image": "/testimonials/cyprian.png"
+        "image": "/Cyprian.png"
       },
       {
         "name": "Job John",
         "role": "Doctorando / Investigador – Australia",
         "content": "Es difícil resumir la contribución de Ebuka en mi vida en pocas frases. Para ser breve, Ebuka Umeh ha sido un mentor constante y transformador mucho antes de la creación del Programa de Mentoría Mantle. Me apoyó académicamente durante mi BEng en FUTO y me brindó orientación en algunas de las etapas más desafiantes de mi vida. Su confianza en mi potencial contribuyó de manera significativa a que obtuviera una beca doctoral en Australia. Recomiendo firmemente su mentoría a cualquier joven o profesional que busque claridad, dirección y un apoyo genuino y profesional.",
-        "image": "/testimonials/job.png"
+        "image": "/job.jpeg"
       }
     ]
   }
