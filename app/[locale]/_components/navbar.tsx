@@ -68,7 +68,13 @@ const Navbar = () => {
         <div className="mx-auto flex max-w-7xl items-center justify-between md:px-6 px-2 md:py-4 py-2">
           <div className="flex items-center gap-3">
             <Link href={`/${currentLocale}`}>
-              <Image src="/logo.svg" alt="logo" width={200} height={200} />
+              <Image
+                src="/logo.svg"
+                alt="logo"
+                width={200}
+                height={200}
+                className="md:w-[200px] w-[120px] md:h-[80px] h-[50px]"
+              />
             </Link>
           </div>
 
@@ -199,11 +205,11 @@ const Navbar = () => {
               >
                 <Button
                   size="lg"
-                  className="w-full max-w-xs mt-4 rounded-full font-bold bg-[#008000] hover:bg-[#006400] text-white p-6 shadow-lg shadow-primary/20"
+                  className="w-full max-w-xs mt-4 rounded-full font-bold bg-[#A020F0] hover:bg-[#7C1BB0]/80 text-white p-6 shadow-lg shadow-primary/20"
                 >
                   <span>{t("navbar.get_started")}</span>
                   <div className="p-1.5 rounded-full bg-white ml-2">
-                    <IconArrowUpRight color="#008000" size={16} />
+                    <IconArrowUpRight color="#A020F0" size={16} />
                   </div>
                 </Button>
               </Link>
