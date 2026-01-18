@@ -92,14 +92,14 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer text-foreground"
               aria-label="Toggle theme"
             >
               {!mounted ? (
-                <div className="w-6 h-6" /> // Placeholder to avoid layout shift
+                <div className="w-6 h-6" />
               ) : theme === "dark" ? (
                 <IconSun size={20} />
               ) : (
