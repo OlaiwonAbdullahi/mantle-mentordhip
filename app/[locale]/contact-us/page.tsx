@@ -15,6 +15,26 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
 
+// SEO Metadata - will be handled by layout
+export const metadata = {
+  title: "Contact Us - Get in Touch with The Mantle Mentorship",
+  description:
+    "Have questions about our mentorship programs? Contact us today to learn more about how we can help you develop practical skills and leadership capabilities.",
+  keywords: [
+    "contact",
+    "get in touch",
+    "mentorship inquiry",
+    "support",
+    "reach out",
+  ],
+  openGraph: {
+    title: "Contact Us - The Mantle Mentorship",
+    description:
+      "Have questions? Contact us to learn more about our mentorship programs.",
+    url: "https://mantlementor.com/contact-us",
+  },
+};
+
 const ContactUs = () => {
   const { t } = useTranslation();
   const [name, setName] = useState<string>("");

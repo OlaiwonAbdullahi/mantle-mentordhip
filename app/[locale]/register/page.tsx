@@ -34,6 +34,27 @@ import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { useParams } from "next/navigation";
 
+// SEO Metadata - will be handled by layout
+export const metadata = {
+  title: "Register for Mentorship - Join The Mantle Mentorship",
+  description:
+    "Sign up for our mentorship programs today and start your journey to becoming a future leader. Flexible programs, experienced mentors, and practical skill development.",
+  keywords: [
+    "register",
+    "mentorship signup",
+    "enrollment",
+    "join mentorship",
+    "apply now",
+    "mentorship programs",
+  ],
+  openGraph: {
+    title: "Register - The Mantle Mentorship",
+    description:
+      "Sign up for our mentorship programs and start developing practical skills for leadership success.",
+    url: "https://mantlementor.com/register",
+  },
+};
+
 const EDUCATION_LEVELS = ["SSCE", "OND", "HND", "BSC", "MSc", "PhD", "Others"];
 
 interface Course {

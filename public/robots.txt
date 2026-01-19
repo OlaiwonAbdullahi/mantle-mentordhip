@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+
+# Sitemaps
+Sitemap: https://mantlementor.com/sitemap.xml
+Sitemap: https://mantlementor.com/en/sitemap.xml
+Sitemap: https://mantlementor.com/es/sitemap.xml
+Sitemap: https://mantlementor.com/fr/sitemap.xml
+Sitemap: https://mantlementor.com/nl/sitemap.xml
+
+# Crawl delay (optional - adjust based on your server capacity)
+Crawl-delay: 1
