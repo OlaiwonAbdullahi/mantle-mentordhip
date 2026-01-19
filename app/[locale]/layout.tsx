@@ -4,6 +4,7 @@ import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://mantlementor.com";
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "The Mantle Mentorship";
@@ -130,6 +131,21 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-SJWBWS8XRP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ''G-SJWBWS8XRP', {
+              'page_path': window.location.pathname,
+            });
+          `}
+        </Script>
         <meta
           name="google-site-verification"
           content="WnEKKpiLBsjJOSNna0xOWk8KJ6EhKPm-urg2eQ9gAxc"
