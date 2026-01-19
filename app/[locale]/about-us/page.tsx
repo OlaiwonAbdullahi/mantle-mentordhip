@@ -10,26 +10,6 @@ import {
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-// SEO Metadata - will be handled by layout
-export const metadata = {
-  title: "About Us - Learn Our Mentorship Mission",
-  description:
-    "Discover The Mantle Mentorship's mission to transfer practical and life-based skills to the next generation of leaders through personalized guidance and mentorship.",
-  keywords: [
-    "mentorship",
-    "about us",
-    "leadership development",
-    "skill transfer",
-    "mentor",
-  ],
-  openGraph: {
-    title: "About Us - The Mantle Mentorship",
-    description:
-      "Discover our mission to transfer practical and life-based skills to future leaders.",
-    url: "https://mantlementor.com/about-us",
-  },
-};
-
 const AboutUs = () => {
   const { t } = useTranslation();
   const benefits = [
