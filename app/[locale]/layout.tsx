@@ -130,6 +130,10 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <meta
+          name="google-site-verification"
+          content="WnEKKpiLBsjJOSNna0xOWk8KJ6EhKPm-urg2eQ9gAxc"
+        />
       </head>
       <body className="antialiased ">
         <Providers locale={locale}>
