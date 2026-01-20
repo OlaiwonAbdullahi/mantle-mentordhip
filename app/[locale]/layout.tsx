@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Transferring the practical & life-based skill mantle to next future leaders",
     images: [
       {
-        url: `${baseUrl}/og-image.png`,
+        url: `${baseUrl}/logo.png`,
         width: 1200,
         height: 630,
         alt: "The Mantle Mentorship",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "The Mantle Mentorship",
     description:
       "Transferring the practical & life-based skill mantle to next future leaders",
-    images: [`${baseUrl}/twitter-image.png`],
+    images: [`${baseUrl}/logo.png`],
   },
   robots: {
     index: true,
@@ -121,7 +121,7 @@ export default async function RootLayout({
       email: "info@mantlementor.com",
       telephone: "+234 803 897 9738",
     },
-    image: `${baseUrl}/og-image.png`,
+    image: `${baseUrl}/logo.png`,
   };
 
   return (
