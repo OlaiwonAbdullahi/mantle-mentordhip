@@ -2,6 +2,13 @@ import ComingSoon from "./_components/coming-soon";
 import Hero from "./_components/hero";
 import Programs from "./_components/programs";
 import Testimonials from "./_components/testimonials";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const Page = () => {
   return (

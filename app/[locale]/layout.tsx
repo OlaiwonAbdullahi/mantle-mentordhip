@@ -10,6 +10,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://mantlementor.com";
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "The Mantle Mentorship";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: "The Mantle Mentorship",
     template: "%s | The Mantle Mentorship",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "The Mantle Mentorship Team",
-      url: baseUrl,
+      url: "/",
     },
   ],
   creator: "The Mantle Mentorship",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: baseUrl,
+    url: "/",
     siteName: siteName,
     title: "The Mantle Mentorship",
     description:
@@ -81,13 +82,12 @@ export const metadata: Metadata = {
     google: "WnEKKpiLBsjJOSNna0xOWk8KJ6EhKPm-urg2eQ9gAxc",
   },
   alternates: {
-    canonical: baseUrl,
     languages: {
-      en: `${baseUrl}/en`,
-      es: `${baseUrl}/es`,
-      fr: `${baseUrl}/fr`,
-      nl: `${baseUrl}/nl`,
-      "x-default": baseUrl,
+      en: "/en",
+      es: "/es",
+      fr: "/fr",
+      nl: "/nl",
+      "x-default": "/",
     },
   },
 };
@@ -141,7 +141,7 @@ export default async function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', ''G-SJWBWS8XRP', {
+            gtag('config', 'G-SJWBWS8XRP', {
               'page_path': window.location.pathname,
             });
           `}

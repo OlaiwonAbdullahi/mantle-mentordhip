@@ -13,11 +13,14 @@ export const metadata: Metadata = {
     "mentor programs",
     "professional development",
   ],
+  alternates: {
+    canonical: "/programs",
+  },
   openGraph: {
     title: "Our Programs - The Mantle Mentorship",
     description:
       "Explore our comprehensive mentorship programs designed to develop practical skills and foster future leaders.",
-    url: "https://mantlementor.com/programs",
+    url: "/programs",
   },
 };
 
