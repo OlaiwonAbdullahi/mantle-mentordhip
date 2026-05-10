@@ -113,7 +113,7 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="max-h-[60vh] overflow-y-auto p-6 scrollbar-hide">
+        <div className="max-h-[60vh] overflow-y-auto p-6 ">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20">
               <IconLoader className="w-10 h-10 text-[#A020F0] animate-spin mb-4" />
@@ -152,10 +152,10 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
                   <div className="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 hover:border-[#A020F0]/30 transition-all group">
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
                       <div className="flex items-center gap-3">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#A020F0]/10 text-[#A020F0] text-xs font-bold uppercase tracking-wider">
+                        <span className="px-2.5 whitespace-nowrap py-0.5 rounded-full bg-[#A020F0]/10 text-[#A020F0] text-xs font-bold uppercase tracking-wider">
                           Week {schedule.week}
                         </span>
-                        <h4 className="text-lg font-bold   text-white group-hover:text-[#A020F0] transition-colors">
+                        <h4 className="text-md font-semibold   text-white group-hover:text-[#A020F0] transition-colors">
                           {schedule.title}
                         </h4>
                       </div>

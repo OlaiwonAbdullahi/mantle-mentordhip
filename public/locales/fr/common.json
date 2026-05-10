@@ -66,7 +66,9 @@
     "program_discipline": "Programme de compétences basées sur une discipline",
     "program_project": "Programme d’acquisition basé sur des projets",
     "program_startup": "Programmes de conseil pour start-ups et jeunes entreprises",
-    "in_development": "Ce programme est actuellement en cours de développement. Revenez plus tard pour plus de détails."
+    "in_development": "Ce programme est actuellement en cours de développement. Revenez plus tard pour plus de détails.",
+    "see_more": "Voir plus",
+    "see_less": "Voir moins"
   },
   "contact_us_page": {
     "title_contact": "Contact",

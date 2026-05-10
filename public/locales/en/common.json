@@ -66,7 +66,9 @@
     "program_discipline": "Discipline-based skilled program",
     "program_project": "Project-based acquisition program",
     "program_startup": "Start-up/Young business Advisory Programs",
-    "in_development": "This program is currently in development. Check back later for details."
+    "in_development": "This program is currently in development. Check back later for details.",
+    "see_more": "See more",
+    "see_less": "See less"
   },
   "contact_us_page": {
     "title_contact": "Contact",

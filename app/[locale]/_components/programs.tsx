@@ -57,6 +57,13 @@ const ProgramCard = ({
   benefits,
 }: ProgramProps) => {
   const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const threshold = 150;
+  const shouldTruncate = description && description.length > threshold;
+  const displayDescription =
+    isExpanded || !shouldTruncate
+      ? description
+      : `${description?.substring(0, threshold)}...`;
 
   return (
     <Card
@@ -70,7 +77,15 @@ const ProgramCard = ({
         </CardTitle>
         {description && (
           <CardDescription className="text-muted-foreground text-base mt-2">
-            {description}
+            {displayDescription}
+            {shouldTruncate && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-[#A020F0] hover:underline ml-1 font-medium focus:outline-none"
+              >
+                {isExpanded ? "See Less" : "See More"}
+              </button>
+            )}
           </CardDescription>
         )}
       </CardHeader>

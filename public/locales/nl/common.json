@@ -66,7 +66,9 @@
     "program_discipline": "Discipline-gebaseerd vaardigheidsprogramma",
     "program_project": "Project-gebaseerd acquisitieprogramma",
     "program_startup": "Start-up/Jonge Bedrijf Adviesprogramma's",
-    "in_development": "Dit programma is momenteel in ontwikkeling. Kom later terug voor details."
+    "in_development": "Dit programma is momenteel in ontwikkeling. Kom later terug voor details.",
+    "see_more": "Bekijk meer",
+    "see_less": "Bekijk minder"
   },
   "contact_us_page": {
     "title_contact": "Contacteer",
