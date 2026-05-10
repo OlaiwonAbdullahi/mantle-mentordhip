@@ -165,9 +165,12 @@ const ScheduleDialog = ({ courseId, programTitle }: ScheduleDialogProps) => {
                       </div>
                     </div>
 
-                    <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
-                      {schedule.description}
-                    </p>
+                    <p
+                      className="text-neutral-400 text-sm mb-4 max-w-[500px] leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: schedule.description,
+                      }}
+                    />
 
                     <div className="flex items-center gap-2 pt-4 border-t border-neutral-800/50">
                       <div className="p-1.5 rounded-full bg-neutral-800 text-neutral-400">
